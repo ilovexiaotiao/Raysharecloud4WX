@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>雷赛云微信公众号工资单</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<script type="text/javascript">
+			function checkPhone() {
+
+				window.location.href = "../../index.html";
+			}
+		</script>
+		<!--
+        	作者：a15838261357@sina.com
+        	时间：2018-10-09
+        	描述：年份 月份函数
+        -->		<script type="text/javascript">
+			function fillSelect() {
+				var obj = document.getElementById("s1");
+				var s2 = document.getElementById("s2");
+				for(var i = 2010; i < 2054; i++) {
+
+					var op = new Option(i, i);
+					obj.add(op);
+				}
+				for(var y = 1; y < 13; y++) {
+					var a = new Option(y, y);
+					s2.add(a);
+				}
+			}
+		</script>
+
+	</head>
+<!--
+	作者：a15838261357@sina.com
+	时间：2018-10-09
+	描述：页面打开执行的函数fillSelect()
+-->
+	<body onload="fillSelect()">
+
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../index.html" style="color: white;"></a>
+			<h1 class="mui-title">工资单</h1>
+		</header>
+		<header class="mui-bar mui-bar-nav" style="top: 44px;background-color: white!important;color: red!important;height: 60px;">
+
+			<div>
+				<form class="mui-input-group" style="align-content: center;">
+					<form class="mui-input-group" style="align-content: center;">
+						<div  style="float: left;" >
+							
+							<select id="s1" >
+								
+								<option>请选择年份</option>
+							</select>
+						</div>
+						<div style="float: left;margin-top: 10px;" >
+							<a style="color: red;font-size: 15px;">年</a>
+						</div>
+						<div  style="float: left;">
+							<select id="s2" >
+								<option>请选择月份</option>
+							</select>
+						</div>
+						<div style="float: left;margin-top: 10px;" >
+							<a style="color: red;font-size: 15px;">月</a>
+						</div>
+						<div style="float: left;margin-left: 10px;">
+							<p>总收入：</p>
+							<p>月收入：</p>
+						</div>
+					</form>
+				</form>
+				</form>
+			</div>
+		</header>
+		<div class="mui-content" style="font-size: 10px;margin-top: 70px;">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label style="width: 60%;">结算员工</label>
+					<input style="width: 40%;" type="text" class="mui-input-clear" placeholder="结算员工" value="张三">
+				</div>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label style="width: 60%;">员工编号</label>
+						<input style="width: 40%;" type="text" class="mui-input-clear" placeholder="员工编号" value="124667">
+					</div>
+					<form class="mui-input-group">
+						<div class="mui-input-row">
+							<label style="width: 60%;">部门岗位</label>
+							<input style="width: 40%;" type="text" class="mui-input-clear" placeholder="部门岗位" value="保洁员">
+						</div>
+						<div class="mui-input-row">
+								<label style="width: 60%;">工资年份（单位：年）</label>
+								<input style="width: 40%;" type="text" class="mui-input-clear" placeholder="工资月份" value="2018">
+
+							</div>
+							</form>
+						<form class="mui-input-group">
+							<div class="mui-input-row">
+								<label style="width: 60%;">工资月份（单位：月）</label>
+								<input style="width: 40%;" type="text" class="mui-input-clear" placeholder="工资月份" value="8">
+
+							</div>
+							<form class="mui-input-group">
+							
+							<form class="mui-input-group">
+								<div class="mui-input-row">
+									<label style="width: 60%;">实际工资（单位：元）</label>
+									<input style="width: 40%;" type="text" class="mui-input-clear" placeholder="实际工资" value="4,000">
+								</div>
+								<form class="mui-input-group">
+									<div class="mui-input-row">
+										<label style="width: 60%;">应发合计（单位：元）</label>
+										<input style="width: 40%;" type="text" class="mui-input-clear" placeholder="应发合计" value="3,500">
+									</div>
+									<form class="mui-input-group">
+										<div class="mui-input-row">
+											<label style="width: 60%;">应扣合计（单位：元）</label>
+											<input style="width: 40%;" type="text" class="mui-input-clear" placeholder="应扣合计" value="500">
+										</div>
+									</form>
+								</form>
+							</form>
+						</form>
+					</form>
+				</form>
+			</form>
+		</div>
+	</body>
+
+</html>

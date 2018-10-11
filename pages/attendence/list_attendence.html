@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<!--
+	作者：a15838261357@sina.com
+	时间：2018-10-09
+	描述：考勤打卡页面
+-->
+	<head>
+		<meta charset="UTF-8">
+		<title>考勤打卡</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/header.css" />
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+
+		<header class="mui-bar mui-bar-nav"><a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../index.html"
+			 style="color: white;"></a>
+		    <h1 class="mui-title">考勤打卡</h1>
+		</header>
+		<!--
+        	作者：a15838261357@sina.com
+        	时间：2018-10-09
+        	描述：make_attendence.html为新建考勤页面
+        -->
+		<div class="mui-content" style="margin-top: 5px;">
+		    <button type="button"  onclick="window.location.href='make_attendence.html'" class="mui-btn mui-btn-grey mui-btn-block" style="height: 100px;"><span class="mui-icon mui-icon-plus-filled"></span>新建考勤</button>
+		</div>
+		<div class="mui-input-row mui-search">
+		    <input type="search" class="mui-input-clear" placeholder="输入编号或者名称">
+		</div>
+		
+		<!--
+	作者：a15838261357@sina.com
+	时间：2018-10-09
+	描述：考勤信息列表，跳转为详细信息
+-->
+		 <ul class="mui-table-view">
+		     <li class="mui-table-view-cell mui-media">
+		         <a href="example_attendence.html">
+		             
+
+		             <div class="mui-media-body">
+		                 签到啦
+		                 <p class="mui-ellipsis">雷曼科技广场</p>
+		                 <p class="mui-ellipsis">上班时间 9:00 下班时间 17:00</p>
+		             </div>
+		         </a>
+		     </li>
+		    
+		 </ul>
+	</body>
+
+</html>

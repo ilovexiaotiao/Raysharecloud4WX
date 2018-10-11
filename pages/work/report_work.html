@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+<!--
+	作者：a15838261357@sina.com
+	时间：2018-10-09
+	描述：工作上报
+-->
+	<head>
+		<meta charset="UTF-8">
+		<title>雷赛云微信公众号工作上报</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+		<script src="../../js/jquery.min.js"></script>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/common.js"></script>
+		<script src="../../js/public-method.js"></script>
+
+		<!-- 定义当前页弹出容器属性 -->
+		<script type="text/javascript">
+			var layer = new Layer({
+				layerclass: "layerContianer2", //存放页面的容器类名
+				width: 100,
+				height: 100,
+				left: 0,
+				top: 80,
+				alerttit: "选择上传类型",
+				setOverflow: "overflow-y:none", //设置滚动的属性 overflow-y：设置竖向  overflow-x:设置横向
+			});
+		</script>
+	</head>
+
+	<!-- 随页面启动初始化函数 -->
+	<body onload="start()">
+
+
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../index.html" style="color: white;"></a>
+			<h1 class="mui-title">工作上报</h1>
+		</header>
+
+
+		<div class="mui-content">
+	<!-- 上报内容 -->
+
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>项目编号</label>
+					<input type="text" class="mui-input-clear table_input" placeholder="项目编号">
+				</div>
+			</form>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>工位编号</label>
+					<input type="text" class="mui-input-clear table_input" placeholder="工位编号">
+				</div>
+			</form>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>员工编号</label>
+					<input type="text" class="mui-input-clear table_input" placeholder="员工编号">
+				</div>
+			</form>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>签到时间</label>
+					<input type="text" class="mui-input-clear table_input" placeholder="签到时间">
+				</div>
+			</form>
+
+
+			<form class="mui-input-group">
+				<div class="mui-input-row" style="height: 100%;width: 100%;">
+					<table class="table">
+						<tr>
+
+							<th style="width: 10%;">序号</th>
+							<th style="width: 35%;">项目</th>
+							<th style="width: 40%">清洁标准</th>
+							<th style="width: 15%;">自查</th>
+						</tr>
+						<tr>
+							<td style="text-align: center;">1</td>
+							<td>地面</td>
+
+							<td>无水迹</td>
+							<td style="text-align: center;"><input type="checkbox"></td>
+						</tr>
+						<tr>
+							<td style="text-align: center;">2</td>
+							<td>墙面</td>
+							<td>无乱涂乱画，无灰尘、无蜘蛛、无污渍</td>
+							<td style="text-align: center;"><input type="checkbox"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">3</td>
+							<td>天花</td>
+							<td>无灰尘、无污渍</td>
+							<td style="text-align: center;"><input type="checkbox"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">4</td>
+							<td>坐厕间隔强</td>
+							<td>无灰尘</td>
+							<td style="text-align: center;"><input type="checkbox"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">5</td>
+							<td>坐便器、小便斗</td>
+							<td>无污垢、洁净</td>
+							<td style="text-align: center;"><input type="checkbox"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">6</td>
+							<td>洗手盆及台面、玻璃镜面、水龙头</td>
+							<td>台面无水珠、无污渍、镜面光亮</td>
+							<td style="text-align: center;"><input type="checkbox"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">7</td>
+							<td>灯罩</td>
+							<td>无灰尘、无污渍</td>
+							<td style="text-align: center;"><input type="checkbox"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">8</td>
+							<td>送/排风口</td>
+							<td>无灰尘、无污渍</td>
+							<td style="text-align: center;"><input type="checkbox"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">9</td>
+							<td>废纸篓</td>
+							<td>废纸不超过桶面的1/2，无异味</td>
+							<td style="text-align: center;"><input type="checkbox"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">10</td>
+							<td>喷香机、洗手液箱</td>
+							<td>正常喷香</td>
+							<td style="text-align: center;"><input type="checkbox"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">11</td>
+							<td>纸巾</td>
+							<td>正常时间无断纸现象</td>
+							<td style="text-align: center;"><input type="checkbox"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">12</td>
+							<td>卫生纸架</td>
+							<td>无灰尘、无污渍</td>
+							<td style="text-align: center;"><input type="checkbox"></td>
+
+						</tr>
+					</table>
+				</div>
+
+			</form>
+
+			<!--上传图片-->
+			<div class="container">
+				<label>上传签到图片：</label>
+				<button id="show-btn" onclick="show_btn()">添加图片</button>
+				<p> 最多只能上传六张照片</p>
+				<!--
+                	作者：a15838261357@sina.com
+                	时间：2018-10-09
+                	描述：仅支持本地上传file_input
+                	    仅支持本地拍照file_input1
+                -->
+				<input type="file" id="file_input" name="upload"  multiple />
+				<input type="file" id="file_input1" name="upload" accept="image/*" capture="camera">
+			</div>
+
+			<div>
+				<button type="button" style="top: 300px;" class="mui-btn mui-btn-grey mui-btn-block" onclick="checkPhone1()">工作上报</button>
+			</div>
+
+
+	</body>
+
+</html>

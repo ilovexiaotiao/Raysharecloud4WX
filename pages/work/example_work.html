@@ -1,0 +1,328 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>雷赛云微信公众号工作上报</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
+		<script src="../../js/jquery.min.js"></script>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript">
+/* 		function getPhoneType() {
+				//正则,忽略大小写
+        //alert("11");
+				var pattern_phone = new RegExp("iphone", "i");
+				var pattern_android = new RegExp("Android", "i");
+				var userAgent = navigator.userAgent.toLowerCase();
+				var isAndroid = pattern_android.test(userAgent);
+				var isIphone = pattern_phone.test(userAgent);
+				if(isAndroid) {
+					//capture="camera"
+					$('#file_input').attr('capture', 'camera');
+					alert("a");
+				} else if(isIphone) {
+					$('#file_input').removeAttr('capture');
+
+				}
+			} */
+	window.onload = function(){    
+    var input = document.getElementById("file_input");    
+    var result;    
+    var dataArr = []; // 储存所选图片的结果(文件名和base64数据)  
+    var fd;  //FormData方式发送请求    
+    var oSelect = document.getElementById("select");  
+    var oAdd = document.getElementById("add");  
+    var oSubmit = document.getElementById("submit");  
+    var oInput = document.getElementById("file_input");  
+		var pattern_phone = new RegExp("iphone", "i");
+		var pattern_android = new RegExp("Android", "i");
+		var userAgent = navigator.userAgent.toLowerCase();
+		var isAndroid = pattern_android.test(userAgent);
+		var isIphone = pattern_phone.test(userAgent);
+		if(isAndroid) {
+							//capture="camera"
+			$('#file_input').attr('capture', 'camera');
+			//alert("a");
+		} else if(isIphone) {
+			$('#file_input').removeAttr('capture');
+		
+		}    
+    if(typeof FileReader==='undefined'){    
+        alert("抱歉，你的浏览器不支持 FileReader");    
+        input.setAttribute('disabled','disabled');    
+    }else{    
+        input.addEventListener('change',readFile,false);    
+    }　　　　　//handler    
+    
+        
+    function readFile(){   
+        fd = new FormData();    
+        var iLen = this.files.length;  
+        var index = 0;  
+        for(var i=0;i<iLen;i++){  
+            if (!input['value'].match(/.jpg|.gif|.png|.jpeg|.bmp/i)){　　//判断上传文件格式    
+                return alert("上传的图片格式不正确，请重新选择");    
+            }  
+            var reader = new FileReader();  
+            reader.index = i;    
+            fd.append(i,this.files[i]);  
+            reader.readAsDataURL(this.files[i]);  //转成base64    
+            reader.fileName = this.files[i].name;  
+  
+  
+            reader.onload = function(e){   
+                var imgMsg = {    
+                    name : this.fileName,//获取文件名    
+                    base64 : this.result   //reader.readAsDataURL方法执行完后，base64数据储存在reader.result里    
+                }   
+                dataArr.push(imgMsg);    
+                result = '<div class="delete">delete</div><div class="result"><img src="'+this.result+'" alt=""/></div>';    
+                var div = document.createElement('div');  
+                div.innerHTML = result;    
+                div['className'] = 'float';  
+                div['index'] = index;    
+                document.getElementsByTagName('body')[0].appendChild(div);  　　//插入dom树    
+                var img = div.getElementsByTagName('img')[0];  
+                img.onload = function(){    
+                    var nowHeight = ReSizePic(this); //设置图片大小    
+                    this.parentNode.style.display = 'block';    
+                    var oParent = this.parentNode;    
+                    if(nowHeight){    
+                        oParent.style.paddingTop = (oParent.offsetHeight - nowHeight)/2 + 'px';    
+                    }    
+                }   
+  
+  
+                div.onclick = function(){  
+                    this.remove();                  // 在页面中删除该图片元素  
+                    delete dataArr[this.index];  // 删除dataArr对应的数据  
+                      
+                }  
+                index++;  
+            }    
+        }    
+    }    
+        
+        
+    function send(){   
+  
+  
+        var submitArr = [];  
+        for (var i = 0; i < dataArr.length; i++) {  
+            if (dataArr[i]) {  
+                submitArr.push(dataArr[i]);  
+            }  
+        }  
+        // console.log('提交的数据：'+JSON.stringify(submitArr)) 
+        $.ajax({    
+            url : 'http://123.206.89.242:9999',    
+            type : 'post', 
+            data : JSON.stringify(submitArr),    
+            dataType: 'json',    
+            //processData: false,   用FormData传fd时需有这两项    
+            //contentType: false,    
+            success : function(data){    
+                console.log('返回的数据：'+JSON.stringify(data))    
+          　}
+ 
+        })    
+    }    
+        
+     
+  
+  
+   
+    oAdd.onclick=function(){  
+        oInput.value = "";   // 先将oInput值清空，否则选择图片与上次相同时change事件不会触发  
+        oInput.click();   
+    }   
+  
+}    
+/*    
+ 用ajax发送fd参数时要告诉jQuery不要去处理发送的数据，    
+ 不要去设置Content-Type请求头才可以发送成功，否则会报“Illegal invocation”的错误，    
+ 也就是非法调用，所以要加上“processData: false,contentType: false,”    
+ * */    
+    
+                
+function ReSizePic(ThisPic) {    
+    var RePicWidth = 200; //这里修改为您想显示的宽度值    
+    
+    var TrueWidth = ThisPic.width; //图片实际宽度    
+    var TrueHeight = ThisPic.height; //图片实际高度    
+        
+    if(TrueWidth>TrueHeight){    
+        //宽大于高    
+        var reWidth = RePicWidth;    
+        ThisPic.width = reWidth;    
+        //垂直居中    
+        var nowHeight = TrueHeight * (reWidth/TrueWidth);    
+        return nowHeight;  //将图片修改后的高度返回，供垂直居中用    
+    }else{    
+        //宽小于高    
+        var reHeight = RePicWidth;    
+        ThisPic.height = reHeight;    
+    }    
+}    
+		</script>
+
+		
+		
+		<script type="text/javascript">
+	
+			function checkPhone(){
+				alert("上报成功!");
+				window.location.href="homePage.html";
+			}
+		</script>
+	</head>
+
+	<body>
+
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../index.html" style="color: white;"></a>
+			<h1 class="mui-title">工作上报</h1>
+			<!--    <span class="mui-icon mui-icon-bars mui-icon mui-icon-right-nav mui-pull-right"></span>
+--></header>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>项目编号</label>
+					<input type="text" class="mui-input-clear" placeholder="项目编号">
+				</div>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label>工位编号</label>
+						<input type="text" class="mui-input-clear" placeholder="工位编号">
+					</div>
+					<form class="mui-input-group">
+						<div class="mui-input-row">
+							<label>员工编号</label>
+							<input type="text" class="mui-input-clear" placeholder="员工编号">
+						</div>
+						<form class="mui-input-group">
+							<div class="mui-input-row">
+								<label>签到时间</label>
+								<input type="text" class="mui-input-clear" placeholder="签到时间">
+							</div>
+						</form>
+					</form>
+				</form>
+			</form>
+
+			<form class="mui-input-group">
+				<div class="mui-input-row" style="height: 100%;width: 100%;">
+					<table class="table">
+						<tr>
+
+							<th style="width: 10%;">序号</th>
+							<th style="width: 35%;">项目</th>
+							<th style="40%">清洁标准</th>
+							<th style="width: 15%;">自查</th>
+						</tr>
+						<tr>
+							<td style="text-align: center;">1</td>
+							<td>地面</td>
+
+							<td>无水迹</td>
+							<td style="text-align: center;"><input type="checkbox"></td>
+						</tr>
+						<tr>
+							<td style="text-align: center;">2</td>
+							<td>墙面</td>
+							<td>无乱涂乱画，无灰尘、无蜘蛛、无污渍</td>
+							<td style="text-align: center;"><input type="checkbox"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">3</td>
+							<td>天花</td>
+							<td>无灰尘、无污渍</td>
+							<td style="text-align: center;"><input type="checkbox"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">4</td>
+							<td>坐厕间隔强</td>
+							<td>无灰尘</td>
+							<td style="text-align: center;"><input type="checkbox"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">5</td>
+							<td>坐便器、小便斗</td>
+							<td>无污垢、洁净</td>
+							<td style="text-align: center;"><input type="checkbox"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">6</td>
+							<td>洗手盆及台面、玻璃镜面、水龙头</td>
+							<td>台面无水珠、无污渍、镜面光亮</td>
+							<td style="text-align: center;"><input type="checkbox"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">7</td>
+							<td>灯罩</td>
+							<td>无灰尘、无污渍</td>
+							<td style="text-align: center;"><input type="checkbox"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">8</td>
+							<td>送/排风口</td>
+							<td>无灰尘、无污渍</td>
+							<td style="text-align: center;"><input type="checkbox"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">9</td>
+							<td>废纸篓</td>
+							<td>废纸不超过桶面的1/2，无异味</td>
+							<td style="text-align: center;"><input type="checkbox"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">10</td>
+							<td>喷香机、洗手液箱</td>
+							<td>正常喷香</td>
+							<td style="text-align: center;"><input type="checkbox"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">11</td>
+							<td>纸巾</td>
+							<td>正常时间无断纸现象</td>
+							<td style="text-align: center;"><input type="checkbox"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">12</td>
+							<td>卫生纸架</td>
+							<td>无灰尘、无污渍</td>
+							<td style="text-align: center;"><input type="checkbox"></td>
+							
+						</tr>
+					</table>
+				</div>
+
+			</form>
+<div class="container">    
+                <label>上传签到图片：</label>  
+                
+                <button id="add">添加图片</button>   
+              <p>  最多只能上传六张照片</p>
+                <input type="file" id="file_input" name="upload"  accept="image/*" capture="camera"  multiple/> <!--用input标签并选择type=file，记得带上multiple，不然就只能单选图片了-->    
+                
+</div>    
+
+			<button type="button" style="top: 300px;" class="mui-btn mui-btn-grey mui-btn-block" onclick="checkPhone()">工作上报</button>
+
+		</div>
+
+	</body>
+
+</html>
