@@ -317,93 +317,272 @@ function getlocal() {
 // 涉及功能：用户定位，工位签到
 // 涉及页面：新建签到页、工作上报页（complain）、稽查上报页（check）
 function RSMap() {
-		var geolocation = new BMap.Geolocation(); //创建百度地图定位实例
-		//var geomap = new BMap.Map(this.mapid); //创建百度地图图像实例
-		var geocoder = new BMap.Geocoder(); //创建百度地图地址编译器实例
-		var geomark; //创建地图标记
-		var geolabel; //创建地图标记文字说明
-		//var geoaddress;
-		var currentpoint;
-		var initialpoint = new BMap.Point(116.331398, 39.897445);
+	var geolocation = new BMap.Geolocation(); //创建百度地图定位实例
+	//var geomap = new BMap.Map(this.mapid); //创建百度地图图像实例
+	var geocoder = new BMap.Geocoder(); //创建百度地图地址编译器实例
+	var geomark; //创建地图标记
+	var geolabel; //创建地图标记文字说明
+	//var geoaddress;
+	var currentpoint;
+	var initialpoint = new BMap.Point(116.331398, 39.897445);
 
 
 
-		//初始化函数
-		if (typeof RSMap.initialized == "undefined") {
+	//初始化函数
+	if (typeof RSMap.initialized == "undefined") {
 
-			//功能1:获取当前位置的经纬度坐标,并分别应道到ID为lng和lat的元素中
-			RSMap.prototype.getPoint = function(lng, lat) {
+		//功能1:获取当前位置的经纬度坐标,并分别应道到ID为lng和lat的元素中
+		RSMap.prototype.getPoint = function(lng, lat) {
 
-				//向百度地图API服务器发送去获取当前定位的请求
-				geolocation.getCurrentPosition(function(r) {
-					//对服务器返回结果进行状态判断,如果返回SUCCESS,则开始解析
-					if (this.getStatus() == BMAP_STATUS_SUCCESS) {
-						document.getElementById(lat).value = r.point.lat;
-						document.getElementById(lng).value = r.point.lng;
-						//console.log(geopoint.lat);
-					}
+			//向百度地图API服务器发送去获取当前定位的请求
+			geolocation.getCurrentPosition(function(r) {
+				//对服务器返回结果进行状态判断,如果返回SUCCESS,则开始解析
+				if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+					document.getElementById(lat).value = r.point.lat;
+					document.getElementById(lng).value = r.point.lng;
+					//console.log(geopoint.lat);
+				}
 
 
-				})
-
-			}
-
-			//功能2:获取当前位置的具体地址,并分别映射到ID为address的元素中
-			RSMap.prototype.getAddress = function(address) {
-				geolocation.getCurrentPosition(function(r) {
-					//对服务器返回结果进行状态判断,如果返回SUCCESS,则开始解析
-					if (this.getStatus() == BMAP_STATUS_SUCCESS) {
-						geocoder.getLocation(r.point, function(rs) {
-							//console.log(rs.address);
-							document.getElementById(address).value = rs.address;
-						})
-					}
-
-				})
-			}
-
-			//功能3:获取当前地图,显示到ID为map的元素中
-			RSMap.prototype.getMap = function(map) {
-				//初始化地图
-				var geomap = new BMap.Map(map);
-				var initialpoint = new BMap.Point(116.331398, 39.897445);
-				geomap.centerAndZoom(initialpoint,12);	
-				
-				
-				//获取当前定位
-				geolocation.getCurrentPosition(function(r) {
-					//对服务器返回结果进行状态判断,如果返回SUCCESS,则开始解析
-					if (this.getStatus() == BMAP_STATUS_SUCCESS) {
-						
-						//创建当前位置的地图标记
-						geomark = new BMap.Marker(r.point);
-						geomap.addOverlay(geomark);
-						geomap.panTo(r.point);
-						//获取地址信息
-						geocoder.getLocation(r.point, function(rs) {
-							//添加地图缩放和模式转换的控件
-															
-							geomap.addControl(new BMap.MapTypeControl({
-								mapTypes: [
-									BMAP_NORMAL_MAP,
-									BMAP_HYBRID_MAP
-								]
-							}));
-							geomap.enableScrollWheelZoom(true);
-							//创建当前位置的地址标签
-							geolabel = new BMap.Label(rs.address, {
-								offset: new BMap.Size(20, -10)
-							});
-							geomark.setLabel(geolabel);
-							//固定当前标签
-							geomark.disableDragging();
-						})
-					}
-					//console.log(geopoint);
-
-				})
-			};
+			})
 
 		}
-		RSMap.initialized = true;
+
+		//功能2:获取当前位置的具体地址,并分别映射到ID为address的元素中
+		RSMap.prototype.getAddress = function(address) {
+			geolocation.getCurrentPosition(function(r) {
+				//对服务器返回结果进行状态判断,如果返回SUCCESS,则开始解析
+				if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+					geocoder.getLocation(r.point, function(rs) {
+						//console.log(rs.address);
+						document.getElementById(address).value = rs.address;
+					})
+				}
+
+			})
+		}
+
+		//功能3:获取当前地图,显示到ID为map的元素中
+		RSMap.prototype.getMap = function(map) {
+			//初始化地图
+			var geomap = new BMap.Map(map);
+			var initialpoint = new BMap.Point(116.331398, 39.897445);
+			geomap.centerAndZoom(initialpoint, 12);
+
+
+			//获取当前定位
+			geolocation.getCurrentPosition(function(r) {
+				//对服务器返回结果进行状态判断,如果返回SUCCESS,则开始解析
+				if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+
+					//创建当前位置的地图标记
+					geomark = new BMap.Marker(r.point);
+					geomap.addOverlay(geomark);
+					geomap.panTo(r.point);
+					//获取地址信息
+					geocoder.getLocation(r.point, function(rs) {
+						//添加地图缩放和模式转换的控件
+
+						geomap.addControl(new BMap.MapTypeControl({
+							mapTypes: [
+								BMAP_NORMAL_MAP,
+								BMAP_HYBRID_MAP
+							]
+						}));
+						geomap.enableScrollWheelZoom(true);
+						//创建当前位置的地址标签
+						geolabel = new BMap.Label(rs.address, {
+							offset: new BMap.Size(20, -10)
+						});
+						geomark.setLabel(geolabel);
+						//固定当前标签
+						geomark.disableDragging();
+					})
+				}
+				//console.log(geopoint);
+
+			})
+		};
+
 	}
+	RSMap.initialized = true;
+}
+
+
+
+// Part5.图表类函数
+// 技术选型：js,E-chart API
+// 涉及功能：薪资查询，绩效查询
+// 涉及页面：薪资查询页、绩效查询页
+function RSChart(chartid, title) {
+	//获取图表ID和图表标题
+	var chartid = chartid;
+	var title = title;
+	//初始化echarts实例
+	var chart = echarts.init(document.getElementById(chartid));
+	//配置图表属性
+	option = {
+		//打开图表渐进动画
+		animation: true,
+		//设置标题
+		title: {
+			left: 'center',
+			text: title,
+		},
+		//设置图例
+		legend: {
+			top: 'bottom',
+			//data: ['dd', 'dada']
+		},
+		//设置说明
+		tooltip: {
+			triggerOn: 'item',
+			position: function(pt) {
+				return [pt[0], 130];
+			},
+			alwaysShowContent: true
+		},
+		//设置图表工作栏
+		toolbox: {
+			left: 'center',
+			itemSize: 25,
+			top: 55,
+			feature: {
+				dataZoom: {
+					yAxisIndex: 'none'
+				},
+				restore: {}
+			}
+		},
+		//设置X轴属性
+		xAxis: {
+			type: 'category',
+			//设置X轴坐标样式
+			axisPointer: {
+				value: '0',
+				snap: true,
+				lineStyle: {
+					color: '#004E52',
+					opacity: 0.5,
+					width: 2
+				},
+				//X轴标签
+				label: {
+					show: true,
+					formatter: function(params) {
+						return echarts.format.formatTime('yyyy-M', params.value);
+					},
+					backgroundColor: '#004E52'
+				},
+				//添加拖动条
+				handle: {
+					show: true,
+					color: '#004E52'
+				},
+			},
+			//录入X轴样例数据
+			data: ["2018-1", "2018-2", "2018-3", "2018-4", "2018-5", "2018-6", "2018-7", "2018-8"],
+			//添加X轴分割线
+			splitLine: {
+				show: true
+			}
+
+		},
+		//设置Y轴属性
+		yAxis: {
+			type: 'value',
+			axisTick: {
+				inside: true
+			},
+			splitLine: {
+				show: false
+			},
+			axisLabel: {
+				inside: true,
+				formatter: '{value}\n'
+			},
+			//设置Y坐标轴最小值
+			min: function(value) {
+				return value.min - 400;
+			},
+			
+			z: 10
+		},
+		grid: {
+			top: 110,
+			left: 15,
+			right: 15,
+			height: 160
+		},
+		dataZoom: [{
+			type: 'inside',
+			throttle: 50
+		}],
+		//录入图表数值
+		series: [{
+				name: '实际收入',
+				type: 'bar',
+				smooth: true,
+				symbol: 'circle',
+				symbolSize: 5,
+				sampling: 'average',
+				itemStyle: {
+					normal: {
+						color: '#8ec6ad'
+					}
+				},
+				stack: 'a',
+				areaStyle: {
+					normal: {
+						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+							offset: 0,
+							color: '#8ec6ad'
+						}, {
+							offset: 1,
+							color: '#ffe'
+						}])
+					}
+				},
+				data: [4300.6, 4375.3, 4425.6, 4241, 4822.3, 4769.2, 4231.6, 4446.6]
+			},
+			{
+				name: '应收收入',
+				type: 'line',
+				smooth: true,
+				stack: 'b',
+				symbol: 'circle',
+				symbolSize: 5,
+				sampling: 'average',
+				itemStyle: {
+					normal: {
+						color: '#d68262'
+					}
+				},
+				areaStyle: {
+					normal: {
+						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+							offset: 0,
+							color: '#d68262'
+						}, {
+							offset: 1,
+							color: '#ffe'
+						}])
+					}
+				},
+				data: [4942.6, 4355.9, 4589.0, 4226.4, 4228.7, 4770.7, 4175.6, 4182.2]
+			}
+
+		]
+	};
+	
+	if (typeof RSChart.initialized == "undefined") {
+		
+		//生成echart图表的函数
+		RSChart.prototype.getChart = function(title) {
+			this.title = title;
+			chart.setOption(option);
+
+		}
+	}
+
+}
