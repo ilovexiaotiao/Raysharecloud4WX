@@ -12,8 +12,9 @@
 		<script src="../../js/mui.min.js"></script>
 		<script src="../../js/common.js"></script>
 		<script src="../../js/public-method.js"></script>
+		<script type="text/javascript" src="../../js/information.js"></script>
 
-	<!-- 定义当前页弹出容器属性 -->
+		<!-- 定义当前页弹出容器属性 -->
 		<script type="text/javascript">
 			var layer = new Layer({
 				layerclass: "layerContianer2", //存放页面的容器类名
@@ -32,6 +33,9 @@
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../index.html" style="color: white;"></a>
 			<h1 class="mui-title">投诉申请单</h1>
+			<a href="list_complain.html">
+				<span class="mui-icon mui-icon-bars" style="border-radius:40px;height: 40px;width: 40px;left: 80%;color: white;"></span>
+			</a>
 		</header>
 
 		<div class="mui-content">
@@ -78,21 +82,24 @@
 			</div>
 		</form>
 		<!--上传图片-->
-			<div class="container">
-				<label>上传图片：</label>
-				<button id="show-btn" onclick="show_btn()">添加图片</button>
-				<p> 最多只能上传六张照片</p>
-				<!--
+		<div class="container">
+			<label>上传图片：</label>
+			<button id="show-btn" onclick="show_btn()">添加图片</button>
+			<p> 最多只能上传六张照片</p>
+			<!--
                 	作者：a15838261357@sina.com
                 	时间：2018-10-09
                 	描述：仅支持本地上传file_input
                 	    仅支持本地拍照file_input1
                 -->
-				<input type="file" id="file_input" name="upload"  multiple />
-				<input type="file" id="file_input1" name="upload" accept="image/*" capture="camera">
-			</div>
+			<input type="file" id="file_input" name="upload" multiple />
+			<input type="file" id="file_input1" name="upload" accept="image/*" capture="camera">
+		</div>
 
-		<button type="button" style="top: 300px;" class="mui-btn mui-btn-grey mui-btn-block" onclick="checkPhone1()">确定投诉</button>
+		<div align="center" style="margin-top: 10px;">
+			<button type="button" onclick="keep()" style="width: 80px;position: absolute;bottom: -70px;left: 25%;" class="mui-btn mui-btn-grey">保存</button>
+			<button type="button" onclick="complainSub()" style="width: 80px;position: absolute;bottom: -70px;" class="mui-btn mui-btn-grey">上报</button>
+		</div>
 		</div>
 	</body>
 

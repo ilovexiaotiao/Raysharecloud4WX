@@ -12,6 +12,7 @@
 		<link href="../../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
 		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/information.js" ></script>
 		<style>
 			p {
 				margin-top: 10px;
@@ -24,9 +25,12 @@
 		<script type="text/javascript">
 			mui.init()
 		</script>
-		<header class="mui-bar mui-bar-nav"><a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../index.html"
+		<header class="mui-bar mui-bar-nav"><a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="list_attendence.html"
 			 style="color: white;"></a>
 			<h1 class="mui-title">考勤详情</h1>
+				<a href="list_attendence.html">
+				<span class="mui-icon mui-icon-bars" style="border-radius:40px;height: 40px;width: 40px;left: 80%;color: white;"></span>
+			</a>
 		</header>
 		<!--
         	作者：a15838261357@sina.com
@@ -48,7 +52,7 @@
 			<form class="mui-input-group">
 				<div class="mui-input-row">
 					<label>公司</label>
-					<p>雷曼科技广场</p>
+					<p>雷赛科技有限公司</p>
 				</div>
 			</form>
 			<form class="mui-input-group">
@@ -59,16 +63,11 @@
 			</form>
 			<form class="mui-input-group">
 				<div class="mui-input-row">
-					<label>上班时间</label>
+					<label>签到时间</label>
 					<p>9:00</p>
 				</div>
 			</form>
-			<form class="mui-input-group">
-				<div class="mui-input-row">
-					<label>下班时间</label>
-					<p>17:00</p>
-				</div>
-			</form>
+	
 
 			<form class="mui-input-group">
 				<div class="mui-input-row">
@@ -80,7 +79,7 @@
 			<form class="mui-input-group">
 				<div class="mui-input-row">
 					<label>地点</label>
-					<p></p>
+					<p>科技花园</p>
 				</div>
 			</form>
 			<form class="mui-input-group">
@@ -120,13 +119,13 @@
 						<label>考勤图片:</label>
 						<div style="float: left;">
 							
-							<img class="mui-media-object mui-pull-left" src="" style="margin-top: 5px;" width="60px">
-							<img class="mui-media-object mui-pull-left" src="" style="margin-top: 5px;" width="60px">
-							<img class="mui-media-object mui-pull-left" src="" style="margin-top: 5px;" width="60px">
+							<img class="mui-media-object mui-pull-left" src="../../images/858712093676267294.jpg" style="margin-top: 5px;" width="60px">
+							<img class="mui-media-object mui-pull-left" src="../../images/cbd.jpg" style="margin-top: 5px;" width="60px">
+							<img class="mui-media-object mui-pull-left" src="../../images/t014145efb179843d18.jpg" style="margin-top: 5px;" width="60px">
 						
-							<img class="mui-media-object mui-pull-left" src="" style="margin-top: 5px;" width="60px">
-							<img class="mui-media-object mui-pull-left" src="" style="margin-top: 5px;" width="60px">
-							<img class="mui-media-object mui-pull-left" src="" style="margin-top: 5px;" width="60px">
+							<img class="mui-media-object mui-pull-left" src="../../images/U621P4T8D6807565F107DT20141124111432.jpg" style="margin-top: 5px;" width="60px">
+
+
 
 						</div>
 
@@ -134,7 +133,10 @@
 				
 			</form>
 			</form>
-			
+					<div align="center" style="margin-top: 10px;">
+			<button type="button" onclick="revise()" style="width: 80px;position: absolute;bottom: -120px;left: 25%;" class="mui-btn mui-btn-grey">修改</button>
+			<button type="button" onclick="attendenceSub()" style="width: 80px;position: absolute;bottom: -120px;" class="mui-btn mui-btn-grey">上报</button>
+		</div>
 			
 	</body>
 

@@ -13,15 +13,11 @@
 		<link href="../../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
 		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/information.js"></script>
 		<script type="text/javascript">
 			mui.init()
 		</script>
-		<script type="text/javascript">
-			function checkPhone() {
-				alert("提交成功!");
-				window.location.href = "all_application.html";
-			}
-		</script>
+
 	</head>
 
 	<body>
@@ -29,6 +25,9 @@
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../index.html" style="color: white;"></a>
 			<h1 class="mui-title">请班（加假）申请单</h1>
+			<a href="list_application.html">
+				<span class="mui-icon mui-icon-bars" style="border-radius:40px;height: 40px;width: 40px;left: 80%;color: white;"></span>
+			</a>
 		</header>
 		<!--
         	作者：a15838261357@sina.com
@@ -49,22 +48,22 @@
 				<form class="mui-input-group">
 					<div class="mui-input-row">
 						<label>姓名</label>
-						<input type="text" class="mui-input-clear" placeholder="姓名" value="李四">
+						<input type="text" class="mui-input-clear" placeholder="姓名" >
 					</div>
 					<form class="mui-input-group">
 						<div class="mui-input-row">
 							<label>员工编号</label>
-							<input type="text" class="mui-input-clear" placeholder="员工编号" value="456134">
+							<input type="text" class="mui-input-clear" placeholder="员工编号" >
 						</div>
 						<form class="mui-input-group">
 							<div class="mui-input-row">
 								<label>部门名称</label>
-								<input type="text" class="mui-input-clear" placeholder="部门名称" value="保洁">
+								<input type="text" class="mui-input-clear" placeholder="部门名称" >
 							</div>
 							<form class="mui-input-group">
 								<div class="mui-input-row">
 									<label>岗位名称</label>
-									<input type="text" class="mui-input-clear" placeholder="岗位名称" value="保洁员">
+									<input type="text" class="mui-input-clear" placeholder="岗位名称" >
 								</div>
 								<form class="mui-input-group">
 									<div class="mui-input-row">
@@ -100,7 +99,11 @@
 		</form>
 		</form>
 		</form>
-		<button type="button" onclick="checkPhone()" class="mui-btn mui-btn-grey mui-btn-block" style="position: absolute;bottom: 0;width: 100%;">确定</button><!--checkPhone()点击后的提示信息-->
+
+		<div align="center" style="margin-top: 10px;">
+			<button type="button" onclick="window.location.href='confirm_application.html'" style="width: 80px;position: absolute;bottom: 0;left: 25%;" class="mui-btn mui-btn-grey">保存</button>
+			<button type="button" onclick="window.location.href='confirm_application.html'" style="width: 80px;position: absolute;bottom: 0;" class="mui-btn mui-btn-grey">上报</button>
+		</div>
 		</div>
 	</body>
 

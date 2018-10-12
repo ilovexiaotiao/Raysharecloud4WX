@@ -1,10 +1,11 @@
 <!doctype html>
 <html>
-<!--
+	<!--
 	作者：a15838261357@sina.com
 	时间：2018-10-09
 	描述：离职信息表
 -->
+
 	<head>
 		<meta charset="UTF-8">
 		<title>雷赛云微信公众号离职申请单</title>
@@ -12,22 +13,19 @@
 		<link href="../../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="../../css/header.css" />
 		<script src="../../js/mui.min.js"></script>
-<script type="text/javascript">
-	
-			function checkPhone(){
-				alert("提交成功!");
-				window.location.href="all_application.html";
-			}
-		</script>
+		<script type="text/javascript" src="../../js/information.js"></script>
 	</head>
 
 	<body>
 
-<header class="mui-bar mui-bar-nav">
+		<header class="mui-bar mui-bar-nav">
 			<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../index.html" style="color: white;"></a>
 			<h1 class="mui-title">离职（入职）申请单</h1>
+			<a href="list_application.html">
+				<span class="mui-icon mui-icon-bars" style="border-radius:40px;height: 40px;width: 40px;left: 80%;color: white;"></span>
+			</a>
 		</header>
-<!--
+		<!--
 	作者：a15838261357@sina.com
 	时间：2018-10-09
 	描述：离职表的内容
@@ -45,17 +43,17 @@
 				<form class="mui-input-group">
 					<div class="mui-input-row">
 						<label>姓名</label>
-						<input type="text" class="mui-input-clear" placeholder="姓名" value="王五">
+						<input type="text" class="mui-input-clear" placeholder="姓名" >
 					</div>
 					<form class="mui-input-group">
 						<div class="mui-input-row">
 							<label>离职（入职）项目</label>
-							<input type="text" class="mui-input-clear" placeholder="入职（离职）项目" value="雷曼科技广场">
+							<input type="text" class="mui-input-clear" placeholder="入职（离职）项目" >
 						</div>
 						<form class="mui-input-group">
 							<div class="mui-input-row">
 								<label>离职（入职）岗位</label>
-								<input type="text" class="mui-input-clear" placeholder="入职（离职）岗位" value="保洁员">
+								<input type="text" class="mui-input-clear" placeholder="入职（离职）岗位" >
 							</div>
 						</form>
 						<form class="mui-input-group">
@@ -71,7 +69,7 @@
 						<form class="mui-input-group">
 							<div class="mui-input-row">
 								<label>离职（入职）日期</label>
-								<input type="date" class="mui-input-clear" placeholder="入职（离职）日期" value="2018-09-20">
+								<input type="date" class="mui-input-clear" placeholder="入职（离职）日期" >
 							</div>
 						</form>
 						<form class="mui-input-group">
@@ -91,7 +89,10 @@
 		</form>
 		</form>
 		</form>
-		<button type="button" onclick="checkPhone()" class="mui-btn mui-btn-grey mui-btn-block" style="position: absolute;bottom: 0;width: 100%;">确定</button> <!--checkPhone()点击后提示信息和跳转的页面-->
+		<div align="center" style="margin-top: 10px;">
+			<button type="button" onclick="window.location.href='confirm_application.html'" style="width: 80px;position: absolute;left: 25%;" class="mui-btn mui-btn-grey">保存</button>
+			<button type="button" onclick="window.location.href='confirm_application.html'" style="width: 80px;position: absolute;" class="mui-btn mui-btn-grey">上报</button>
+		</div>
 		</div>
 	</body>
 

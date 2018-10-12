@@ -8,8 +8,10 @@
 		<link href="../../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="../../css/header.css" />
 		<link rel="stylesheet" href="../../css/entry.css" />
+		<link href="../../css/p.css" />
 		<script src="../../js/mui.min.js"></script>
 		<script src="../../js/common.js"></script>
+		<script type="text/javascript" src="../../js/information.js" ></script>
 		<script src="../../js/jquery.min.js"></script>
 
 		<script type="text/javascript">
@@ -26,8 +28,11 @@
 	<body onload="getPhoneType()">
 
 		<header class="mui-bar mui-bar-nav">
-			<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../index.html" style="color: white;"></a>
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">入职（离职）申请单</h1>
+			<a href="list_application.html">
+			<span class="mui-icon mui-icon-bars" style="border-radius:40px;height: 40px;width: 40px;left: 80%;color: white;"></span>
+		</a>
 		</header>
 		<!--
 	作者：a15838261357@sina.com
@@ -38,38 +43,31 @@
 			<form class="mui-input-group">
 				<div class="mui-input-row">
 					<label>申请类型</label>
-					<select style="font-size: 10px;width: 37%;">
-						<option value="">入职</option>
-						<option value="">离职</option>
-					</select>
+
+					<p style="margin-left: 65%;">入职</p>
 				</div>
 				<form class="mui-input-group">
 					<div class="mui-input-row">
 						<label>姓名</label>
-						<input style="width: 37%;" type="text" class="mui-input-clear" placeholder="姓名" value="王五">
+					<p style="margin-left: 65%;">王五</p>
 					</div>
 					<form class="mui-input-group">
 						<div class="mui-input-row">
 							<label>性别</label>
-							<input style="width: 37%;" type="text" class="mui-input-clear" placeholder="性别" value="男">
+					<p style="margin-left: 65%;">男</p>
 						</div>
 					</form>
 					<form class="mui-input-group">
 						<div class="mui-input-row">
 							<label>身份证号</label>
-							<input style="width: 37%;" type="text" class="mui-input-clear" placeholder="身份证号">
+					<p style="margin-left: 65%;">412726199854126547</p>
 						</div>
 					</form>
 					<form class="mui-input-group">
 						<div class="mui-input-row">
 							<label>身份证正面照片</label>
 							<div class="file1" align="center" style="top: 0px;">
-								<img class="camerabox" id="newImage" style="width: 10%; margin-top: 0px;">
-								<div>
-									<a>点击上传</a>
-								</div>
-								</img>
-								<input type="file" id="fileInpBtn" accept="image/*" onchange="showPicture(this)" multiple /> //showPicture(this)图片的回显
+								<img class="camerabox" id="newImage" src="../../images/u=4181988924,410599396&fm=26&gp=0.jpg" style="width: 10%; margin-top: 0px;">
 							</div>
 						</div>
 					</form>
@@ -78,72 +76,61 @@
 						<div class="mui-input-row">
 							<label>身份证反面照片</label>
 							<div class="file1" align="center" style="top: 5px;">
-								<img class="camerabox" id="newImage1" style="width: 10%; margin-top: 0px;">
-								<div>
-									<a>点击上传</a>
-								</div>
-								</img>
-								<input type="file" id="fileInpBtn1" accept="image/*" onchange="showPicture1(this)" multiple />
-
+								<img class="camerabox" id="newImage1" src="../../images/u=4181988924,410599396&fm=26&gp=0.jpg" style="width: 10%; margin-top: 0px;">
+	
 							</div>
 						</div>
 					</form>
 					<form class="mui-input-group">
 						<div class="mui-input-row">
 							<label>入职（离职）项目</label>
-							<input style="width: 37%;" type="text" class="mui-input-clear" placeholder="入职（离职）项目" value="雷曼科技广场">
+							<p style="margin-left: 65%;">雷赛科技有限公司</p>
+
 						</div>
 						<form class="mui-input-group">
 							<div class="mui-input-row">
 								<label>入职（离职）岗位</label>
-								<input style="width: 37%;" type="text" class="mui-input-clear" placeholder="入职（离职）岗位" value="保洁员">
+							<p style="margin-left: 65%;">保洁员</p>
 							</div>
 						</form>
 						<form class="mui-input-group">
 							<div class="mui-input-row">
 								<label>工资结算方式</label>
-								<select style="font-size: 10px;width: 37%;">
-									<option value="">--请选择--</option>
-									<option value="">现金</option>
-									<option value="">转账</option>
-								</select>
+								<p style="margin-left: 65%;">现金</p>
+
 							</div>
 						</form>
 						<form class="mui-input-group">
 							<div class="mui-input-row">
 								<label>入职（离职）日期</label>
-								<input style="width: 37%;" type="date" class="mui-input-clear" placeholder="入职（离职）日期" value="2018-09-20">
+							<p style="margin-left: 65%;">2018/09/20</p>
 							</div>
 						</form>
 						<form class="mui-input-group">
 							<div class="mui-input-row">
 								<label>入职（离职）说明</label>
 							</div>
-							<textarea name="comment" form="usrform" placeholder="请说明"></textarea> </div>
+							<p style="margin-left: 65%;">无</p>
 
 		</form>
 		<form class="mui-input-group">
 			<div class="mui-input-row">
 				<label>工作经历</label>
-				<input style="width: 37%;" type="text" class="mui-input-clear" placeholder="工作经历">
+							<p style="margin-left: 65%;">无</p>
 			</div>
 		</form>
 
 		<form class="mui-input-group">
 			<div class="mui-input-row">
 				<label>银行卡号</label>
-				<input style="width: 37%;" type="text" class="mui-input-clear" placeholder="银行卡号">
+							<p style="margin-left: 65%;">暂未提供</p>
 			</div>
 		</form>
 		<form class="mui-input-group">
 			<div class="mui-input-row">
 				<label>银行卡照片</label>
 				<div class="file1" align="center" style="top: 0px;">
-					<img class="camerabox" id="newImage2" style="width: 10%; margin-top: 0px;" />
-					<div>
-						<a>点击上传</a>
-					</div>
-					<input type="file" id="fileInpBtn2" accept="image/*" onchange="showPicture2(this)" multiple />
+					<img class="camerabox" src="../../images/u=1943935163,3098413327&fm=72.jpg" id="newImage2" style="width: 10%; margin-top: 0px;" />
 
 				</div>
 			</div>
@@ -151,20 +138,24 @@
 		<form class="mui-input-group">
 			<div class="mui-input-row">
 				<label>家庭信息</label>
-				<input style="width: 37%;" type="text" class="mui-input-clear" placeholder="家庭信息">
+							<p style="margin-left: 65%;">无填写</p>
 			</div>
 		</form>
 		<form class="mui-input-group">
 			<div class="mui-input-row">
 				<label>其他</label>
 			</div>
-			<textarea name="comment" form="usrform" placeholder="请说明"></textarea> </div>
+							<p style="margin-left: 65%;">无</p>
 
 		</form>
 		</form>
 		</form>
 		</form>
-		<button type="button" onclick="entry()" class="mui-btn mui-btn-grey mui-btn-block">确定</button><!--entry()提交后的提示信息，以及跳转-->
+     
+           <div align="center" style="margin-top: 10px;">
+			<button type="button" onclick="window.location.href='confirm_application.html'" style="width: 80px;position: absolute;left: 25%;" class="mui-btn mui-btn-grey">保存</button>
+			<button type="button" onclick="window.location.href='confirm_application.html'" style="width: 80px;position: absolute;" class="mui-btn mui-btn-grey">上报</button>
+           </div>
 		</div>
 	</body>
 

@@ -1,10 +1,11 @@
 <!doctype html>
 <html>
-<!--
+	<!--
 	作者：a15838261357@sina.com
 	时间：2018-10-09
 	描述：投诉页面
 -->
+
 	<head>
 		<meta charset="UTF-8">
 		<title>雷赛云微信公众号投诉申请单</title>
@@ -14,13 +15,17 @@
 		<link rel="stylesheet" href="../../css/entry.css" />
 		<script src="../../js/jquery.min.js"></script>
 		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/information.js"></script>
 
 	</head>
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../index.html" style="color: white;"></a>
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">投诉申请单</h1>
+			<a href="list_complain.html">
+				<span class="mui-icon mui-icon-bars" style="border-radius:40px;height: 40px;width: 40px;left: 80%;color: white;"></span>
+			</a>
 		</header>
 		<!--详细信息-->
 		<div class="mui-content">
@@ -56,7 +61,7 @@
 		</form>
 		</form>
 		<form class="mui-input-group">
-<!--考勤图片-->
+			<!--考勤图片-->
 			<div class="mui-input-row" style="height: 130px!important;">
 				<label>考勤图片:</label>
 				<div style="float: left;">
@@ -74,8 +79,10 @@
 			</div>
 
 		</form>
-		<button type="button" style="top: 300px;" class="mui-btn mui-btn-grey mui-btn-block" onclick="complain()">确定投诉</button></div><!--complain()按钮跳转，及提示信息 -->
-                                                                                                                                     
+		<div align="center" style="margin-top: 10px;">
+			<button type="button" onclick="revise()" style="width: 80px;position: absolute;bottom: 0px;left: 25%;" class="mui-btn mui-btn-grey">修改</button>
+			<button type="button" onclick="window.location.href='confirm_complain.html'" style="width: 80px;position: absolute;bottom: 0px;" class="mui-btn mui-btn-grey">上报</button>
+		</div>
 	</body>
 
 </html>

@@ -1,22 +1,23 @@
-<!doctype html>
 <html>
 
 	<head>
 		<meta charset="UTF-8">
 		<title>新建考勤</title>
-	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
 		<link rel="stylesheet" type="text/css" href="../../css/base.css" />
-		<script src="../../js/jquery.min.js"></script>
+		<link rel="stylesheet" href="../../css/p.css" />
+		<script type="text/javascript" src="../../js/jquery.min.js"></script>
 		<script src="../../js/mui.min.js"></script>
 		<script src="../../js/common.js"></script>
 		<script src="../../js/public-method.js"></script>
-		<style>
-			p {
-				margin-top: 10px;
-			}
-		</style>
+		<script type="text/javascript" src="../../js/information.js"></script>
+		<script type="text/javascript" src="../../js/map.js"></script>
+		<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ox4ZBEjYHBpoONXLQCBV8pzMUFpalyFU"></script>
+
+
 		<script type="text/javascript">
 			mui.init()
 		</script>
@@ -32,18 +33,21 @@
 				setOverflow: "overflow-y:none", //设置滚动的属性 overflow-y：设置竖向  overflow-x:设置横向
 			});
 		</script>
+
 	</head>
-
-	<!-- 随页面启动初始化函数 -->
-	<body onload="start()">
-
-
-		<header class="mui-bar mui-bar-nav"><a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../index.html"
-			 style="color: white;"></a>
+<body onload="start();today();autofill();">
+			<header class="mui-bar mui-bar-nav">
+			<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="list_attendence.html" style="color: white;"></a>
 			<h1 class="mui-title">新建考勤</h1>
+							<a href="list_attendence.html">
+				<span class="mui-icon mui-icon-bars" style="border-radius:40px;height: 40px;width: 40px;left: 80%;color: white;"></span>
+			</a>
 		</header>
-		<div class="mui-content">
-			<form class="mui-input-group">
+		<div id="allmap" style="top: 60px;"></div>
+
+		<div class="tips"></div>
+		<div class="mui-content" style="margin-top: -30px;">
+			<form class="mui-input-group" style="margin-top: 60px;">
 				<div class="mui-input-row">
 					<input type="text" class="mui-input-clear" placeholder="请输入考勤名称" style="margin-top: 0px;">
 				</div>
@@ -51,13 +55,13 @@
 			<form class="mui-input-group">
 				<div class="mui-input-row">
 					<label>编号</label>
-					<input type="text" class="mui-input-clear" placeholder="编号">
+					<input type="text" id="bh" class="mui-input-clear" disabled="disabled" placeholder="编号">
 				</div>
 			</form>
 			<form class="mui-input-group">
 				<div class="mui-input-row">
 					<label>公司</label>
-					<input type="text" class="mui-input-clear" placeholder="公司名称">
+					<input type="text" id="gs" disabled="disabled" class="mui-input-clear" placeholder="公司名称">
 				</div>
 			</form>
 			<form class="mui-input-group">
@@ -66,35 +70,31 @@
 					<input type="text" class="mui-input-clear" placeholder="打卡范围">
 				</div>
 			</form>
+
 			<form class="mui-input-group">
 				<div class="mui-input-row">
-					<label>上班时间</label>
-					<input type="time" class="mui-input-clear" placeholder="上班时间">
-				</div>
-			</form>
-			<form class="mui-input-group">
-				<div class="mui-input-row">
-					<label>下班时间</label>
-					<input type="time" class="mui-input-clear" placeholder="下班时间">
+					<label>签到时间</label>
+					<input type="text" disabled="disabled" name="date" id="today" class="mui-input-clear" placeholder="">
 				</div>
 			</form>
 			<form class="mui-input-group">
 				<div class="mui-input-row">
 					<label>工作日</label>
-					<input type="text" class="mui-input-clear" placeholder="工作日">
+					<input type="text" id="gzr" class="mui-input-clear" placeholder="工作日">
 				</div>
 			</form>
 
 			<form class="mui-input-group">
 				<div class="mui-input-row">
 					<label>地点</label>
-					<input type="text" class="mui-input-clear" placeholder="地点">
+					<input type="text" class="mui-input-clear" id="address" placeholder="地点" disabled="disabled">
+					
 				</div>
 			</form>
 			<form class="mui-input-group">
 				<div class="mui-input-row">
 					<label>人数</label>
-					<input type="text" class="mui-input-clear" placeholder="人数">
+					<input type="text" class="mui-input-clear" placeholder="人数" value="1">
 				</div>
 			</form>
 			<form class="mui-input-group">
@@ -119,7 +119,7 @@
 					</div>
 				</div>
 			</form>
-	<!--上传图片-->
+			<!--上传图片-->
 			<div class="container">
 				<label>上传签到图片：</label>
 				<button id="show-btn" onclick="show_btn()">添加图片</button>
@@ -130,10 +130,25 @@
                 	描述：仅支持本地上传file_input
                 	    仅支持本地拍照file_input1
                 -->
-				<input type="file" id="file_input" name="upload"  multiple />
+				<input type="file" id="file_input" name="upload" multiple />
 				<input type="file" id="file_input1" name="upload" accept="image/*" capture="camera">
 			</div>
-		<button type="button" style="top: 300px;" class="mui-btn mui-btn-grey mui-btn-block"  onclick="checkPhone2()" >确认提交</button>
-	</body>
+			<div align="center" style="margin-top: 10px;">
+				<button type="button" onclick="window.location.href='confirm_attendence.html'" style="width: 80px;position: absolute;bottom: -520px;left: 25%;" class="mui-btn mui-btn-grey">保存</button>
+				<button type="button" onclick="window.location.href='confirm_attendence.html'" style="width: 80px;position: absolute;bottom: -520px;" class="mui-btn mui-btn-grey">上报</button>
+			</div>
 
+	</body>
+	</body>
 </html>
+<script type="text/javascript">
+	var map = new RSMap();
+	map.getPoint("lng", "lat");
+	map.getAddress("address");
+	map.getMap("allmap");
+	//console(map.getPoint().lng);
+
+	//console.log(map.sendSignal());
+	//map.getMap();
+	//map.getAddress();
+</script>
