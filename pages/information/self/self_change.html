@@ -1,10 +1,11 @@
 <!doctype html>
 <html>
-<!--
+	<!--
 	作者：a15838261357@sina.com
 	时间：2018-10-09
 	描述：修改个人信息页面
 -->
+
 	<head>
 		<meta charset="UTF-8">
 		<title>雷赛云微信公众号修改个人信息</title>
@@ -22,9 +23,9 @@
         	描述：提交按钮点击后的反应
         -->
 		<script type="text/javascript">
-			function revise(){
+			function revise() {
 				alert("提交成功!");
-				window.location.href="self_information.html";
+				window.location.href = "self_information.html";
 			}
 		</script>
 	</head>
@@ -33,9 +34,9 @@
 
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../../index.html" style="color: white;"></a>
-	    <h1 class="mui-title">修改个人信息</h1>
-	</header>
-<!--
+			<h1 class="mui-title">修改个人信息</h1>
+		</header>
+		<!--
 	作者：a15838261357@sina.com
 	时间：2018-10-09
 	描述：修改内容
@@ -53,6 +54,11 @@
 						<img class="mui-media-object mui-pull-left" src="../../../images/shuijiao.jpg" style="margin-top: 5px;" width="60px">
 					</div>
 					<form class="mui-input-group">
+
+						<div class="mui-input-row">
+							<label>所在公司</label>
+							<input type="text" class="mui-input-clear" placeholder="所在项目" value="雷曼科技有限公司">
+						</div>
 						<div class="mui-input-row">
 							<label>所在项目</label>
 							<input type="text" class="mui-input-clear" placeholder="所在项目" value="雷曼科技有限公司">
@@ -62,63 +68,68 @@
 								<label>职位</label>
 								<input type="text" class="mui-input-clear" placeholder="职位" value="保洁员">
 							</div>
+							<div class="mui-input-row">
+								<label>员工编号</label>
+								<input type="text" class="mui-input-clear" placeholder="员工编号" value="y45456458785416">
+							</div>
 						</form>
-		
-					    </form>
-				    </form>
+
+					</form>
+				</form>
 			</form>
 		</div>
 
-			<div style="margin-top: 10px;">
-				<p style="font-size: 15px;margin-top: 5px; margin-left: 10px">个人详细资料</p>
+		<div style="margin-top: 10px;">
+			<p style="font-size: 15px;margin-top: 5px; margin-left: 10px">个人详细资料</p>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>昵称</label>
+					<input type="text" class="mui-input-clear" placeholder="昵称" value="雷赛云">
+				</div>
 				<form class="mui-input-group">
 					<div class="mui-input-row">
-						<label>昵称</label>
-						<input type="text" class="mui-input-clear" placeholder="昵称" value="雷赛云">
+						<label>所在组别</label>
+						<input type="text" class="mui-input-clear" placeholder="所在组别" value="保洁二组">
 					</div>
 					<form class="mui-input-group">
 						<div class="mui-input-row">
-							<label>所在组别</label>
-							<input type="text" class="mui-input-clear" placeholder="所在组别" value="保洁二组">
+							<label>个人邮箱</label>
+							<input type="email" class="mui-input-clear" placeholder="个人邮箱" value="14587974561@sina.com">
 						</div>
 						<form class="mui-input-group">
 							<div class="mui-input-row">
-								<label>个人邮箱</label>
-								<input type="email" class="mui-input-clear" placeholder="个人邮箱" value="14587974561@sina.com">
+								<label>qq</label>
+								<input type="number" class="mui-input-clear" placeholder="qq" value="145679411">
 							</div>
-							<form class="mui-input-group">
-								<div class="mui-input-row">
-									<label>qq</label>
-									<input type="number" class="mui-input-clear" placeholder="qq" value="145679411">
-								</div>
-							</form>
 						</form>
 					</form>
 				</form>
-			</div>
-			<div style="margin-top: 10px;">
-				<p style="font-size: 15px;margin-top: 5px; margin-left: 10px">其他</p>
-				<form class="mui-input-group">
-					<div class="mui-input-row">
-						<label>银行卡号</label>
-						<input type="number" class="mui-input-clear" placeholder="银行卡号" value="6228480719364002276">
-					</div>
-					<form class="mui-input-group">
-						<div class="mui-input-row">
-							<label>开户银行</label>
-							<input type="text" class="mui-input-clear" placeholder="开户银行" value="农行">
-						</div>
-						<form class="mui-input-group">
-							<div class="mui-input-row">
-								<label>兴趣爱好</label>
-								<input type="text" class="mui-input-clear" placeholder="兴趣爱好" value="游泳">
-							</div>
-			
-						</form>
-					</form>
-				</form>
-			</div>
 			</form>
+		</div>
+		<div style="margin-top: 10px;">
+			<p style="font-size: 15px;margin-top: 5px; margin-left: 10px">其他</p>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>银行卡号</label>
+					<input type="number" class="mui-input-clear" placeholder="银行卡号" value="6228480719364002276">
+				</div>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label>开户银行</label>
+						<input type="text" class="mui-input-clear" placeholder="开户银行" value="农行">
+					</div>
+					<form class="mui-input-group">
+						<div class="mui-input-row">
+							<label>兴趣爱好</label>
+							<input type="text" class="mui-input-clear" placeholder="兴趣爱好" value="游泳">
+						</div>
+
+					</form>
+				</form>
+			</form>
+		</div>
+		</form>
 	</body>
-<button type="button" class="mui-btn mui-btn-grey mui-btn-block" onclick="revise()" >提交</button>
+	<button type="button" class="mui-btn mui-btn-grey mui-btn-block" onclick="revise()">提交</button>
+
 </html>

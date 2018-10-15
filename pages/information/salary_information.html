@@ -8,6 +8,7 @@
 		<link href="../../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
 		<link rel="stylesheet" href="../../css/p.css" />
+		<script src="../../js/echarts.js"></script>
 
 		<script type="text/javascript" src="../../js/common.js"></script>
 		<script src="../../js/mui.min.js"></script>
@@ -22,8 +23,8 @@
 	描述：页面打开执行的函数fillSelect()
 -->
 
-	<body onload="fillSelect()">
-
+	<body onload="fillSelect();">
+		
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../index.html" style="color: white;"></a>
 			<h1 class="mui-title">工资单</h1>
@@ -60,58 +61,170 @@
 				</form>
 			</div>
 		</header>
-		<div class="mui-content" style="font-size: 10px;margin-top: 70px;">
-			<form class="mui-input-group">
-				<div class="mui-input-row">
-					<label style="width: 60%;">结算员工</label>
-					<p>张三</p>
-				</div>
-			</form>
-			<form class="mui-input-group">
-				<div class="mui-input-row">
-					<label style="width: 60%;">员工编号</label>
-					<p>22465132</p>
-				</div>
-			</form>
-			<form class="mui-input-group">
-				<div class="mui-input-row">
-					<label style="width: 60%;">部门岗位</label>
-					<p>保洁员</p>
-				</div>
-			</form>
-			<form class="mui-input-group">
-				<div class="mui-input-row">
-					<label style="width: 60%;">工资年份（单位：年）</label>
-					<p>2018</p>
-				</div>
-			</form>
-			<form class="mui-input-group">
-				<div class="mui-input-row">
-					<label style="width: 60%;">工资月份（单位：月）</label>
-					<p>8</p>
-				</div>
-			</form>
 
-			<form class="mui-input-group">
-				<div class="mui-input-row">
-					<label style="width: 60%;">实际工资（单位：元）</label>
-					<p>4,000</p>
-				</div>
-			</form>
-			<form class="mui-input-group">
-				<div class="mui-input-row">
-					<label style="width: 60%;">应发合计（单位：元）</label>
-					<p>3,500</p>
-				</div>
-			</form>
-			<form class="mui-input-group">
-				<div class="mui-input-row">
-					<label style="width: 60%;">应扣合计（单位：元）</label>
-					<p>500</p>
-				</div>
-			</form>
+		<body>
+			<div class="mui-content" style="font-size: 10px;margin-top: 100px;">
+				<div id="container" style="width: 90%;height:400px;"></div>
+		<div style="margin-left:40%;margin-top:2%">
 
 		</div>
-	</body>
+		<div id="container" style="height: 50%;width: 50%"></div>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label style="width: 60%;">结算员工</label>
+						<p>张三</p>
+					</div>
+				</form>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label style="width: 60%;">员工编号</label>
+						<p>22465132</p>
+					</div>
+				</form>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label style="width: 60%;">部门岗位</label>
+						<p>保洁员</p>
+					</div>
+				</form>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label style="width: 60%;">工资年份（单位：年）</label>
+						<p>2018</p>
+					</div>
+				</form>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label style="width: 60%;">工资月份（单位：月）</label>
+						<p>8</p>
+					</div>
+				</form>
+
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label style="width: 60%;">实际工资（单位：元）</label>
+						<p>4,000</p>
+					</div>
+				</form>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label style="width: 60%;">应发合计（单位：元）</label>
+						<p>3,500</p>
+					</div>
+				</form>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label style="width: 60%;">应扣合计（单位：元）</label>
+						<p>500</p>
+					</div>
+				</form>
+
+			</div>
+		</body>
 
 </html>
+<script type="text/javascript">
+	var drillDown = {
+		getOption: function() {
+			var option = null;
+			option = {
+				title: {
+					text: '折线图下钻示例',
+					left: 'center'
+				},
+				tooltip: {
+					trigger: 'item',
+					formatter: '{a} <br/>{b} : {c}',
+					alwaysShowContent: true
+				},
+				legend: {
+					left: 'left',
+					data: ['月数据']
+				},
+				xAxis: {
+					type: 'category',
+					name: 'x',
+					splitLine: {
+						show: true
+					},
+					label: {
+						show: true,
+						formatter: function(params) {
+							return echarts.format.formatTime('yyyy-MM-dd', params.value);
+						},
+						backgroundColor: '#004E52'
+					},
+					handle: {
+						show: true,
+						color: '#004E52'
+					},
+					data: ['201601', '201602', '201603', '201604', '201605', '201606', '201607', '201608', '201609']
+				},
+				grid: {
+					left: '3%',
+					right: '4%',
+					bottom: '3%',
+					containLabel: true
+				},
+				yAxis: {
+					type: 'log',
+					name: 'y'
+				},
+				series: [{
+					name: '月数据',
+					type: 'line',
+					data: [1, 2, 4, 8, 16, 32, 64, 128, 256]
+				}]
+			};
+			return option;
+		},
+		initChart: function(myChart, option) {
+			myChart.setOption(option);
+			myChart.on('click', function(object) {
+				// 销毁之前的echarts实例
+				echarts.dispose(dom);
+				// 初始化一个新的实例
+				var myChart = echarts.init(dom);
+				// object为当前的这个echart对象，大家可以自己打印出来看看
+				// console.dir(object);
+				// 我们可以看到name属性即为当前点击点的对应月份值，那么我们可以通过这个值去接口查询对应201609月份下的每一天的值.
+				// 此处的201609月份数据可以通过接口读取
+				// $.ajax(
+				//     type : 'get',
+				//     url : interfaceUrl + '&month=' + object.name, // 此处可以替换为你的接口地址
+				//     dataType : 'json',
+				//     success : function (msg){
+				//         option.xAxis.data = msg.xAxis;
+				//         option.series[0].data = msg.yAxis[0];
+				//         myChart.setOption(option, true);
+				//     }
+				// );
+				// 我这里就模拟一个测试数据，做为demo演示
+				option.xAxis.data = [
+					'2016-09-01', '2016-09-02', '2016-09-03', '2016-09-04', '2016-09-05', '2016-09-06', '2016-09-07',
+					'2016-09-08',
+					'2016-09-09', '2016-09-10', '2016-09-11', '2016-09-12', '2016-09-13', '2016-09-14', '2016-09-15',
+					'2016-09-16',
+					'2016-09-17', '2016-09-18', '2016-09-19', '2016-09-20', '2016-09-21', '2016-09-22', '2016-09-23',
+					'2016-09-24',
+					'2016-09-25', '2016-09-26', '2016-09-27', '2016-09-28', '2016-09-29', '2016-09-30'
+				];
+				option.series[0].data = [
+					3, 4, 5, 6, 5, 6, 7, 8, 8, 9,
+					12, 13, 15, 16, 20, 12, 30, 21, 22, 29,
+					30, 31, 33, 34, 35, 36, 20, 29, 33, 40
+				];
+				myChart.setOption(option, true);
+			});
+		},
+	};
+	var dom = document.getElementById("container");
+	var myChart = echarts.init(dom);
+	var option = drillDown.getOption();
+	drillDown.initChart(myChart, option);
+	$('#return-button').on('click', function() {
+		var myChart = echarts.init(dom);
+		var option = drillDown.getOption();
+		drillDown.initChart(myChart, option);
+	});
+</script>
