@@ -334,7 +334,7 @@ function getQueryString(name) {
 	return uri;
 }
 
-<<<<<<< HEAD
+
 function autofill() {
 	var bianhao = getQueryString('bh');
 	var gongsi = getQueryString("gs");
@@ -364,7 +364,7 @@ var a = null;
 
 
 
-=======
+
 // Part4.地图类函数
 // 技术选型：js,百度地图API
 // 涉及功能：用户定位，工位签到
@@ -395,13 +395,13 @@ function RSMap() {
 					document.getElementById(lng).value = r.point.lng;
 					//console.log(geopoint.lat);
 				}
->>>>>>> v1.01
+
 
 function showPicture(imgFile) {
 	/*获取上传文件的路径，并赋给img标签*/
 	a = window.URL.createObjectURL(imgFile.files[0]);
 
-<<<<<<< HEAD
+
 	return a;
 }
 
@@ -514,7 +514,7 @@ function HideOrShowFont(obj) {
 		document.getElementById("a3").style.color = "red";
 	}
 }
-=======
+
 			})
 
 		}
@@ -757,7 +757,7 @@ function RSChart(chartid, title) {
 	}
 
 }
->>>>>>> v1.01
+
 
 
 
