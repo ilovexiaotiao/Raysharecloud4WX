@@ -139,7 +139,7 @@ function start() {
 	var dataArr = []; // 储存所选图片的结果(文件名和base64数据)  
 	var fd; //FormData方式发送请求		
 	//判断是否支持H5监听对象		
-	if(typeof FileReader === 'undefined') {
+	if(typeof FileReader == 'undefined') {
 		alert("抱歉，你的浏览器不支持 FileReader");
 		input.setAttribute('disabled', 'disabled');
 	} else {
