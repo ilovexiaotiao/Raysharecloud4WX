@@ -139,7 +139,7 @@ function start() {
 	var dataArr = []; // 储存所选图片的结果(文件名和base64数据)  
 	var fd; //FormData方式发送请求		
 	//判断是否支持H5监听对象		
-	if(typeof FileReader === 'undefined') {
+	if(typeof FileReader == 'undefined') {
 		alert("抱歉，你的浏览器不支持 FileReader");
 		input.setAttribute('disabled', 'disabled');
 	} else {
@@ -244,6 +244,19 @@ function ReSizePic(ThisPic) {
 	}
 }
 
+function showPicture(imgFile) {
+	/*获取上传文件的路径，并赋给img标签*/
+	a = window.URL.createObjectURL(imgFile.files[0]);
+
+	return a;
+}
+
+function look() {
+	document.getElementById("newImage").src = a;
+
+}
+
+
 // Part3.移动端函数
 // 技术选型：js
 // 涉及功能：多图片上传、获取相机
@@ -321,6 +334,7 @@ function getQueryString(name) {
 	return uri;
 }
 
+
 function autofill() {
 	var bianhao = getQueryString('bh');
 	var gongsi = getQueryString("gs");
@@ -348,9 +362,45 @@ function autofill1() {
 }
 var a = null;
 
+
+
+
+// Part4.地图类函数
+// 技术选型：js,百度地图API
+// 涉及功能：用户定位，工位签到
+// 涉及页面：新建签到页、工作上报页（complain）、稽查上报页（check）
+function RSMap() {
+	var geolocation = new BMap.Geolocation(); //创建百度地图定位实例
+	//var geomap = new BMap.Map(this.mapid); //创建百度地图图像实例
+	var geocoder = new BMap.Geocoder(); //创建百度地图地址编译器实例
+	var geomark; //创建地图标记
+	var geolabel; //创建地图标记文字说明
+	//var geoaddress;
+	var currentpoint;
+	var initialpoint = new BMap.Point(116.331398, 39.897445);
+
+
+
+	//初始化函数
+	if (typeof RSMap.initialized == "undefined") {
+
+		//功能1:获取当前位置的经纬度坐标,并分别应道到ID为lng和lat的元素中
+		RSMap.prototype.getPoint = function(lng, lat) {
+
+			//向百度地图API服务器发送去获取当前定位的请求
+			geolocation.getCurrentPosition(function(r) {
+				//对服务器返回结果进行状态判断,如果返回SUCCESS,则开始解析
+				if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+					document.getElementById(lat).value = r.point.lat;
+					document.getElementById(lng).value = r.point.lng;
+					//console.log(geopoint.lat);
+				}
+
+
 function showPicture(imgFile) {
 	/*获取上传文件的路径，并赋给img标签*/
 	a = window.URL.createObjectURL(imgFile.files[0]);
+
 
 	return a;
 }
@@ -464,170 +514,69 @@ function HideOrShowFont(obj) {
 		document.getElementById("a3").style.color = "red";
 	}
 }
-	function RSMap() {
-		var geolocation = new BMap.Geolocation(); //创建百度地图定位实例
-		//var geomap = new BMap.Map(this.mapid); //创建百度地图图像实例
-		var geocoder = new BMap.Geocoder(); //创建百度地图地址编译器实例
-		var geomark; //创建地图标记
-		var geolabel; //创建地图标记文字说明
-		//var geoaddress;
-		var currentpoint;
-		var initialpoint = new BMap.Point(116.331398, 39.897445);
 
-
-
-		//初始化函数
-		if (typeof RSMap.initialized == "undefined") {
-
-			//功能1:获取当前位置的经纬度坐标,并分别应道到ID为lng和lat的元素中
-			RSMap.prototype.getPoint = function(lng, lat) {
-
-				//向百度地图API服务器发送去获取当前定位的请求
-				geolocation.getCurrentPosition(function(r) {
-					//对服务器返回结果进行状态判断,如果返回SUCCESS,则开始解析
-					if (this.getStatus() == BMAP_STATUS_SUCCESS) {
-						document.getElementById(lat).value = r.point.lat;
-						document.getElementById(lng).value = r.point.lng;
-						//console.log(geopoint.lat);
-					}
-
-
-				})
-
-			}
-
-			//功能2:获取当前位置的具体地址,并分别映射到ID为address的元素中
-			RSMap.prototype.getAddress = function(address) {
-				geolocation.getCurrentPosition(function(r) {
-					//对服务器返回结果进行状态判断,如果返回SUCCESS,则开始解析
-					if (this.getStatus() == BMAP_STATUS_SUCCESS) {
-						geocoder.getLocation(r.point, function(rs) {
-							//console.log(rs.address);
-							document.getElementById(address).value = rs.address;
-						})
-					}
-
-				})
-			}
-
-			//功能3:获取当前地图,显示到ID为map的元素中
-			RSMap.prototype.getMap = function(map) {
-				//初始化地图
-				var geomap = new BMap.Map(map);
-				var initialpoint = new BMap.Point(116.331398, 39.897445);
-				geomap.centerAndZoom(initialpoint,12);	
-				
-				
-				//获取当前定位
-				geolocation.getCurrentPosition(function(r) {
-					//对服务器返回结果进行状态判断,如果返回SUCCESS,则开始解析
-					if (this.getStatus() == BMAP_STATUS_SUCCESS) {
-						
-						//创建当前位置的地图标记
-						geomark = new BMap.Marker(r.point);
-						geomap.addOverlay(geomark);
-						geomap.panTo(r.point);
-						//获取地址信息
-						geocoder.getLocation(r.point, function(rs) {
-							//添加地图缩放和模式转换的控件
-															
-							geomap.addControl(new BMap.MapTypeControl({
-								mapTypes: [
-									BMAP_NORMAL_MAP,
-									BMAP_HYBRID_MAP
-								]
-							}));
-							geomap.enableScrollWheelZoom(true);
-							//创建当前位置的地址标签
-							geolabel = new BMap.Label(rs.address, {
-								offset: new BMap.Size(20, -10)
-							});
-							geomark.setLabel(geolabel);
-							//固定当前标签
-							geomark.disableDragging();
-						})
-					}
-					//console.log(geopoint);
-
-				})
-			};
+			})
 
 		}
-		RSMap.initialized = true;
+
+		//功能2:获取当前位置的具体地址,并分别映射到ID为address的元素中
+		RSMap.prototype.getAddress = function(address) {
+			geolocation.getCurrentPosition(function(r) {
+				//对服务器返回结果进行状态判断,如果返回SUCCESS,则开始解析
+				if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+					geocoder.getLocation(r.point, function(rs) {
+						//console.log(rs.address);
+						document.getElementById(address).value = rs.address;
+					})
+				}
+
+			})
+		}
+
+		//功能3:获取当前地图,显示到ID为map的元素中
+		RSMap.prototype.getMap = function(map) {
+			//初始化地图
+			var geomap = new BMap.Map(map);
+			var initialpoint = new BMap.Point(116.331398, 39.897445);
+			geomap.centerAndZoom(initialpoint, 12);
+
+
+			//获取当前定位
+			geolocation.getCurrentPosition(function(r) {
+				//对服务器返回结果进行状态判断,如果返回SUCCESS,则开始解析
+				if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+
+					//创建当前位置的地图标记
+					geomark = new BMap.Marker(r.point);
+					geomap.addOverlay(geomark);
+					geomap.panTo(r.point);
+					//获取地址信息
+					geocoder.getLocation(r.point, function(rs) {
+						//添加地图缩放和模式转换的控件
+
+						geomap.addControl(new BMap.MapTypeControl({
+							mapTypes: [
+								BMAP_NORMAL_MAP,
+								BMAP_HYBRID_MAP
+							]
+						}));
+						geomap.enableScrollWheelZoom(true);
+						//创建当前位置的地址标签
+						geolabel = new BMap.Label(rs.address, {
+							offset: new BMap.Size(20, -10)
+						});
+						geomark.setLabel(geolabel);
+						//固定当前标签
+						geomark.disableDragging();
+					})
+				}
+				//console.log(geopoint);
+
+			})
+		};
+
 	}
-
-
-	var map = new RSMap();
-	map.getPoint("lng", "lat");
-	map.getAddress("address");
-	map.getMap("allmap");
-	//console(map.getPoint().lng);
-
-	//console.log(map.sendSignal());
-	//map.getMap();
-	//map.getAddress();
-	 function dis_confirm(){
- 	var r = confirm("尚未绑定手机号，点击确认绑定!")
- 	if(r==true){
- 		window.location.href="self_phone_bind.html"
- 	}
- }
- function keep(){
- 	 	var r = confirm("是否保存？")
- 	if(r==true){
- 		alert("保存成功！");
- 		
- 	}
- }
-function sub(){
-	 	var r = confirm("是否上报？")
- 	if(r==true){
- 		alert("上报成功！");
- 		window.location.href="all_application.html";
- 	}
-}
-function revise(){
-	alert("该任务已被锁定，无法修改!")
-}
-function attendenceSub(){
-	 	var r = confirm("是否上报？")
- 	if(r==true){
- 		alert("上报成功！");
- 		window.location.href="list_attendence.html";
- 	}
-}
-function complainSub(){
-	 	var r = confirm("是否上报？")
- 	if(r==true){
- 		alert("上报成功！");
- 		window.location.href="list_complain.html";
- 	}
-}
-function workSub(){
-	 	var r = confirm("是否上报？")
- 	if(r==true){
- 		alert("上报成功！");
- 		window.location.href="list_work.html";
- 	}
-}
-function superviseSub(){
-	 	var r = confirm("是否上报？")
- 	if(r==true){
- 		alert("上报成功！");
- 		window.location.href="list_supervise.html";
- 	}
-}
-      function today(){//构建方法
-        var today=new Date();//new 出当前时间
-        var h=today.getFullYear();//获取年
-        var m=today.getMonth()+1;//获取月
-        var d=today.getDate();//获取日
-        var H = today.getHours();//获取时
-        var M = today.getMinutes();//获取分
-        var S = today.getSeconds();//获取秒
-       //返回 年-月-日 时:分:秒
-        document.getElementById("today").value=h+"-"+m+"-"+d+" "+H+":"+M+":"+S; //将获取到的 年-月-日 时:分:秒 赋给input文本输入框
-
+	RSMap.initialized = true;
 }
 
 
@@ -807,4 +756,121 @@ function RSChart(chartid, title) {
 		}
 	}
 
+}
+
+
+
+
+// Part6.系统类函数
+// 技术选型：js
+// 涉及功能：页面确认，上报确认
+// 涉及页面：
+
+
+
+function keep() {
+	var r = confirm("是否保存？")
+	if(r == true) {
+		alert("保存成功！");
+
+	}
+}
+
+function sub() {
+	var r = confirm("是否上报？")
+	if(r == true) {
+		alert("上报成功！");
+		window.location.href = "all_application.html";
+	}
+}
+
+function revise() {
+	alert("该任务已被锁定，无法修改!")
+}
+
+function attendenceSub() {
+	var r = confirm("是否上报？")
+	if(r == true) {
+		alert("上报成功！");
+		window.location.href = "list_attendence.html";
+	}
+}
+
+function complainSub() {
+	var r = confirm("是否上报？")
+	if(r == true) {
+		alert("上报成功！");
+		window.location.href = "list_complain.html";
+	}
+}
+
+function workSub() {
+	var r = confirm("是否上报？")
+	if(r == true) {
+		alert("上报成功！");
+		window.location.href = "list_work.html";
+	}
+}
+
+function superviseSub() {
+	var r = confirm("是否上报？")
+	if(r == true) {
+		alert("上报成功！");
+		window.location.href = "list_supervise.html";
+	}
+}
+
+
+
+function today() { //构建方法
+	var today = new Date(); //new 出当前时间
+	var h = today.getFullYear(); //获取年
+	var m = today.getMonth() + 1; //获取月
+	var d = today.getDate(); //获取日
+	var H = today.getHours(); //获取时
+	var M = today.getMinutes(); //获取分
+	var S = today.getSeconds(); //获取秒
+	//返回 年-月-日 时:分:秒
+	document.getElementById("today").value = h + "-" + m + "-" + d + " " + H + ":" + M + ":" + S; //将获取到的 年-月-日 时:分:秒 赋给input文本输入框
+
+}
+
+function fillSelect() {
+	var obj = document.getElementById("s1");
+	var s2 = document.getElementById("s2");
+	for(var i = 2010; i < 2054; i++) {
+
+		var op = new Option(i, i);
+		obj.add(op);
+	}
+	for(var y = 1; y < 13; y++) {
+		var a = new Option(y, y);
+		s2.add(a);
+	}
+}
+
+function HideOrShowFont(obj) {
+	if(obj == "a1") {
+		document.getElementById("a1").style.color = "red";
+		
+		document.getElementById("a2").style.color = "dodgerblue";
+		document.getElementById("a3").style.color = "dodgerblue";
+	} else if(obj == 'a2') {
+		document.getElementById("a1").style.color = "dodgerblue";
+		document.getElementById("a2").style.color = "red";
+			
+
+		document.getElementById("a3").style.color = "dodgerblue";
+	} else if(obj == 'a3') {
+		document.getElementById("a1").style.color = "dodgerblue";
+		document.getElementById("a2").style.color = "dodgerblue";
+		document.getElementById("a3").style.color = "red";
+	}
+}
+
+function dis_confirm() {
+	var r = confirm("尚未绑定手机号，点击确认绑定!")
+	if(r == true) {
+		window.location.href = "self_phone_bind.html"
+	}
 }
