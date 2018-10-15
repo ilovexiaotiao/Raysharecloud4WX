@@ -14,18 +14,25 @@
 		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
 		<link rel="stylesheet" href="../../css/p.css" />
 		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/common.js" ></script>
 		<script type="text/javascript" src="../../js/information.js"></script>
 	</head>
 
 	<body>
 
 		<header class="mui-bar mui-bar-nav">
-		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">投诉列表</h1>
 			<a href="raise_complain.html">
 				<span class="mui-icon mui-icon-plusempty" style="border-radius:40px;height: 40px;width: 40px;left: 80%;color: white;"></span>
 			</a>
 		</header>
+		<style>
+
+    a:visited{text-decoration:underline;}
+	a:hover{ text-decoration:underline;}
+	a:active{ text-decoration:underline;}
+</style>
 		<!--投诉列表-->
 		<header class="mui-bar mui-bar-nav" style="top: 44px;background-color: white!important;color: red!important;">
 
@@ -34,20 +41,19 @@
 					<form class="mui-input-group" style="align-content: center;">
 						<div style="float: left; padding-right: 30%;">
 
-							<a style="font-size: 15px;">全部</a>
-							</select>
-						</div>
-						<div style="float: left;">
-							<a style="font-size: 15px;color: red;">末分配</a>
+							<a href="javascript:HideOrShowFont('a1')" style="font-size: 15px;color: red;" id="a1">全部</a>
 
 						</div>
+						<div style="float: left;">
+							<a href="javascript:HideOrShowFont('a2')" style="font-size: 15px;" id="a2">未分派</a>
+						</div>
 						<div style="float: left;padding-left: 30%;">
-							<a style="font-size: 15px;">已分派</a>
+							<a href="javascript:HideOrShowFont('a3')" style="font-size: 15px;" id="a3">已分派</a>
+
 						</div>
 					</form>
 				</form>
-				</form>
-			</div>
+				</div>
 		</header>
 		<div class="mui-content" style="font-size: 10px;margin-top: 40px;">
 

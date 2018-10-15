@@ -14,9 +14,15 @@
 		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
 		<link rel="stylesheet" href="../../css/p.css" />
 		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/common.js" ></script>
 		<script type="text/javascript" src="../../js/information.js"></script>
 	</head>
+<style>
 
+    a:visited{text-decoration:underline;}
+	a:hover{ text-decoration:underline;}
+	a:active{ text-decoration:underline;}
+</style>
 	<body>
 
 		<header class="mui-bar mui-bar-nav">
@@ -32,17 +38,17 @@
 			<div>
 				<form class="mui-input-group" style="align-content: center;">
 					<form class="mui-input-group" style="align-content: center;">
-						<div style="float: left; padding-right: 30%;">
+		<div style="float: left; padding-right: 30%;">
 
-							<a style="font-size: 15px;">全部</a>
-							</select>
+							<a href="javascript:HideOrShowFont('a1')" style="font-size: 15px;color: red;" id="a1">全部</a>
+
 						</div>
 						<div style="float: left;">
-							<a style="font-size: 15px;color: red;">未完成</a>
-
+							<a href="javascript:HideOrShowFont('a2')" style="font-size: 15px;" id="a2">未完成</a>
 						</div>
 						<div style="float: left;padding-left: 30%;">
-							<a style="font-size: 15px;">已完成</a>
+							<a href="javascript:HideOrShowFont('a3')" style="font-size: 15px;" id="a3">已完成</a>
+
 						</div>
 					</form>
 				</form>
