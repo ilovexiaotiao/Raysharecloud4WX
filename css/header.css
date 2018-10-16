@@ -213,4 +213,8 @@ p{
 				background-color: white;
 			}
 		
-			
+			.mui-slider-title{
+				top: 170px;
+				font-size: 18px;
+				font-weight: bolder;
+			}

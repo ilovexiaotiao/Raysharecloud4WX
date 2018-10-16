@@ -8,6 +8,7 @@
 		<link href="../../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
 		<link rel="stylesheet" href="../../css/p.css" />
+		<script src="../../js/echarts.js"></script>
 
 		<script type="text/javascript" src="../../js/common.js"></script>
 		<script src="../../js/mui.min.js"></script>
@@ -22,15 +23,15 @@
 	描述：页面打开执行的函数fillSelect()
 -->
 
-	<body onload="fillSelect()">
-
+	<body onload="fillSelect();">
+		
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../index.html" style="color: white;"></a>
 			<h1 class="mui-title">工资单</h1>
 		</header>
 		<header class="mui-bar mui-bar-nav" style="top: 44px;background-color: white!important;color: red!important;height: 60px;">
 
-			<div>
+			<div style="display: none;">
 				<form class="mui-input-group" style="align-content: center;">
 					<form class="mui-input-group" style="align-content: center;">
 						<div style="float: left;">
@@ -60,59 +61,71 @@
 				</form>
 			</div>
 		</header>
-		<body>
-		<div class="mui-content" style="font-size: 10px;margin-top: 70px;">
-			<form class="mui-input-group">
-				<div class="mui-input-row">
-					<label style="width: 60%;">结算员工</label>
-					<p>张三</p>
-				</div>
-			</form>
-			<form class="mui-input-group">
-				<div class="mui-input-row">
-					<label style="width: 60%;">员工编号</label>
-					<p>22465132</p>
-				</div>
-			</form>
-			<form class="mui-input-group">
-				<div class="mui-input-row">
-					<label style="width: 60%;">部门岗位</label>
-					<p>保洁员</p>
-				</div>
-			</form>
-			<form class="mui-input-group">
-				<div class="mui-input-row">
-					<label style="width: 60%;">工资年份（单位：年）</label>
-					<p>2018</p>
-				</div>
-			</form>
-			<form class="mui-input-group">
-				<div class="mui-input-row">
-					<label style="width: 60%;">工资月份（单位：月）</label>
-					<p>8</p>
-				</div>
-			</form>
 
-			<form class="mui-input-group">
-				<div class="mui-input-row">
-					<label style="width: 60%;">实际工资（单位：元）</label>
-					<p>4,000</p>
-				</div>
-			</form>
-			<form class="mui-input-group">
-				<div class="mui-input-row">
-					<label style="width: 60%;">应发合计（单位：元）</label>
-					<p>3,500</p>
-				</div>
-			</form>
-			<form class="mui-input-group">
-				<div class="mui-input-row">
-					<label style="width: 60%;">应扣合计（单位：元）</label>
-					<p>500</p>
-				</div>
-			</form>
+		<body>
+			
+			<div class="mui-content" style="font-size: 10px;margin-top: 100px;">
+		<div id="main" style="width: 95%;height:400px;"></div>
 
 		</div>
-	</body>
+		<div id="container" style="height: 50%;width: 50%"></div>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label style="width: 60%;">结算员工</label>
+						<p>张三</p>
+					</div>
+				</form>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label style="width: 60%;">员工编号</label>
+						<p>y45456458785416</p>
+					</div>
+				</form>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label style="width: 60%;">部门岗位</label>
+						<p>保洁员</p>
+					</div>
+				</form>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label style="width: 60%;">工资年份（单位：年）</label>
+						<p>2018</p>
+					</div>
+				</form>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label style="width: 60%;">工资月份（单位：月）</label>
+						<p>8</p>
+					</div>
+				</form>
+
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label style="width: 60%;">实际工资（单位：元）</label>
+						<p>4,000</p>
+					</div>
+				</form>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label style="width: 60%;">应发合计（单位：元）</label>
+						<p>3,500</p>
+					</div>
+				</form>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label style="width: 60%;">应扣合计（单位：元）</label>
+						<p>500</p>
+					</div>
+				</form>
+
+			</div>
+		</body>
 
 </html>
+		<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+		<script type="text/javascript">
+			
+			var charts = new RSChart("main", "2018年度应收、实收工资趋势图");
+			charts.getChart("haha");
+		</script>
