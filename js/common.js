@@ -397,18 +397,6 @@ function RSMap() {
 				}
 
 
-function showPicture(imgFile) {
-	/*获取上传文件的路径，并赋给img标签*/
-	a = window.URL.createObjectURL(imgFile.files[0]);
-
-
-	return a;
-}
-
-function look() {
-	document.getElementById("newImage").src = a;
-
-}
 
 function dis_confirm() {
 	var r = confirm("尚未绑定手机号，点击确认绑定!")
