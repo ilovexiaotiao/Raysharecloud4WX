@@ -862,3 +862,7 @@ function dis_confirm() {
 		window.location.href = "self_phone_bind.html"
 	}
 }
+ function change(){
+ 	alert('提交成功！');
+ 	window.location.href="self_information.html"
+ }
