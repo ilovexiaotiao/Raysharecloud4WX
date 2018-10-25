@@ -24,108 +24,93 @@
 -->
 
 	<body onload="fillSelect();">
-		
+
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../index.html" style="color: white;"></a>
 			<h1 class="mui-title">工资单</h1>
-		</header>
-		<header class="mui-bar mui-bar-nav" style="top: 44px;background-color: white!important;color: red!important;height: 60px;">
-
-			<div style="display: none;">
-				<form class="mui-input-group" style="align-content: center;">
-					<form class="mui-input-group" style="align-content: center;">
-						<div style="float: left;">
-
-							<select id="s1">
-
-								<option>请选择年份</option>
-							</select>
-						</div>
-						<div style="float: left;margin-top: 10px;">
-							<a style="color: red;font-size: 15px;">年</a>
-						</div>
-						<div style="float: left;">
-							<select id="s2">
-								<option>请选择月份</option>
-							</select>
-						</div>
-						<div style="float: left;margin-top: 10px;">
-							<a style="color: red;font-size: 15px;">月</a>
-						</div>
-						<div style="float: left;margin-left: 10px;">
-							<p>总收入：</p>
-							<p>月收入：</p>
-						</div>
-					</form>
-				</form>
-				</form>
-			</div>
+			<a href="salary_list.html">
+				<span class="mui-icon mui-icon-bars" style="border-radius:40px;height: 40px;width: 40px;left: 80%;color: white;"></span>
+			</a>
 		</header>
 
 		<body>
-			
-			<div class="mui-content" style="font-size: 10px;margin-top: 100px;">
-		<div id="main" style="width: 95%;height:400px;"></div>
 
-		</div>
-		<div id="container" style="height: 50%;width: 50%"></div>
-				<form class="mui-input-group">
-					<div class="mui-input-row">
-						<label style="width: 60%;">结算员工</label>
-						<p>张三</p>
-					</div>
-				</form>
-				<form class="mui-input-group">
-					<div class="mui-input-row">
-						<label style="width: 60%;">员工编号</label>
-						<p>y45456458785416</p>
-					</div>
-				</form>
-				<form class="mui-input-group">
-					<div class="mui-input-row">
-						<label style="width: 60%;">部门岗位</label>
-						<p>保洁员</p>
-					</div>
-				</form>
-				<form class="mui-input-group">
-					<div class="mui-input-row">
-						<label style="width: 60%;">工资年份（单位：年）</label>
-						<p>2018</p>
-					</div>
-				</form>
-				<form class="mui-input-group">
-					<div class="mui-input-row">
-						<label style="width: 60%;">工资月份（单位：月）</label>
-						<p>8</p>
-					</div>
-				</form>
+			<div id="container" style="height: 50%;width: 50%;margin-top: 60px;"></div>
+			<form class="mui-input-group" style="height: 100px;">
+				<div class="mui-input-row" align="center">
+					<h3>当月实发工资（元）</h3>
 
-				<form class="mui-input-group">
-					<div class="mui-input-row">
-						<label style="width: 60%;">实际工资（单位：元）</label>
-						<p>4,000</p>
-					</div>
-				</form>
-				<form class="mui-input-group">
-					<div class="mui-input-row">
-						<label style="width: 60%;">应发合计（单位：元）</label>
-						<p>3,500</p>
-					</div>
-				</form>
-				<form class="mui-input-group">
-					<div class="mui-input-row">
-						<label style="width: 60%;">应扣合计（单位：元）</label>
-						<p>500</p>
-					</div>
-				</form>
+				</div>
+				<div align="center" style="float: left;padding-left: 30%;">
+					<h1>4,623.23</h1>
+         
+				</div>
+				<div style="float: left; padding-left: 10%;">
+			 <a href="salary_list.html">
+				<span class="mui-icon mui-icon-forward" style="border-radius:40px;height: 40px;width: 40px;font-size: 50px;color: black;"></span>
+			</a>
+				</div>
+			</form>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label style="width: 60%;">结算员工</label>
+					<p>张三</p>
+				</div>
+			</form>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label style="width: 60%;">员工编号</label>
+					<p>y45456458785416</p>
+				</div>
+			</form>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label style="width: 60%;">部门岗位</label>
+					<p>保洁员</p>
+				</div>
+			</form>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label style="width: 60%;">工资年份（单位：年）</label>
+					<p>2018</p>
+				</div>
+			</form>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label style="width: 60%;">工资月份（单位：月）</label>
+					<p>8</p>
+				</div>
+			</form>
+
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label style="width: 60%;">实际工资（单位：元）</label>
+					<p>4,000</p>
+				</div>
+			</form>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label style="width: 60%;">应发合计（单位：元）</label>
+					<p>3,500</p>
+				</div>
+			</form>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label style="width: 60%;">应扣合计（单位：元）</label>
+					<p>500</p>
+				</div>
+			</form>
+
+			</div>
+			<div class="mui-content" style="font-size: 10px;margin-top: 10px;margin-bottom: 20px;">
+				<div id="main" style="width: 95%;height:400px;"></div>
 
 			</div>
 		</body>
 
 </html>
-		<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-		<script type="text/javascript">
-			
-			var charts = new RSChart("main", "2018年度应收、实收工资趋势图");
-			charts.getChart("haha");
-		</script>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<script type="text/javascript">
+	var charts = new RSChart("main", "2018年度应收、实收工资趋势图");
+	charts.getChart("haha");
+</script>
