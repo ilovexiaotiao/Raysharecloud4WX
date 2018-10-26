@@ -823,19 +823,7 @@ function today() { //构建方法
 
 }
 
-function fillSelect() {
-	var obj = document.getElementById("s1");
-	var s2 = document.getElementById("s2");
-	for(var i = 2010; i < 2054; i++) {
 
-		var op = new Option(i, i);
-		obj.add(op);
-	}
-	for(var y = 1; y < 13; y++) {
-		var a = new Option(y, y);
-		s2.add(a);
-	}
-}
 
 function HideOrShowFont(obj) {
 	if(obj == "a1") {

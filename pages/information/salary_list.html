@@ -8,6 +8,10 @@
 		<link href="../../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
 		<link rel="stylesheet" href="../../css/p.css" />
+		<link rel="stylesheet" href="../../css/demo.css" />
+
+		<script type="text/javascript" src="../../js/jquery-1.8.2.min.js"></script>
+		<script src="../../js/demo.js"></script>
 
 		<script type="text/javascript" src="../../js/common.js"></script>
 		<script src="../../js/mui.min.js"></script>
@@ -22,7 +26,7 @@
 	描述：页面打开执行的函数fillSelect()
 -->
 
-	<body onload="fillSelect()">
+	<body>
 
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../index.html" style="color: white;"></a>
@@ -31,147 +35,192 @@
 		<header class="mui-bar mui-bar-nav" style="top: 44px;background-color: white!important;color: red!important;height: 60px;">
 
 			<div>
-				<form class="mui-input-group" style="align-content: center;">
-					<form class="mui-input-group" style="align-content: center;">
-						<div style="float: left;">
+				<div class="screening" style="margin-top: 5px;">
+					<ul>
 
-							<select id="s1">
+						<li class="Regional">年度</li>
+						<li class="Sort">月度</li>
+						<li class="Brand">类型</li>
+					</ul>
+				</div>
 
-								<option>2018</option>
-							</select>
-						</div>
-						<div style="float: left;margin-top: 10px;">
-							<a style="color: blue; font-size: 15px;">年</a>
-						</div>
-						<div style="float: left;">
-							<select id="s2">
-								<option>10</option>
-							</select>
-						</div>
-						<div style="float: left;margin-top: 10px;">
-							<a style="color: blue;font-size: 15px;">月</a>
-						</div>
-						<div style="float: left;margin-left: 50px;">
-							<select id="s2">
-								<option>类型</option>
-								<option>工资</option>
-								<option>五险一金</option>
-								<option>社保</option>
-								
-							</select>
-						</div>
-					</form>
-				</form>
-				</form>
+				<!-- End grade -->
+				<!-- Category -->
+
+				<div class="Regional-eject Regional-height">
+					<ul class="Regional-Regional" id="Regional-Regional">
+						<li onclick="Regional(this)">2018</li>
+						<li onclick="Regional(this)">2019</li>
+						<li onclick="Regional(this)">2020</li>
+						<li onclick="Regional(this)">2021</li>
+						<li onclick="Regional(this)">2022</li>
+						<li onclick="Regional(this)">2023</li>
+						<li onclick="Regional(this)">2024</li>
+						<li onclick="Regional(this)">2025</li>
+						<li onclick="Regional(this)">2026</li>
+						<li onclick="Regional(this)">2027</li>
+						<li onclick="Regional(this)">2028</li>
+						<li onclick="Regional(this)">2029</li>
+					</ul>
+				</div>
+
+				<div class="Sort-eject Sort-height">
+					<ul class="Sort-Sort" id="Sort-Sort">
+						<li onclick="Sorts(this)">1</li>
+						<li onclick="Sorts(this)">2</li>
+						<li onclick="Sorts(this)">3</li>
+						<li onclick="Sorts(this)">4</li>
+						<li onclick="Sorts(this)">5</li>
+						<li onclick="Sorts(this)">6</li>
+						<li onclick="Sorts(this)">7</li>
+						<li onclick="Sorts(this)">8</li>
+						<li onclick="Sorts(this)">9</li>
+						<li onclick="Sorts(this)">10</li>
+						<li onclick="Sorts(this)">11</li>
+						<li onclick="Sorts(this)">12</li>
+					</ul>
+				</div>
+
+				<div class="Brand-eject Brand-height">
+					<ul class="Brand-Brand" id="Brand-Brand">
+						<li onclick="Brand(this)">工资</li>
+						<li onclick="Brand(this)">五险一金</li>
+						<li onclick="Brand(this)">社保</li>
+						<li onclick="Brand(this)">其它</li>
+					</ul>
+				</div>
+
 			</div>
 		</header>
 
 		<body>
 			<div class="mui-content" style="font-size: 10px;margin-top: 70px;width: 98%;margin-left: 1%;">
-			    
-			<form class="mui-input-group">
-				<div class="mui-input-row" style="height: 100%;width: 100%;">
-					<table class="table" style="text-align: center;">
-						<tr>
 
-							<th style="width: 26%;">年份（单位：年）</th>
-							<th style="width: 26%;">月份（单位：月）</th>
-							<th style="width: 22%">类型</th>
-							<th style="width: 26%;">金额（单位：元）</th>
-						</tr>
-						<tr>
-							<td style="text-align: center;">2018</td>
-							<td>1</td>
+				<form class="mui-input-group">
+					<div class="mui-input-row" style="height: 100%;width: 100%;">
+						<table class="table" style="text-align: center;">
+							<tr>
 
-							<td>五险一金</td>
-							<td style="text-align: center;">400</td>
-						</tr>
-						<tr>
-							<td style="text-align: center;">2019</td>
-							<td>2</td>
-							<td>五险一金</td>
-							<td style="text-align: center;">401</td>
+								<th style="width: 26%;">年份（单位：年）</th>
+								<th style="width: 26%;">月份（单位：月）</th>
+								<th style="width: 22%">类型</th>
+								<th style="width: 26%;">金额（单位：元）</th>
+							</tr>
+							<tr>
+								<td style="text-align: center;">2018</td>
+								<td>1</td>
 
-						</tr>
-						<tr>
-							<td style="text-align: center;">2020</td>
-							<td>3</td>
-							<td>五险一金</td>
-							<td style="text-align: center;">402</td>
+								<td>五险一金</td>
+								<td style="text-align: center;">400</td>
+							</tr>
+							<tr>
+								<td style="text-align: center;">2019</td>
+								<td>2</td>
+								<td>五险一金</td>
+								<td style="text-align: center;">401</td>
 
-						</tr>
-						<tr>
-							<td style="text-align: center;">2021</td>
-							<td>4</td>
-							<td>五险一金</td>
-							<td style="text-align: center;">403</td>
+							</tr>
+							<tr>
+								<td style="text-align: center;">2020</td>
+								<td>3</td>
+								<td>五险一金</td>
+								<td style="text-align: center;">402</td>
 
-						</tr>
-						<tr>
-							<td style="text-align: center;">2022</td>
-							<td>5</td>
-							<td>五险一金</td>
-							<td style="text-align: center;">404</td>
+							</tr>
+							<tr>
+								<td style="text-align: center;">2021</td>
+								<td>4</td>
+								<td>五险一金</td>
+								<td style="text-align: center;">403</td>
 
-						</tr>
-						<tr>
-							<td style="text-align: center;">2023</td>
-							<td>6</td>
-							<td>五险一金</td>
-							<td style="text-align: center;">405</td>
+							</tr>
+							<tr>
+								<td style="text-align: center;">2022</td>
+								<td>5</td>
+								<td>五险一金</td>
+								<td style="text-align: center;">404</td>
 
-						</tr>
-						<tr>
-							<td style="text-align: center;">2024</td>
-							<td>7</td>
-							<td>五险一金</td>
-							<td style="text-align: center;">406</td>
+							</tr>
+							<tr>
+								<td style="text-align: center;">2023</td>
+								<td>6</td>
+								<td>五险一金</td>
+								<td style="text-align: center;">405</td>
 
-						</tr>
-						<tr>
-							<td style="text-align: center;">2025</td>
-							<td>8</td>
-							<td>五险一金</td>
-							<td style="text-align: center;">407</td>
+							</tr>
+							<tr>
+								<td style="text-align: center;">2024</td>
+								<td>7</td>
+								<td>五险一金</td>
+								<td style="text-align: center;">406</td>
 
-						</tr>
-						<tr>
-							<td style="text-align: center;">2026</td>
-							<td>9</td>
-							<td>五险一金</td>
-							<td style="text-align: center;">408</td>
+							</tr>
+							<tr>
+								<td style="text-align: center;">2025</td>
+								<td>8</td>
+								<td>五险一金</td>
+								<td style="text-align: center;">407</td>
 
-						</tr>
-						<tr>
-							<td style="text-align: center;">2027</td>
-							<td>10</td>
-							<td>五险一金</td>
-							<td style="text-align: center;">412</td>
+							</tr>
+							<tr>
+								<td style="text-align: center;">2026</td>
+								<td>9</td>
+								<td>五险一金</td>
+								<td style="text-align: center;">408</td>
 
-						</tr>
-						<tr>
-							<td style="text-align: center;">2028</td>
-							<td>11</td>
-							<td>五险一金</td>
-							<td style="text-align: center;">409</td>
+							</tr>
+							<tr>
+								<td style="text-align: center;">2027</td>
+								<td>10</td>
+								<td>五险一金</td>
+								<td style="text-align: center;">412</td>
 
-						</tr>
-						<tr>
-							<td style="text-align: center;">2029</td>
-							<td>12</td>
-							<td>五险一金</td>
-							<td style="text-align: center;">411</td>
+							</tr>
+							<tr>
+								<td style="text-align: center;">2028</td>
+								<td>11</td>
+								<td>五险一金</td>
+								<td style="text-align: center;">409</td>
 
-						</tr>
-					</table>
-				</div>
+							</tr>
+							<tr>
+								<td style="text-align: center;">2029</td>
+								<td>12</td>
+								<td>五险一金</td>
+								<td style="text-align: center;">411</td>
 
-			</form>
+							</tr>
+						</table>
+					</div>
+
+				</form>
 			</div>
-			
-			
-			
-			
+
+			<script src="js/truck.23648f77.js"></script>
+
+			<script type="text/javascript">
+				$(function() {
+					$('.choosebox li a').click(function() {
+						var thisToggle = $(this).is('.size_radioToggle') ? $(this) : $(this).prev();
+						var checkBox = thisToggle.prev();
+						checkBox.trigger('click');
+						$('.size_radioToggle').removeClass('current');
+						thisToggle.addClass('current');
+						return false;
+					});
+				});
+
+				$(".choosebox li a").click(function() {
+					var text = $(this).html();
+					$(".choosetext span").html(text);
+					$("#result").html("" + getSelectedValue("dress-size"));
+				});
+
+				function getSelectedValue(id) {
+					return
+					$("#" + id).find(".choosetext span.value").html();
+				}
+			</script>
 		</body>
 
 </html>
