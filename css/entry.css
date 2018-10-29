@@ -1,0 +1,19 @@
+			div.file1 {
+				width: 100%;
+				height: 40px;
+				line-height: 20px;
+				color: red
+			}
+			
+			div.file1 input {
+				position: absolute;
+				top: 0px;
+				zoom: 1;
+				filter: alpha(opacity=0);
+				opacity: 0;
+				font-size: 20px;
+				margin-left: -240px
+			}
+			p {
+				margin-top: 10px;
+			}

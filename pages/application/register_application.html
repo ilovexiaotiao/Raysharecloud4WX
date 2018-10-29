@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+	<!--
+	作者：a15838261357@sina.com
+	时间：2018-10-09
+	描述：入职信息表
+-->
+
+	<head>
+		<meta charset="UTF-8">
+		<title>雷赛云微信公众号入职申请单</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/header.css" />
+		<link rel="stylesheet" href="../../css/entry.css" />
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/common.js"></script>
+		<script src="../../js/jquery.min.js"></script>
+		<script type="text/javascript" src="../../js/information.js"></script>
+
+		<script type="text/javascript">
+			mui.init()
+		</script>
+
+	</head>
+	<!--
+	作者：a15838261357@sina.com
+	时间：2018-10-09
+	描述： getPhoneType()启动时所执行的函数，主要是对图片上传时候手机类型的判断
+-->
+
+	<body onload="getPhoneType()">
+
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../index.html" style="color: white;"></a>
+			<h1 class="mui-title">入职（离职）申请单</h1>
+			<a href="list_application.html">
+				<span class="mui-icon mui-icon-bars" style="border-radius:40px;height: 40px;width: 40px;left: 80%;color: white;"></span>
+			</a>
+		</header>
+		<!--
+	作者：a15838261357@sina.com
+	时间：2018-10-09
+	描述：入职申请单的详细内容
+ -->
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>申请类型</label>
+					<select style="font-size: 10px;width: 37%;">
+						<option value="">入职</option>
+						<option value="">离职</option>
+					</select>
+				</div>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label>姓名</label>
+						<input style="width: 37%;" type="text" class="mui-input-clear" placeholder="姓名" >
+					</div>
+					<form class="mui-input-group">
+						<div class="mui-input-row">
+							<label>性别</label>
+							<input style="width: 37%;" type="text" class="mui-input-clear" placeholder="性别" >
+						</div>
+					</form>
+					<form class="mui-input-group">
+						<div class="mui-input-row">
+							<label>身份证号</label>
+							<input style="width: 37%;" type="text" class="mui-input-clear" placeholder="身份证号">
+						</div>
+					</form>
+					<form class="mui-input-group">
+						<div class="mui-input-row">
+							<label>身份证正面照片</label>
+							<div class="file1" align="center" style="top: 0px;">
+								<img class="camerabox" id="newImage" style="width: 10%; margin-top: 0px;">
+								<div>
+									<a>点击上传</a>
+								</div>
+								</img>
+								<input type="file" id="fileInpBtn" accept="image/*" onchange="showPicture(this)" multiple />
+
+							</div>
+						</div>
+					</form>
+
+					<form class="mui-input-group">
+						<div class="mui-input-row">
+							<label>身份证反面照片</label>
+							<div class="file1" align="center" style="top: 5px;">
+								<img class="camerabox" id="newImage1" style="width: 10%; margin-top: 0px;">
+								<div>
+									<a>点击上传</a>
+								</div>
+								</img>
+								<input type="file" id="fileInpBtn1" accept="image/*" onchange="showPicture1(this)" multiple />
+
+							</div>
+						</div>
+					</form>
+					<form class="mui-input-group">
+						<div class="mui-input-row">
+							<label>入职（离职）项目</label>
+							<input style="width: 37%;" type="text" class="mui-input-clear" placeholder="入职（离职）项目" >
+						</div>
+						<form class="mui-input-group">
+							<div class="mui-input-row">
+								<label>入职（离职）岗位</label>
+								<input style="width: 37%;" type="text" class="mui-input-clear" placeholder="入职（离职）岗位" >
+							</div>
+						</form>
+						<form class="mui-input-group">
+							<div class="mui-input-row">
+								<label>工资结算方式</label>
+								<select style="font-size: 10px;width: 37%;">
+									<option value="">--请选择--</option>
+									<option value="">现金</option>
+									<option value="">转账</option>
+								</select>
+							</div>
+						</form>
+						<form class="mui-input-group">
+							<div class="mui-input-row">
+								<label>入职（离职）日期</label>
+								<input style="width: 37%;" type="date" class="mui-input-clear" placeholder="入职（离职）日期" >
+							</div>
+						</form>
+						<form class="mui-input-group">
+							<div class="mui-input-row">
+								<label>入职（离职）说明</label>
+							</div>
+							<textarea name="comment" form="usrform" placeholder="请说明"></textarea> </div>
+
+		</form>
+		<form class="mui-input-group">
+			<div class="mui-input-row">
+				<label>工作经历</label>
+				<input style="width: 37%;" type="text" class="mui-input-clear" placeholder="工作经历">
+			</div>
+		</form>
+
+		<form class="mui-input-group">
+			<div class="mui-input-row">
+				<label>银行卡号</label>
+				<input style="width: 37%;" type="text" class="mui-input-clear" placeholder="银行卡号">
+			</div>
+		</form>
+		<form class="mui-input-group">
+			<div class="mui-input-row">
+				<label>银行卡照片</label>
+				<div class="file1" align="center" style="top: 0px;">
+					<img class="camerabox" id="newImage2" style="width: 10%; margin-top: 0px;" />
+					<div>
+						<a>点击上传</a>
+					</div>
+					<input type="file" id="fileInpBtn2" accept="image/*" onchange="showPicture2(this)" multiple />
+
+				</div>
+			</div>
+		</form>
+		<form class="mui-input-group">
+			<div class="mui-input-row">
+				<label>家庭信息</label>
+				<input style="width: 37%;" type="text" class="mui-input-clear" placeholder="家庭信息">
+			</div>
+		</form>
+		<form class="mui-input-group">
+			<div class="mui-input-row">
+				<label>其他</label>
+			</div>
+			<textarea name="comment" form="usrform" placeholder="请说明"></textarea> </div>
+
+		</form>
+		</form>
+		</form>
+		</form>
+		<div align="center" style="margin-top: 10px;">
+			<button type="button" onclick="window.location.href='confirm_application.html'" style="width: 80px;" class="mui-btn mui-btn-grey">保存</button>
+			<button type="button" onclick="window.location.href='confirm_application.html'" style="width: 80px;" class="mui-btn mui-btn-grey">上报</button>
+		</div>
+		</div>
+	</body>
+
+</html>

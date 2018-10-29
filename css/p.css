@@ -1,0 +1,11 @@
+p{
+	margin-top: 10px;
+}
+			#allmap {
+				width: 90%;
+				height: 40%;
+				overflow: hidden;
+				margin: 0;
+				font-family: "微软雅黑";
+				margin: 0 auto;
+			}

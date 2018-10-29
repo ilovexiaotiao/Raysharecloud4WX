@@ -1,0 +1,220 @@
+.mui-bar{
+	font-family: "微软雅黑"!important;
+	background-color: #60a2de!important;
+    color: white!important;
+}
+body{
+		font-family: "微软雅黑"!important;
+}
+html{
+	font-family: "微软雅黑"!important;
+}
+.mui-title{
+	 color: white!important;
+}
+.mui-input-clear{
+	font-size: 10px;
+	
+}
+.mui-input-group{
+	font-size: 10px;
+}
+.se{
+	font-size: 10px;
+}
+.mui-navigate-right{
+	font-family: "微软雅黑"!important;
+	font-size: 10px;
+}
+p{
+	font-family: "微软雅黑"!important;
+	font-size: 10px;
+}
+.anniu{
+	font-family: "微软雅黑"!important;
+	font-size: 10px;
+}
+.mui-content{
+	font-family: "微软雅黑"!important;
+	font-size: 10px;
+}
+ .float{    
+        float:left;    
+        width : 100px;    
+        height: 100px;    
+        overflow: hidden;    
+        border: 1px solid #CCCCCC;    
+        border-radius: 10px;    
+        padding: 5px;    
+        margin: 5px;    
+    }    
+    img{    
+        position: relative;    
+    }    
+    .result{    
+        width: 100px;    
+        height: 100px;    
+        text-align: center;    
+        box-sizing: border-box;    
+    }   
+  
+  
+    #file_input{  
+        display: none;  
+    }  
+		
+  	#file_input1{  
+  			display: none;  
+  	}  /* added in 20181008 */
+  
+  
+    .delete{  
+        width: 100px;  
+        height:100px;  
+        position: absolute;  
+        text-align: center;  
+        line-height: 200px;  
+        z-index: 10;  
+        font-size: 30px;  
+        background-color: rgba(255,255,255,0.8);  
+        color: #777;  
+        opacity: 0;  
+        transition-duration: :0.7s;  
+        -webkit-transition-duration: 0.7s;   
+    }  
+  
+  
+    .delete:hover{  
+        cursor: pointer;  
+        opacity: 1;  
+    }  
+    .mui-media-object{
+    	margin-top: 10px;
+    	margin-left: 10px;
+    }
+  
+  .mui-action-back{
+  	color: white;
+  }
+  img {
+				border: none;
+			}
+			
+			.mui-input-group .mui-input-row.bd0:after {
+				height: 0;
+			}
+			
+			.mui-input-group .mui-input-row.bd0 {
+				border-bottom: #c8c7cc 1px solid;
+			}
+			
+			.mui-card {
+				position: relative;
+				border: #c8c7cc 1px dotted;
+				padding: 8px;
+				-webkit-box-shadow: none;
+				box-shadow: none;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+				margin-bottom: 30px;
+			}
+			/*图片背景*/
+			
+			.mui-card-header:after {
+				height: 0;
+			}
+			
+			.camerabox {
+				width: 70%;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+			}
+			
+			.beforecamera {
+				padding: 0;
+				margin: 0;
+				margin-top: 20px;
+				border: none;
+			}
+			
+			.beforecamera .mui-card-header {
+				width: 100%;
+				text-align: center;
+			}
+			
+			.beforecamera .mui-card-header>div {
+				width: 100%;
+				height: 100%;
+				font-weight: normal;
+				color: #09f;
+			}
+			/*提交按钮*/
+			
+			.mui-btn {
+				height: 50px;
+				box-sizing: border-box;
+				line-height: 50px;
+				padding: 0;
+				font-size: 16px;
+			}
+			/*图形按钮*/
+			
+			.fileInpBtn {
+				position: absolute;
+				left: 2;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				cursor: pointer;
+				filter: alpha(opacity: 0);
+				opacity: 0;
+				border-color: orange;
+			}
+			div.file {
+				display: inline-block;
+				width: 100%;
+				height: 40px;
+				line-height: 20px;
+				position: relative;
+				overflow: hidden;
+				color: red
+			}
+			
+			div.file input {
+				position: absolute;
+				top: 0px;
+				zoom: 1;
+				filter: alpha(opacity=0);
+				opacity: 0;
+				font-size: 20px;
+				margin-left: -240px
+			}
+			.table {
+				width: 100%;
+			}
+			
+			table,
+			th,
+			td {
+				background-color: white;
+				border: 1px solid black;
+				border-collapse: collapse;
+			}
+			
+			.tsel {
+				position: absolute;
+				margin-top: auto;
+				width: 100%;
+				height: 100%;
+				margin-bottom: 150px;
+				text-align: left;
+				background-color: white;
+			}
+		
+			.mui-slider-title{
+				top: 170px;
+				font-size: 18px;
+				font-weight: bolder;
+			}
