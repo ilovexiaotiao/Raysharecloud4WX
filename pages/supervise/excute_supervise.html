@@ -7,12 +7,17 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
-		<script src="../../js/mui.min.js"></script>
-		<script src="../../js/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+		<link rel="stylesheet" href="../../css/p.css" />
 
-		<script src="js/mui.min.js"></script>
+		<script src="../../js/jquery.min.js"></script>
+		<script src="../../js/mui.min.js"></script>
 		<script src="../../js/common.js"></script>
 		<script src="../../js/public-method.js"></script>
+		<script type="text/javascript" src="../../js/information.js"></script>
+		<script type="text/javascript" src="../../js/map.js"></script>
+		<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ox4ZBEjYHBpoONXLQCBV8pzMUFpalyFU"></script>
 
 		<!-- 定义当前页弹出容器属性 -->
 		<script type="text/javascript">
@@ -189,13 +194,24 @@
 				document.getElementById("newImage").src = a11;
 
 			}
-
 		</script>
 
+		</script>
+				<!-- 定义当前页弹出容器属性 -->
+		<script type="text/javascript">
+			var layer = new Layer({
+				layerclass: "layerContianer2", //存放页面的容器类名
+				width: 100,
+				height: 100,
+				left: 0,
+				top: 80,
+				alerttit: "选择上传类型",
+				setOverflow: "overflow-y:none", //设置滚动的属性 overflow-y：设置竖向  overflow-x:设置横向
+			});
 		</script>
 	</head>
 
-	<body onload="getPhoneType();">
+	<body onload="getPhoneType();today();autofill();">
 
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
@@ -204,17 +220,38 @@
 				<span class="mui-icon mui-icon-bars" style="border-radius:40px;height: 40px;width: 40px;left: 80%;color: white;"></span>
 			</a>
 		</header>
+				<div id="allmap" style="top: 60px;"></div>
+
+		<div class="tips"></div>
 		<div class="mui-content">
+			<form class="mui-input-group" style="margin-top: 30px;">
+				<div class="mui-input-row">
+					<label>项目编号</label>
+					<input type="text" id="gs" class="mui-input-clear" disabled="disabled" placeholder="X256413215641">
+				</div>
+			</form>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>员工编号</label>
+					<input type="text" id="bh" class="mui-input-clear" disabled="disabled" placeholder="y45456458785416">
+				</div>
+			</form>
 			<form class="mui-input-group">
 				<div class="mui-input-row">
 					<label>稽查时间</label>
-					<input type="datetime-local" class="mui-input-clear" placeholder="稽查时间">
+					<input type="text" name="date" id="today" class="mui-input-clear" disabled="disabled">
 				</div>
 			</form>
 			<form class="mui-input-group">
 				<div class="mui-input-row">
 					<label>稽查内容</label>
 					<input type="text" class="mui-input-clear" placeholder="稽查内容">
+				</div>
+			</form>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>上报地址</label>
+					<input type="text" id="address" class="mui-input-clear" placeholder="稽查内容">
 				</div>
 			</form>
 			<form class="mui-input-group">
@@ -572,4 +609,15 @@
 			</div>
 		</div>
 	</body>
-	</html
+	</html>
+	<script type="text/javascript">
+	var map = new RSMap();
+	map.getPoint("lng", "lat");
+	map.getAddress("address");
+	map.getMap("allmap");
+	//console(map.getPoint().lng);
+
+	//console.log(map.sendSignal());
+	//map.getMap();
+	//map.getAddress();
+</script>

@@ -13,11 +13,17 @@
 		<link href="../../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
 		<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+		<link rel="stylesheet" href="../../css/p.css" />
+
 		<script src="../../js/jquery.min.js"></script>
 		<script src="../../js/mui.min.js"></script>
 		<script src="../../js/common.js"></script>
 		<script src="../../js/public-method.js"></script>
 		<script type="text/javascript" src="../../js/information.js"></script>
+		<script type="text/javascript" src="../../js/map.js"></script>
+		<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ox4ZBEjYHBpoONXLQCBV8pzMUFpalyFU"></script>
+
 		<!-- 定义当前页弹出容器属性 -->
 		<script type="text/javascript">
 			var layer = new Layer({
@@ -43,38 +49,42 @@
 				<span class="mui-icon mui-icon-bars" style="border-radius:40px;height: 40px;width: 40px;left: 80%;color: white;"></span>
 			</a>
 		</header>
+		<div id="allmap" style="top: 60px;"></div>
 
+		<div class="tips"></div>
 		<div class="mui-content">
 			<!-- 上报内容 -->
 
-			<form class="mui-input-group">
+			<form class="mui-input-group" style="margin-top: 30px;">
 				<div class="mui-input-row">
 					<label>项目编号</label>
-					<input type="text" id="xm" class="mui-input-clear table_input" placeholder="项目编号">
+					<input type="text" id="xm" class="mui-input-clear" disabled="disabled" placeholder="X256413215641">
+
 				</div>
 			</form>
 			<form class="mui-input-group">
 				<div class="mui-input-row">
 					<label>工位编号</label>
-					<input type="text" id="gw" class="mui-input-clear table_input" placeholder="工位编号">
+					<input type="text" id="gw" class="mui-input-clear" disabled="disabled" placeholder="M545646541561768">
+
 				</div>
 			</form>
 			<form class="mui-input-group">
 				<div class="mui-input-row">
 					<label>员工编号</label>
-					<input type="text" id="yg" class="mui-input-clear table_input" placeholder="员工编号">
-				</div>
-			</form>
-			<form class="mui-input-group">
-				<div class="mui-input-row">
-					<label>签到地点</label>
-					<input type="text" name="date" id="today" class="mui-input-clear" placeholder="">
+					<input type="text" id="yg" class="mui-input-clear" disabled="disabled" placeholder="y45456458785416">
 				</div>
 			</form>
 			<form class="mui-input-group">
 				<div class="mui-input-row">
 					<label>签到时间</label>
-					<input type="text" name="date" id="today" class="mui-input-clear" placeholder="">
+					<input type="text" name="date" id="today" class="mui-input-clear" disabled="disabled">
+				</div>
+			</form>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>签到地点</label>
+					<input type="text" name="date" id="address" class="mui-input-clear" disabled="disabled">
 				</div>
 			</form>
 
@@ -193,10 +203,21 @@
 			</div>
 
 			<div align="center" style="margin-top: 10px;">
-				<button type="button" onclick="window.location.href='confirm_work.html'" style="width: 80px;position: absolute;bottom: -400px;left: 25%;" class="mui-btn mui-btn-grey">保存</button>
-				<button type="button" onclick="window.location.href='confirm_work.html'" style="width: 80px;position: absolute;bottom: -400px;" class="mui-btn mui-btn-grey">上报</button>
+				<button type="button" onclick="window.location.href='confirm_work.html'" style="width: 80px;position: absolute;bottom: -700px;left: 25%;" class="mui-btn mui-btn-grey">保存</button>
+				<button type="button" onclick="window.location.href='confirm_work.html'" style="width: 80px;position: absolute;bottom: -700px;" class="mui-btn mui-btn-grey">上报</button>
 			</div>
 
 	</body>
 
 </html>
+<script type="text/javascript">
+	var map = new RSMap();
+	map.getPoint("lng", "lat");
+	map.getAddress("address");
+	map.getMap("allmap");
+	//console(map.getPoint().lng);
+
+	//console.log(map.sendSignal());
+	//map.getMap();
+	//map.getAddress();
+</script>

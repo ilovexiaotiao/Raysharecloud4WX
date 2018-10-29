@@ -360,6 +360,7 @@ function autofill1() {
 	document.getElementById("yg").value = yuangong;
 
 }
+
 var a = null;
 
 
@@ -854,3 +855,11 @@ function dis_confirm() {
  	alert('提交成功！');
  	window.location.href="self_information.html"
  }
+ function dis_confirm() {
+	var r = confirm("尚未绑定手机号，点击确认绑定!")
+	if(r == true) {
+		window.location.href = "self_phone_bind.html"
+	}
+}
+
+
