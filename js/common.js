@@ -862,4 +862,11 @@ function dis_confirm() {
 	}
 }
 
-
+		function l(){
+			
+   document.getElementById("newImage").src="../../images/858712093676267294.jpg"
+		
+		}
+	function l2(){
+		document.getElementById("newImage").src="../../images/t01b98ba8990e577af4.jpg"
+	}
