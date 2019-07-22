@@ -1,0 +1,415 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>雷赛云微信公众号稽查上报详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
+		<link rel="stylesheet" href="../../css/p.css" />
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/jquery.min.js"></script>
+
+		<script src="js/mui.min.js"></script>
+		<script src="../../js/common.js"></script>
+		<script src="../../js/public-method.js"></script>
+
+		<!-- 定义当前页弹出容器属性 -->
+		<script type="text/javascript">
+			var layer = new Layer({
+				layerclass: "layerContianer2", //存放页面的容器类名
+				width: 100,
+				height: 100,
+				left: 0,
+				top: 80,
+				alerttit: "选择上传类型",
+				setOverflow: "overflow-y:none", //设置滚动的属性 overflow-y：设置竖向  overflow-x:设置横向
+			});
+		</script>
+		<!--
+        	作者：a15838261357@sina.com
+        	时间：2018-10-09
+        	描述：查看图片函数，showPicture(imgFile)把图片转成二进制，look()查看图片所执行函数
+        -->
+
+	</head>
+
+	<body onload="getPhoneType();">
+
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">稽查上报详情</h1>
+			<a href="list_supervise.html">
+				<span class="mui-icon mui-icon-bars" style="border-radius:40px;height: 40px;width: 40px;left: 80%;color: white;"></span>
+			</a>
+		</header>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>稽查时间</label>
+					<p>2018/9/20</p>
+				</div>
+			</form>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>稽查内容</label>
+					<p>卫生间积水</p>
+				</div>
+			</form>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>稽查结果</label>
+					<p>无积水</p>
+				</div>
+			</form>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>扣除绩效分数</label>
+					<p>0</p>
+				</div>
+			</form>
+			<a style="color: red;">是否组织召开临时会议：</a>
+			<div class="mui-input-row mui-radio mui-left">
+				<label>是</label>
+				<input name="radio" type="radio" checked disabled="disabled">
+			</div>
+			<div class="mui-input-row mui-radio mui-left">
+				<label>否</label>
+				<input name="radio" type="radio" checked disabled="disabled">
+			</div>
+			<form class="mui-input-group">
+				<div class="mui-input-row" style="height: 100%;width: 100%;">
+					<table class="table">
+						<tr>
+
+							<th style="width: 10%;">序号</th>
+							<th style="width: 25%;">项目</th>
+							<th style="width: 55%;">图片上传</th>
+
+							<th style="width: 15%;">合格</th>
+						</tr>
+						<tr>
+							<td style="text-align: center;">1</td>
+							<td>地面</td>
+
+							<td>
+								<div class="container" style="top: 40px;float: left;">
+
+									<div class="mui-card" align="center" style="margin: 0px;margin-bottom: 0px;height: 40px;margin-top: 0px;">
+
+										<div class="file" align="center">
+											<button>上传图片</button>
+
+											<input disabled="disabled" id="fileInpBtn" type="file" name="upload" onchange="showPicture(this)" accept="image/*" multiple>
+										</div>
+
+									</div>
+
+								</div>
+								<div class="container" style="margin-top: 8px;float: left;">
+									<button type="button" onclick="l()">查看图片</button>
+
+								</div>
+							</td>
+							<td style="text-align: center;"><input type="checkbox" checked="checked" disabled="disabled"></td>
+						</tr>
+						<tr>
+							<td style="text-align: center;">2</td>
+							<td>墙面</td>
+							<td>
+								<div class="container" style="top: 40px;float: left;">
+
+									<div class="mui-card" align="center" style="margin: 0px;margin-bottom: 0px;height: 40px;margin-top: 0px;">
+
+										<div class="file" align="center">
+											<button>上传图片</button>
+
+											<input disabled="disabled" id="fileInpBtn" type="file" name="upload" onchange="showPicture(this)" accept="image/*" multiple>
+										</div>
+
+									</div>
+
+								</div>
+								<div class="container" style="margin-top: 8px;float: left;">
+									<button type="button" onclick="l2()">查看图片</button>
+
+								</div>
+							</td>
+							<td style="text-align: center;"><input type="checkbox" checked="checked" disabled="disabled"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">3</td>
+							<td>天花</td>
+							<td>
+								<div class="container" style="top: 40px;float: left;">
+
+									<div class="mui-card" align="center" style="margin: 0px;margin-bottom: 0px;height: 40px;margin-top: 0px;">
+
+										<div class="file" align="center">
+											<button>上传图片</button>
+
+											<input disabled="disabled" id="fileInpBtn" type="file" name="upload" onchange="showPicture(this)" accept="image/*" multiple>
+										</div>
+
+									</div>
+
+								</div>
+								<div class="container" style="margin-top: 8px;float: left;">
+									<button type="button" onclick="look()">查看图片</button>
+
+								</div>
+							</td>
+							<td style="text-align: center;"><input type="checkbox" checked="checked" disabled="disabled"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">4</td>
+							<td>坐厕间隔强</td>
+							<td>
+								<div class="container" style="top: 40px;float: left;">
+
+									<div class="mui-card" align="center" style="margin: 0px;margin-bottom: 0px;height: 40px;margin-top: 0px;">
+
+										<div class="file" align="center">
+											<button>上传图片</button>
+
+											<input disabled="disabled" id="fileInpBtn" type="file" name="upload" onchange="showPicture(this)" accept="image/*" multiple>
+										</div>
+
+									</div>
+
+								</div>
+								<div class="container" style="margin-top: 8px;float: left;">
+									<button type="button" onclick="look()">查看图片</button>
+
+								</div>
+							</td>
+							<td style="text-align: center;"><input type="checkbox" checked="checked" disabled="disabled"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">5</td>
+							<td>坐便器、小便斗</td>
+							<td>
+								<div class="container" style="top: 40px;float: left;">
+
+									<div class="mui-card" align="center" style="margin: 0px;margin-bottom: 0px;height: 40px;margin-top: 0px;">
+
+										<div class="file" align="center">
+											<button>上传图片</button>
+
+											<input disabled="disabled" id="fileInpBtn" type="file" name="upload" onchange="showPicture(this)" accept="image/*" multiple>
+										</div>
+
+									</div>
+
+								</div>
+								<div class="container" style="margin-top: 8px;float: left;">
+									<button type="button" onclick="look()">查看图片</button>
+
+								</div>
+							</td>
+							<td style="text-align: center;"><input type="checkbox" checked="checked" disabled="disabled"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">6</td>
+							<td>洗手盆及台面、玻璃镜面、水龙头</td>
+							<td>
+								<div class="container" style="top: 40px;float: left;">
+
+									<div class="mui-card" align="center" style="margin: 0px;margin-bottom: 0px;height: 40px;margin-top: 0px;">
+
+										<div class="file" align="center">
+											<button>上传图片</button>
+
+											<input disabled="disabled" id="fileInpBtn" type="file" name="upload" onchange="showPicture(this)" accept="image/*" multiple>
+										</div>
+
+									</div>
+
+								</div>
+								<div class="container" style="margin-top: 8px;float: left;">
+									<button type="button" onclick="look()">查看图片</button>
+
+								</div>
+							</td>
+							<td style="text-align: center;"><input type="checkbox" checked="checked" disabled="disabled"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">7</td>
+							<td>灯罩</td>
+							<td>
+								<div class="container" style="top: 40px;float: left;">
+
+									<div class="mui-card" align="center" style="margin: 0px;margin-bottom: 0px;height: 40px;margin-top: 0px;">
+
+										<div class="file" align="center">
+											<button>上传图片</button>
+
+											<input disabled="disabled" id="fileInpBtn" type="file" name="upload" onchange="showPicture(this)" accept="image/*" multiple>
+										</div>
+
+									</div>
+
+								</div>
+								<div class="container" style="margin-top: 8px;float: left;">
+									<button type="button" onclick="look()">查看图片</button>
+
+								</div>
+							</td>
+							<td style="text-align: center;"><input type="checkbox" checked="checked" disabled="disabled"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">8</td>
+							<td>送/排风口</td>
+							<td>
+								<div class="container" style="top: 40px;float: left;">
+
+									<div class="mui-card" align="center" style="margin: 0px;margin-bottom: 0px;height: 40px;margin-top: 0px;">
+
+										<div class="file" align="center">
+											<button>上传图片</button>
+
+											<input disabled="disabled" id="fileInpBtn" type="file" name="upload" onchange="showPicture(this)" accept="image/*" multiple>
+										</div>
+
+									</div>
+
+								</div>
+								<div class="container" style="margin-top: 8px;float: left;">
+									<button type="button" onclick="look()">查看图片</button>
+
+								</div>
+							</td>
+							<td style="text-align: center;"><input type="checkbox" checked="checked" disabled="disabled"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">9</td>
+							<td>废纸篓</td>
+							<td>
+								<div class="container" style="top: 40px;float: left;">
+
+									<div class="mui-card" align="center" style="margin: 0px;margin-bottom: 0px;height: 40px;margin-top: 0px;">
+
+										<div class="file" align="center">
+											<button>上传图片</button>
+
+											<input disabled="disabled" id="fileInpBtn" type="file" name="upload" onchange="showPicture(this)" accept="image/*" multiple>
+										</div>
+
+									</div>
+
+								</div>
+								<div class="container" style="margin-top: 8px;float: left;">
+									<button type="button" onclick="look()">查看图片</button>
+
+								</div>
+							</td>
+							<td style="text-align: center;"><input type="checkbox" checked="checked" disabled="disabled"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">10</td>
+							<td>喷香机、洗手液箱</td>
+							<td>
+								<div class="container" style="top: 40px;float: left;">
+
+									<div class="mui-card" align="center" style="margin: 0px;margin-bottom: 0px;height: 40px;margin-top: 0px;">
+
+										<div class="file" align="center">
+											<button>上传图片</button>
+
+											<input disabled="disabled" id="fileInpBtn" type="file" name="upload" onchange="showPicture(this)" accept="image/*" multiple>
+										</div>
+
+									</div>
+
+								</div>
+								<div class="container" style="margin-top: 8px;float: left;">
+									<button type="button" onclick="look()">查看图片</button>
+
+								</div>
+							</td>
+							<td style="text-align: center;"><input type="checkbox" checked="checked" disabled="disabled"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">11</td>
+							<td>纸巾</td>
+							<td>
+								<div class="container" style="top: 40px;float: left;">
+
+									<div class="mui-card" align="center" style="margin: 0px;margin-bottom: 0px;height: 40px;margin-top: 0px;">
+
+										<div class="file" align="center">
+											<button>上传图片</button>
+
+											<input disabled="disabled" id="fileInpBtn" type="file" name="upload" onchange="showPicture(this)" accept="image/*" multiple>
+										</div>
+
+									</div>
+
+								</div>
+								<div class="container" style="margin-top: 8px;float: left;">
+									<button type="button" onclick="look()">查看图片</button>
+
+								</div>
+							</td>
+							<td style="text-align: center;"><input type="checkbox" checked="checked" disabled="disabled"></td>
+
+						</tr>
+						<tr>
+							<td style="text-align: center;">12</td>
+							<td>卫生纸架</td>
+							<td>
+								<div class="container" style="top: 40px;float: left;">
+
+									<div class="mui-card" align="center" style="margin: 0px;margin-bottom: 0px;height: 40px;margin-top: 0px;">
+
+										<div class="file" align="center">
+											<button style="width: 80px;">上传图片</button>
+
+											<input disabled="disabled" id="fileInpBtn" type="file" name="upload" onchange="showPicture(this)" accept="image/*" multiple>
+										</div>
+
+									</div>
+
+								</div>
+								<div class="container" style="margin-top: 8px;float: left;">
+									<button type="button" onclick="look()">查看图片</button>
+
+								</div>
+							</td>
+							<td style="text-align: center;"><input type="checkbox" checked="checked" disabled="disabled"></td>
+
+						</tr>
+					</table>
+				</div>
+
+			</form>
+			<!--
+            	作者：a15838261357@sina.com
+            	时间：2018-10-09
+            	描述：图片显示位置
+            -->
+			<div class="container">
+				<form class="mui-input-group">
+					<div class="mui-input-row" style="height: 350px;">
+						<img class="camerabox" id="newImage" style="width: 100%;" />
+					</div>
+				</form>
+			</div>
+
+			<div align="center" style="margin-top: 10px;">
+				<button type="button" onclick="revise()" style="width: 80px;position: absolute;bottom: -700px;left: 25%;" class="mui-btn mui-btn-grey">修改</button>
+				<button type="button" onclick="superviseSub()" style="width: 80px;position: absolute;bottom: -700px;" class="mui-btn mui-btn-grey">上报</button>
+			</div>
+		</div>
+	</body>
+	</html

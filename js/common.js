@@ -256,7 +256,6 @@ function look() {
 
 }
 
-
 // Part3.移动端函数
 // 技术选型：js
 // 涉及功能：多图片上传、获取相机
@@ -294,6 +293,7 @@ function getPhoneType() {
 
 function showPicture(imgFile) {
 	/*获取上传文件的路径，并赋给img标签*/
+	alert("show_pic");
 	document.getElementById("newImage").src = window.URL.createObjectURL(imgFile.files[0]);
 }
 
@@ -334,7 +334,6 @@ function getQueryString(name) {
 	return uri;
 }
 
-
 function autofill() {
 	var bianhao = getQueryString('bh');
 	var gongsi = getQueryString("gs");
@@ -363,9 +362,6 @@ function autofill1() {
 
 var a = null;
 
-
-
-
 // Part4.地图类函数
 // 技术选型：js,百度地图API
 // 涉及功能：用户定位，工位签到
@@ -380,10 +376,8 @@ function RSMap() {
 	var currentpoint;
 	var initialpoint = new BMap.Point(116.331398, 39.897445);
 
-
-
 	//初始化函数
-	if (typeof RSMap.initialized == "undefined") {
+	if(typeof RSMap.initialized == "undefined") {
 
 		//功能1:获取当前位置的经纬度坐标,并分别应道到ID为lng和lat的元素中
 		RSMap.prototype.getPoint = function(lng, lat) {
@@ -391,118 +385,115 @@ function RSMap() {
 			//向百度地图API服务器发送去获取当前定位的请求
 			geolocation.getCurrentPosition(function(r) {
 				//对服务器返回结果进行状态判断,如果返回SUCCESS,则开始解析
-				if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+				if(this.getStatus() == BMAP_STATUS_SUCCESS) {
 					document.getElementById(lat).value = r.point.lat;
 					document.getElementById(lng).value = r.point.lng;
 					//console.log(geopoint.lat);
 				}
 
+				function dis_confirm() {
+					var r = confirm("尚未绑定手机号，点击确认绑定!")
+					if(r == true) {
+						window.location.href = "self_phone_bind.html"
+					}
+				}
 
+				function keep() {
+					var r = confirm("是否保存？")
+					if(r == true) {
+						alert("保存成功！");
 
-function dis_confirm() {
-	var r = confirm("尚未绑定手机号，点击确认绑定!")
-	if(r == true) {
-		window.location.href = "self_phone_bind.html"
-	}
-}
+					}
+				}
 
-function keep() {
-	var r = confirm("是否保存？")
-	if(r == true) {
-		alert("保存成功！");
+				function sub() {
+					var r = confirm("是否上报？")
+					if(r == true) {
+						alert("上报成功！");
+						window.location.href = "all_application.html";
+					}
+				}
 
-	}
-}
+				function revise() {
+					alert("该任务已被锁定，无法修改!")
+				}
 
-function sub() {
-	var r = confirm("是否上报？")
-	if(r == true) {
-		alert("上报成功！");
-		window.location.href = "all_application.html";
-	}
-}
+				function attendenceSub() {
+					var r = confirm("是否上报？")
+					if(r == true) {
+						alert("上报成功！");
+						window.location.href = "list_attendence.html";
+					}
+				}
 
-function revise() {
-	alert("该任务已被锁定，无法修改!")
-}
+				function complainSub() {
+					var r = confirm("是否上报？")
+					if(r == true) {
+						alert("上报成功！");
+						window.location.href = "list_complain.html";
+					}
+				}
 
-function attendenceSub() {
-	var r = confirm("是否上报？")
-	if(r == true) {
-		alert("上报成功！");
-		window.location.href = "list_attendence.html";
-	}
-}
+				function workSub() {
+					var r = confirm("是否上报？")
+					if(r == true) {
+						alert("上报成功！");
+						window.location.href = "list_work.html";
+					}
+				}
 
-function complainSub() {
-	var r = confirm("是否上报？")
-	if(r == true) {
-		alert("上报成功！");
-		window.location.href = "list_complain.html";
-	}
-}
+				function superviseSub() {
+					var r = confirm("是否上报？")
+					if(r == true) {
+						alert("上报成功！");
+						window.location.href = "list_supervise.html";
+					}
+				}
 
-function workSub() {
-	var r = confirm("是否上报？")
-	if(r == true) {
-		alert("上报成功！");
-		window.location.href = "list_work.html";
-	}
-}
+				function today() { //构建方法
+					var today = new Date(); //new 出当前时间
+					var h = today.getFullYear(); //获取年
+					var m = today.getMonth() + 1; //获取月
+					var d = today.getDate(); //获取日
+					var H = today.getHours(); //获取时
+					var M = today.getMinutes(); //获取分
+					var S = today.getSeconds(); //获取秒
+					//返回 年-月-日 时:分:秒
+					document.getElementById("today").value = h + "-" + m + "-" + d + " " + H + ":" + M + ":" + S; //将获取到的 年-月-日 时:分:秒 赋给input文本输入框
 
-function superviseSub() {
-	var r = confirm("是否上报？")
-	if(r == true) {
-		alert("上报成功！");
-		window.location.href = "list_supervise.html";
-	}
-}
+				}
 
-function today() { //构建方法
-	var today = new Date(); //new 出当前时间
-	var h = today.getFullYear(); //获取年
-	var m = today.getMonth() + 1; //获取月
-	var d = today.getDate(); //获取日
-	var H = today.getHours(); //获取时
-	var M = today.getMinutes(); //获取分
-	var S = today.getSeconds(); //获取秒
-	//返回 年-月-日 时:分:秒
-	document.getElementById("today").value = h + "-" + m + "-" + d + " " + H + ":" + M + ":" + S; //将获取到的 年-月-日 时:分:秒 赋给input文本输入框
+				function fillSelect() {
+					var obj = document.getElementById("s1");
+					var s2 = document.getElementById("s2");
+					for(var i = 2010; i < 2054; i++) {
 
-}
+						var op = new Option(i, i);
+						obj.add(op);
+					}
+					for(var y = 1; y < 13; y++) {
+						var a = new Option(y, y);
+						s2.add(a);
+					}
+				}
 
-function fillSelect() {
-	var obj = document.getElementById("s1");
-	var s2 = document.getElementById("s2");
-	for(var i = 2010; i < 2054; i++) {
+				function HideOrShowFont(obj) {
+					if(obj == "a1") {
+						document.getElementById("a1").style.color = "red";
 
-		var op = new Option(i, i);
-		obj.add(op);
-	}
-	for(var y = 1; y < 13; y++) {
-		var a = new Option(y, y);
-		s2.add(a);
-	}
-}
+						document.getElementById("a2").style.color = "dodgerblue";
+						document.getElementById("a3").style.color = "dodgerblue";
+					} else if(obj == 'a2') {
+						document.getElementById("a1").style.color = "dodgerblue";
+						document.getElementById("a2").style.color = "red";
 
-function HideOrShowFont(obj) {
-	if(obj == "a1") {
-		document.getElementById("a1").style.color = "red";
-		
-		document.getElementById("a2").style.color = "dodgerblue";
-		document.getElementById("a3").style.color = "dodgerblue";
-	} else if(obj == 'a2') {
-		document.getElementById("a1").style.color = "dodgerblue";
-		document.getElementById("a2").style.color = "red";
-			
-
-		document.getElementById("a3").style.color = "dodgerblue";
-	} else if(obj == 'a3') {
-		document.getElementById("a1").style.color = "dodgerblue";
-		document.getElementById("a2").style.color = "dodgerblue";
-		document.getElementById("a3").style.color = "red";
-	}
-}
+						document.getElementById("a3").style.color = "dodgerblue";
+					} else if(obj == 'a3') {
+						document.getElementById("a1").style.color = "dodgerblue";
+						document.getElementById("a2").style.color = "dodgerblue";
+						document.getElementById("a3").style.color = "red";
+					}
+				}
 
 			})
 
@@ -512,7 +503,7 @@ function HideOrShowFont(obj) {
 		RSMap.prototype.getAddress = function(address) {
 			geolocation.getCurrentPosition(function(r) {
 				//对服务器返回结果进行状态判断,如果返回SUCCESS,则开始解析
-				if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+				if(this.getStatus() == BMAP_STATUS_SUCCESS) {
 					geocoder.getLocation(r.point, function(rs) {
 						//console.log(rs.address);
 						document.getElementById(address).value = rs.address;
@@ -529,11 +520,10 @@ function HideOrShowFont(obj) {
 			var initialpoint = new BMap.Point(116.331398, 39.897445);
 			geomap.centerAndZoom(initialpoint, 12);
 
-
 			//获取当前定位
 			geolocation.getCurrentPosition(function(r) {
 				//对服务器返回结果进行状态判断,如果返回SUCCESS,则开始解析
-				if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+				if(this.getStatus() == BMAP_STATUS_SUCCESS) {
 
 					//创建当前位置的地图标记
 					geomark = new BMap.Marker(r.point);
@@ -567,8 +557,6 @@ function HideOrShowFont(obj) {
 	}
 	RSMap.initialized = true;
 }
-
-
 
 // Part5.图表类函数
 // 技术选型：js,E-chart API
@@ -665,7 +653,7 @@ function RSChart(chartid, title) {
 			min: function(value) {
 				return value.min - 400;
 			},
-			
+
 			z: 10
 		},
 		grid: {
@@ -734,9 +722,9 @@ function RSChart(chartid, title) {
 
 		]
 	};
-	
-	if (typeof RSChart.initialized == "undefined") {
-		
+
+	if(typeof RSChart.initialized == "undefined") {
+
 		//生成echart图表的函数
 		RSChart.prototype.getChart = function(title) {
 			this.title = title;
@@ -747,15 +735,10 @@ function RSChart(chartid, title) {
 
 }
 
-
-
-
 // Part6.系统类函数
 // 技术选型：js
 // 涉及功能：页面确认，上报确认
 // 涉及页面：
-
-
 
 function keep() {
 	var r = confirm("是否保存？")
@@ -809,8 +792,6 @@ function superviseSub() {
 	}
 }
 
-
-
 function today() { //构建方法
 	var today = new Date(); //new 出当前时间
 	var h = today.getFullYear(); //获取年
@@ -824,18 +805,15 @@ function today() { //构建方法
 
 }
 
-
-
 function HideOrShowFont(obj) {
 	if(obj == "a1") {
 		document.getElementById("a1").style.color = "red";
-		
+
 		document.getElementById("a2").style.color = "dodgerblue";
 		document.getElementById("a3").style.color = "dodgerblue";
 	} else if(obj == 'a2') {
 		document.getElementById("a1").style.color = "dodgerblue";
 		document.getElementById("a2").style.color = "red";
-			
 
 		document.getElementById("a3").style.color = "dodgerblue";
 	} else if(obj == 'a3') {
@@ -851,22 +829,27 @@ function dis_confirm() {
 		window.location.href = "self_phone_bind.html"
 	}
 }
- function change(){
- 	alert('提交成功！');
- 	window.location.href="self_information.html"
- }
- function dis_confirm() {
+
+function change() {
+	alert('提交成功！');
+	window.location.href = "self_information.html"
+}
+
+function dis_confirm() {
 	var r = confirm("尚未绑定手机号，点击确认绑定!")
 	if(r == true) {
 		window.location.href = "self_phone_bind.html"
 	}
 }
 
-		function l(){
-			
-   document.getElementById("newImage").src="../../images/858712093676267294.jpg"
-		
-		}
-	function l2(){
-		document.getElementById("newImage").src="../../images/t01b98ba8990e577af4.jpg"
-	}
+function l() {
+//	alert("look");
+	document.getElementById("newImage").src = "../../img/t01b98ba8990e577af4.jpg";
+//	s=document.getElementById("newImage").src
+//	alert(s);
+
+}
+
+function l2() {
+	document.getElementById("newImage").src = "../../img/t014145efb179843d18.jpg";
+}

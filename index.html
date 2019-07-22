@@ -1,76 +1,109 @@
-<!doctype html>
-<html>
-	<!--
-	作者：a15838261357@sina.com
-	时间：2018-10-09
-	描述：页面首页
+<!--
+	作者：18688989936@163.com
+	时间：2019-7-20
+	描述：页面首页_重构
 -->
 
+<!DOCTYPE html>
+<html>
+
 	<head>
-		<meta charset="UTF-8">
-		<title>雷赛云微信公众号首页</title>
+		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title></title>
+
 		<link href="css/mui.min.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="css/header.css" />
-		<link rel="stylesheet" type="text/css" href="css/app.css" />
-
+		<link href="css/icons-extra.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+		<!--<link href="css/header.css" rel="stylesheet" />-->
 		<script src="js/mui.min.js"></script>
-
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mmenu.min.all.js"></script>
+		<script type="text/javascript" src="js/jquery.flexslider.js"></script>
+		<script type="text/javascript" src="js/o-script.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
 	</head>
 
 	<body>
-		<header class="mui-bar mui-bar-nav">
-			<h1 class="mui-title">首页</h1>
+		<!--顶栏-->
+		<header id="header" class="mui-bar mui-bar-transparent">
+			<div id="header">
+				<!--触碰顶栏返回顶部-->
+				<a href="#menu"></a>
+				<!--雷赛云公司名称-->
+				<!--<span id="Logo" class="svg">
+					<img src="fonts/method-draw-image.svg"/>
+				</span>-->
+				<!--用户头像-->
+				<!--<a class="backBtn" href="javascript:history.back();"></a>-->
+				<a href="#Logo" class="sculpture">
+				</a>
+				<!--登录信息-->
+				<a id="login_name" class="login_text">保洁组长：张长旺</a>
+				<a id="login_role" class="login_text">雷赛云-博宝源清洁服务管理系统</a>
+				<!--通知图标-->
+				<a class="remind mui-icon-extra mui-icon-extra-lamp">
+					<span style="position: relative;"><i class="dot">		
+					</i>
+					</span>
+				</a>
+				<!--扫一扫图标-->
+				<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>
 
-			<a href="pages/information/self/self_personalSettings.html" style=" position:absolute; left:auto;  right:0;
-
-margin-left:auto; margin-right:±VALUE;">
-				<img style="border-radius:40px;height: 35px;width: 35px;left: -55%; top: 5px;" src="images/cbd.jpg" />
-			</a>
-
+			</div>
 		</header>
+		<!--副标题：签到时间-->
+		<div class="subHeader">
+			<i class="i-home i-small">
+				<img src="fonts/稿定设计导出-20190721-113310.png"/>
+			</i>您已完成本日第四次考勤，点此查看</div>
+		<!--正文内容-->
 		<div class="mui-content">
-			<div id="slider" class="mui-slider" style="margin-top: 15px; margin-left: 2.5%;width: 95%;height: 200px;">
+			<!--滚动片-->
+			<div id="slider" class="mui-slider">
 				<div class="mui-slider-group mui-slider-loop">
 					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
 					<div class="mui-slider-item mui-slider-item-duplicate">
 						<a href="pages/complain/list_complain.html">
-							<img src="images/858712093676267294.jpg">
+							<img src="img/858712093676267294.jpg">
 							<p class="mui-slider-title">1</p>
 						</a>
 					</div>
 					<div class="mui-slider-item">
-						<a href="pages/complain/list_complain.html">
-							<img src="images/t014145efb179843d18.jpg">
-							<p class="mui-slider-title">垃圾桶打扫不干净</p>
+						<a href="pages/news/news1.html">
+							<img src="img/201811221139163916.png">
+							<p class="mui-slider-title">喜迎“春笋”</p>
 						</a>
 					</div>
 					<div class="mui-slider-item">
-						<a href="pages/complain/list_complain.html">
-							<img src="images/U621P4T8D6807565F107DT20141124111432.jpg">
-							<p class="mui-slider-title">路边有垃圾</p>
+						<a href="pages/news/news2.html">
+							<img src="img/blog/2.jpg">
+							<p class="mui-slider-title">公司简介</p>
 						</a>
 					</div>
 					<div class="mui-slider-item">
-						<a href="pages/complain/list_complain.html">
-							<img src="images/858712093676267294.jpg">
+						<a href="pages/news/news3.html">
+							<img src="img/blog/1.jpg">
 						</a>
-						<p class="mui-slider-title">屋内垃圾成堆</p>
+						<p class="mui-slider-title">公司理念</p>
 					</div>
 					<div class="mui-slider-item">
-						<a href="pages/complain/list_complain.html">
-							<img src="images/t01b98ba8990e577af4.jpg">
+						<a href="pages/news/news1.html">
+							<img src="img/201811221139163916.png">
 						</a>
-						<p class="mui-slider-title">垃圾桶垃圾过多</p>
+						<p class="mui-slider-title">喜迎“春笋”</p>
 					</div>
 					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
 					<div class="mui-slider-item mui-slider-item-duplicate">
-						<a href="pages/complain/list_complain.html">
-							<img src="images/t014145efb179843d18.jpg">
-							<p class="mui-slider-title">垃圾桶打扫不干净</p>
+						<a href="pages/news/news1.html">
+							<img src="img/201811221139163916.png">
 						</a>
+						<p class="mui-slider-title">喜迎“春笋”</p>
 					</div>
 				</div>
 				<div class="mui-slider-indicator mui-text-right">
@@ -80,90 +113,146 @@ margin-left:auto; margin-right:±VALUE;">
 					<div class="mui-indicator"></div>
 				</div>
 			</div>
-			<HR style="border:1 dashed #987cb9" width="100%" color=gainsboro SIZE=1>
-			<div class="mui-content">
-				<ul class="mui-table-view mui-grid-view mui-grid-9">
+			<!--滚动片、标题分割线-->
+			<div class="block1">
+			</div>
 
-					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-						<a href="pages/application/overtime_application.html">
-							<span class="mui-icon mui-icon-chatboxes"></span>
-							<div class="mui-media-body">加班申请</div>
-						</a>
-					</li>
-
-					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-						<a href="pages/information/salary_information.html">
-							<span class="mui-icon mui-icon-search"></span>
-							<div class="mui-media-body">查看工资</div>
-						</a>
-					</li>
-
-					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-						<a href="pages/work/report_work.html">
-							<span class="mui-icon mui-icon-plus"></span>
-							<div class="mui-media-body">工作上报</div>
-						</a>
-					</li>
-
-					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-						<a href="pages/complain/list_complain.html">
-							<span class="mui-icon mui-icon-chatboxes"></span>
-							<div class="mui-media-body">投诉处理</div>
-						</a>
-					</li>
-
-					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-						<a href="pages/attendence/make_attendence.html">
-							<span class="mui-icon mui-icon-compose"></span>
-							<div class="mui-media-body">考勤打卡</div>
-						</a>
-					</li>
-
-					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-						<a href="more.html">
-							<span class="mui-icon mui-icon-more"></span>
-							<div class="mui-media-body">更多</div>
-						</a>
-					</li>
-				</ul>
-				<div>
-					<HR style="border:1 dashed #987cb9" width="100%" color=gainsboro SIZE=1>
-					<p style="font-size: 20px; font-weight: bold; color: black;margin-left: 10px;margin-top: 10px;height: 30px;">重要通知</p>
-					
-					<div align="right" style="margin-top: -40px;margin-bottom: 10px; margin-right: 20px;font-size: 15px;">
-						<a href="list_news.html" >查看更多</a>
-					</div>
-					
-					<ul class="mui-table-view">
-						<li class="mui-table-view-cell mui-media">
-							<a href="pages/complain/list_complain.html">
-								<img class="mui-media-object mui-pull-left" src="images/U621P4T8D6807565F107DT20141124111432.jpg" style="height: 60px;max-width: 60px;">
-								<div class="mui-media-body" style="margin-top: 5%;">
-									投诉处理
-									<p class="mui-ellipsis">保洁部王强由于受到顾客投诉，经检查属实，特处于王强罚款50元惩罚</p>
-								</div>
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-							<a href="pages/complain/list_complain.html">
-								<img class="mui-media-object mui-pull-left" src="images/t01c77b1dac442a3cb0.jpg" style="height: 60px;max-width: 60px;">
-								<div class="mui-media-body" style="margin-top: 5%;">
-									奖励
-									<p class="mui-ellipsis">保洁部王梅梅受到顾客一致好评，特奖励50元现金</p>
-								</div>
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-							<a href="pages/complain/list_complain.html">
-								<img class="mui-media-object mui-pull-left" src="images/t01b98ba8990e577af4.jpg" style="height: 60px;max-width: 60px;">
-								<div class="mui-media-body" style="margin-top: 5%;">
-									投诉处理
-									<p class="mui-ellipsis">张天不满顾客要求，与顾客争吵，经检查确认无误，对于张天处于200元罚款，直属上司处于50元罚款</p>
-								</div>
-							</a>
-						</li>
-					</ul>
+			<!--一级标题栏-->
+			<div id="content" style="
+   margin-top: 0px;
+">
+				<div class="mainIconPane">
+					<span class="i-pane i-green">
+						<i class="mui-icon mui-icon-bars"></i>
+					</span>
+					<h4>我的任务</h4>
+					<p>
+						<div class="c-green misson-desc ">进行任务：清扫讯美科技广场A区5楼</div>
+						<div class="c-green">待处理任务：3件</div>
+					</p>
 				</div>
+
+				<div class="mainIconPane">
+					<span class="i-pane i-orange">
+						<i class="mui-icon mui-icon-chat"></i>
+					</span>
+					<h4>我的投诉</h4>
+					<p>
+						<div class="c-green misson-desc">进行中：清扫讯美科技广场A区5楼</div>
+						<div class="c-green">待处理：10件</div>
+					</p>
+				</div>
+
+				<div class="mainIconPane">
+					<span class="i-pane i-red">
+						<i id="walk-icon" class="walk mui-icon-extra mui-icon-extra-hotel"></i>
+					</span>
+					<h4>我的巡检</h4>
+					<p>
+						<div class="c-green misson-desc">进行：清扫讯美科技广场A区5楼</div>
+						<div class="c-green">待处理：10件</div>
+					</p>
+				</div>
+			</div>
+
+			<!--1，2级标题分割线-->
+			<div class="block2">
+				我的功能<span class="mui-pull-right">更多...</span>
+			</div>
+			<!--二级标题栏-->
+			<div class="exploreSiteFullPane">
+
+				<a href="#" class="explorePane">
+					<span class="i-pane i-blue">
+						<i class="mui-icon mui-icon-compose"></i>
+					</span>
+					<h4>加班申请</h4>
+				</a>
+				<a href="about.html" class="explorePane middle">
+					<span class="i-pane i-blue">
+						<i class="mui-icon mui-icon-bars"></i>
+					</span>
+					<h4>工资明细</h4>
+				</a>
+				<a href="blog.html" class="explorePane">
+					<span class="i-pane i-blue">
+						<i class="mui-icon mui-icon-redo"></i>
+					</span>
+					<h4>物料申领</h4>
+				</a>
+				<a href="pages/supervise/supervise_dashboard.html" class="explorePane">
+					<span class="i-pane i-blue">
+						<i class="mui-icon mui-icon-star"></i>
+					</span>
+					<h4>质量评审</h4>
+				</a>
+				<a href="shortcodes.html" class="explorePane middle">
+					<span class="i-pane i-blue">
+						<i class="mui-icon mui-icon-contact"></i>
+					</span>
+					<h4>通讯录</h4>
+				</a>
+				<a href="contact.html" class="explorePane">
+					<span class="i-pane i-blue">
+						<i class="mui-icon mui-icon-settings"></i>
+					</span>
+					<h4>绩效明细</h4>
+				</a>
+			</div>
+			<!--2，3级标题分割线-->
+			<div class="block3">
+				重要通知<span class="mui-pull-right">更多...</span>
+			</div>
+
+			<div id="content" style="
+   margin-top: 0px;
+">
+				<div class="mainIconPane">
+					<span class="i-pane i-green">
+						<i class="mui-icon mui-icon-info"></i>
+					</span>
+					<a href="pages/supervise/example_supervise.html">
+					<h4>达实大厦A区被客户投诉</h4>
+					</a>
+					<p>
+						<div class="c-green misson-desc">进行任务：达实大厦A区5楼</div>
+						<div class="c-green">被投诉人：张倩叶</div>
+					</p>
+				</div>
+
+				<div class="mainIconPane">
+					<span class="i-pane i-orange">
+						<i class="mui-icon mui-icon-info"></i>
+					</span>
+					<a href="pages/supervise/example_supervise.html">
+						<span></span>
+						<h4>南山智园B区质量评审不合格</h4>
+					</a>
+					<p>
+						<div class="c-green misson-desc">进行任务：南山智园B区B区5楼</div>
+						<div class="c-green">被投诉人：刘宝生</div>
+					</p>
+				</div>
+<!--
+				<div class="mainIconPane">
+					<span class="i-pane i-red">
+						<i class="mui-icon mui-icon-info"></i>
+					</span>
+					<h4>重要通知3</h4>
+					<p>
+						<div class="c-green misson-desc">进行：清扫讯美科技广场A区5楼</div>
+						<div class="c-green">待处理：10件</div>
+					</p>
+				</div>-->
+			</div>
+			<!-- 底栏 -->
+			<div class="socialMedia scl-grey">
+				<span href="#" class="raysharecloud">雷赛云——博宝源清洁管理系统</span>
+
+			</div>
+			<div class="socialMedia scl-grey">
+				<span href="#" class="raysharecloud">
+					由“深圳市雷赛信息科技有限公司”提供技术支持</span>
 			</div>
 		</div>
 

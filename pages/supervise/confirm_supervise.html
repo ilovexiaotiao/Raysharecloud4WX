@@ -1,26 +1,74 @@
-<!doctype html>
+<!--
+	作者：18688989936@163.com
+	时间：2019-7-21
+	描述：资讯模板_重构
+-->
+<!DOCTYPE html>
 <html>
 
 	<head>
-		<meta charset="UTF-8">
-		<title></title>
+		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title></title>
 		<link href="../../css/mui.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="../../css/header.css" />
+		<link href="../../css/icons-extra.css" rel="stylesheet" />
+		<link href="../../css/style.css" rel="stylesheet" />
+		<!--<link href="css/header.css" rel="stylesheet" />-->
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/jquery.mmenu.min.all.js"></script>
+		<script type="text/javascript" src="../../js/jquery.flexslider.js"></script>
+		<script type="text/javascript" src="../../js/o-script.js"></script>
+		<script type="text/javascript" src="../../js/jquery.easy-pie-chart.js"></script>
+
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
 	</head>
 
-	<body>
-		<script src="../../js/mui.min.js"></script>
-		<script type="text/javascript">
-			mui.init()
-		</script>
-		<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-			<h1 class="mui-title">投诉列表</h1>
+	<!--顶栏-->
+
+	<body class=o-page>
+		<header id="header" class="mui-bar mui-bar-transparent">
+			<div id="header">
+				<!--触碰顶栏返回顶部-->
+				<a href="#menu"></a>
+				<!--雷赛云公司名称-->
+				<!--<span id="Logo" class="svg">
+					<img src="fonts/method-draw-image.svg"/>
+				</span>-->
+				<!--用户头像-->
+				<!--<a class="backBtn" href="javascript:history.back();"></a>-->
+				<!--<a href="#Logo" class="sculpture">-->
+				<a class="backBtn" href="javascript:history.back();"></a>
+				</a>
+				<!--标题信息-->
+				<!--<a id="login_name" class="login_text">保洁组长：张长旺</a>
+				<a id="login_role" class="login_text">雷赛云-博宝源清洁服务管理系统</a>-->
+				<h1 style="color: white;">质量评审</h1>
+				<!--通知图标-->
+				<a class="remind mui-icon-extra mui-icon-extra-lamp">
+					<span style="position: relative;"><i class="dot">		
+					</i>
+					</span>
+				</a>
+				<!--扫一扫图标-->
+				<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>
+
+			</div>
 		</header>
-		<div class="mui-content" style="margin-top: 10px;">
+		<!--副标题：签到时间-->
+		<div class="subHeader">
+			<i class="i-home i-small">
+				<img src="../../fonts/稿定设计导出-20190721-113310.png"/>
+			</i>推荐完成“迅美科技广场A区5楼”任务，点击开始</div>
+
+		<!--月报-->
+		<div class="mui-content" style="margin-top: 10px; height: 540px;">
 			<div class="mui-content">
-				<img src="../../images/7a050583e72fb0cecb213bb962eeaf7.png" style="width: 50%;height: 50%;margin-left: 25%;" />
+				<img src="../../img/7a050583e72fb0cecb213bb962eeaf7.png" style="width: 50%;height: 50%;margin-left: 25%;" />
 			</div>
 			<div align="center" style="margin-top: 10px;margin-bottom: 10px;">
 				<a style="color: black;font-size: 30px;font-family: '黑体';">操作成功!</a>
@@ -38,6 +86,17 @@
 			</ul>
 
 		</div>
+
+		<!-- 底栏 -->
+		<div class="socialMedia scl-grey">
+			<span href="#" class="raysharecloud">雷赛云——博宝源清洁管理系统</span>
+
+		</div>
+		<div class="socialMedia scl-grey">
+			<span href="#" class="raysharecloud">
+					由“深圳市雷赛信息科技有限公司”提供技术支持</span>
+		</div>
+
 	</body>
 
 </html>
