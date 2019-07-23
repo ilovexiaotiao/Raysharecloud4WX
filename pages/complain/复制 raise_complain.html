@@ -6,11 +6,8 @@
 		<title>雷赛云微信公众号投诉申请单</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../../css/mui.min.css" rel="stylesheet" />
-			<link rel="stylesheet" type="text/css" href="../../css/header.css" />
-			<link rel="stylesheet" type="text/css" href="../../css/base.css" />
-			<!--<link rel="stylesheet" href="../../css/p.css" />-->
-			<link href="../../css/icons-extra.css" rel="stylesheet" />
-			<link href="../../css/style.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/base.css" />
 		<script src="../../js/jquery.min.js"></script>
 		<script src="../../js/mui.min.js"></script>
 		<script src="../../js/common.js"></script>
@@ -33,39 +30,13 @@
 
 	<body onload="start()">
 
-		<header id="header" class="mui-bar mui-bar-transparent">
-				<div id="header">
-					<!--触碰顶栏返回顶部-->
-					<a href="#menu"></a>
-					<!--雷赛云公司名称-->
-					<!--<span id="Logo" class="svg">
-					<img src="fonts/method-draw-image.svg"/>
-				</span>-->
-					<!--用户头像-->
-					<!--<a class="backBtn" href="javascript:history.back();"></a>-->
-					<!--<a href="#Logo" class="sculpture">-->
-					<a class="backBtn" href="javascript:history.back();"></a>
-					</a>
-					<!--标题信息-->
-					<!--<a id="login_name" class="login_text">保洁组长：张长旺</a>
-				<a id="login_role" class="login_text">雷赛云-博宝源清洁服务管理系统</a>-->
-					<h1 style="color: white;">发起投诉</h1>
-					<!--通知图标-->
-					<a class="remind mui-icon-extra mui-icon-extra-lamp">
-						<span style="position: relative;"><i class="dot">		
-					</i>
-					</span>
-					</a>
-					<!--扫一扫图标-->
-					<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>
-
-				</div>
-			</header>
-			<!--副标题：签到时间-->
-			<div class="subHeader" style="top: 80px;">
-				<i class="i-home i-small">
-				<img src="../../fonts/稿定设计导出-20190721-113310.png"/>
-			</i>推荐完成“迅美科技广场A区5楼”任务，点击开始</div>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../index.html" style="color: white;"></a>
+			<h1 class="mui-title">投诉申请单</h1>
+			<a href="list_complain.html">
+				<span class="mui-icon mui-icon-bars" style="border-radius:40px;height: 40px;width: 40px;left: 80%;color: white;"></span>
+			</a>
+		</header>
 
 		<div class="mui-content">
 			<form class="mui-input-group">
@@ -115,28 +86,24 @@
 			</div>
 		</form>
 		<!--上传图片-->
-			<div class="container">
-				<!--<label>上传签到图片：</label>-->
-				<button style="margin-left: 5px;" id="show-btn" onclick="show_btn()">考勤拍照</button>
-				
-				<!--
+		<div class="container">
+			<label>上传图片：</label>
+			<button id="show-btn" onclick="show_btn()">添加图片</button>
+			<p> 最多只能上传六张照片</p>
+			<!--
                 	作者：a15838261357@sina.com
                 	时间：2018-10-09
                 	描述：仅支持本地上传file_input
                 	    仅支持本地拍照file_input1
                 -->
-				<input type="file" id="file_input" name="upload" multiple />
-				<input type="file" id="file_input1" name="upload" accept="image/*" capture="camera">
-		
-				<button style="
-    margin-left: 50px;
-" onclick="window.location.href='confirm_complain.html'">保存记录</button>
-				<button style="
-    margin-left: 50px;
-" onclick="window.location.href='confirm_complain.html'" >发送考勤</button>
-			
-			</div>
-			<p> 最多只能上传六张照片,点击可删除</p>
+			<input type="file" id="file_input" name="upload" multiple />
+			<input type="file" id="file_input1" name="upload" accept="image/*" capture="camera">
+		</div>
+
+		<div align="center" style="margin-top: 10px;">
+			<button type="button" onclick="keep()" style="width: 80px;position: absolute;bottom: -70px;left: 25%;" class="mui-btn mui-btn-grey">保存</button>
+			<button type="button" onclick="complainSub()" style="width: 80px;position: absolute;bottom: -70px;" class="mui-btn mui-btn-grey">上报</button>
+		</div>
 		</div>
 	</body>
 
