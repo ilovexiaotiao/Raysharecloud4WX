@@ -7,37 +7,72 @@
 -->
 
 	<head>
-		<meta charset="UTF-8">
-		<title>雷赛云微信公众号考勤打卡</title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="../../css/mui.min.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
-		<link rel="stylesheet" href="../../css/p.css" />
-		<script src="../../js/mui.min.js"></script>
-		<script type="text/javascript" src="../../js/information.js"></script>
-	</head>
+			<meta charset="UTF-8">
+			<title>新建考勤</title>
+			<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+			<link href="../../css/mui.min.css" rel="stylesheet" />
+			<link rel="stylesheet" type="text/css" href="../../css/header.css" />
+			<!--<link rel="stylesheet" type="text/css" href="../../css/base.css" />-->
+			<!--<link rel="stylesheet" href="../../css/p.css" />-->
+			<link href="../../css/icons-extra.css" rel="stylesheet" />
+			<link href="../../css/style.css" rel="stylesheet" />
+			<script type="text/javascript" src="../../js/jquery.min.js"></script>
+			<script src="../../js/mui.min.js"></script>
+			<script src="../../js/common.js"></script>
+			<script src="../../js/public-method.js"></script>
+			<script type="text/javascript" src="../../js/information.js"></script>
+			<script type="text/javascript" src="../../js/map.js"></script>
+			<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+			<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ox4ZBEjYHBpoONXLQCBV8pzMUFpalyFU"></script>
+		</head>
 
 	<body>
 
-		<header class="mui-bar mui-bar-nav">
-			<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../index.html" style="color: white;"></a>
-			<h1 class="mui-title">考勤打卡</h1>
-			<a href="make_attendence.html">
-				<span class="mui-icon mui-icon-plusempty" style="border-radius:40px;height: 40px;width: 40px;left: 80%;color: white;"></span>
-			</a>
-		</header>
+		<header id="header" class="mui-bar mui-bar-transparent">
+				<div id="header">
+					<!--触碰顶栏返回顶部-->
+					<a href="#menu"></a>
+					<!--雷赛云公司名称-->
+					<!--<span id="Logo" class="svg">
+					<img src="fonts/method-draw-image.svg"/>
+				</span>-->
+					<!--用户头像-->
+					<!--<a class="backBtn" href="javascript:history.back();"></a>-->
+					<!--<a href="#Logo" class="sculpture">-->
+					<a class="backBtn" href="javascript:history.back();"></a>
+					</a>
+					<!--标题信息-->
+					<!--<a id="login_name" class="login_text">保洁组长：张长旺</a>
+				<a id="login_role" class="login_text">雷赛云-博宝源清洁服务管理系统</a>-->
+					<h1 style="color: white;">考勤列表</h1>
+					<!--通知图标-->
+					<a class="remind mui-icon-extra mui-icon-extra-lamp">
+						<span style="position: relative;"><i class="dot">		
+					</i>
+					</span>
+					</a>
+					<!--扫一扫图标-->
+					<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>
+
+				</div>
+			</header>
+			<!--副标题：签到时间-->
+			<div class="subHeader" style="top: 80px;">
+				<i class="i-home i-small">
+				<img src="../../fonts/稿定设计导出-20190721-113310.png"/>
+			</i>推荐完成“迅美科技广场A区5楼”任务，点击开始</div>
 		<!--投诉列表-->
 
-		<div class="mui-content" style="font-size: 10px;margin-top: 5px;">
+		<div class="mui-content" style="font-size: 10px;margin-top: 90px;">
 
 			<ul class="mui-table-view">
 				<div class="mui-input-row" style="top: 5px;">
-					<label style="font-size: 15px;width: 55%;"><img style="border-radius:40px;height: 20px;width: 20px;top: 5px;right: 5px;" src="../../images/logo.png" />雷赛科技有限公司</label>
+					<label style="font-size: 15px;width: 55%;"><img style="border-radius:40px;height: 20px;width: 20px;top: 5px;right: 5px;" src="../../img/logo.png" />雷赛科技有限公司</label>
 					<label style="font-size: 15px; padding-left: 25%;width: 45%;margin-top: 5px;">已保存</label>
 
 				</div>
 
-				<a href="example_attendence.html" style="color: #555555;"> <img class="mui-media-object mui-pull-left" src="../../images/cbd.jpg" style="max-width: 130px;height: 120px;"></a>
+				<a href="example_attendence.html" style="color: #555555;"> <img class="mui-media-object mui-pull-left" src="../../img/cbd.jpg" style="max-width: 130px;height: 120px;"></a>
 
 				<li class="mui-table-view-cell mui-media">
 
@@ -45,17 +80,23 @@
 						<form class="mui-input-group">
 							<div class="mui-input-row">
 								<label style="width: 80px;">编号</label>
-								<p>78915462165</p>
+								<p style="
+    margin-top: 6px;
+">78915462165</p>
 							</div>
 							<form class="mui-input-group">
 								<div class="mui-input-row">
 									<label style="width: 80px;">签到地点</label>
-									<p>科技花园</p>
+									<p style="
+    margin-top: 6px;
+">科技花园</p>
 								</div>
 								<form class="mui-input-group">
 									<div class="mui-input-row">
 										<label style="width: 80px;">签到时间</label>
-										<p>2018-10-11 16:31:36</p>
+										<p style="
+    margin-top: 6px;
+">2018-10-11 16:31:36</p>
 									</div>
 
 								</form>
@@ -69,9 +110,9 @@
 		<div class="anniu">
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell mui-collapse" style="height: 40px;">
-					<button type="button" class="mui-btn mui-btn-purple mui-btn-grey" onclick="window.location.href='confirm_attendence.html'" style="height: 30px;line-height: 0px;left: 70%;width:40px">上报</button>
+					<button type="button" class="mui-btn mui-btn-purple mui-btn-grey" onclick="window.location.href='confirm_attendence.html'" style="height: 30px;line-height: 0px;left: 70%;margin-left: -50px;">上报</button>
 
-					<button type="button" class="mui-btn mui-btn-purple mui-btn-grey" onclick="window.location.href='example_attendence.html'" style="height: 30px;line-height: 0px;width:40px">详情</button>
+					<button type="button" class="mui-btn mui-btn-purple mui-btn-grey" onclick="window.location.href='example_attendence.html'" style="height: 30px;line-height: 0px;">详情</button>
 
 				</li>
 
@@ -81,12 +122,12 @@
 
 				<ul class="mui-table-view">
 					<div class="mui-input-row" style="top: 5px;">
-					<label style="font-size: 15px;width: 55%;"><img style="border-radius:40px;height: 20px;width: 20px;top: 5px;right: 5px;" src="../../images/logo.png" />雷赛科技有限公司</label>
+					<label style="font-size: 15px;width: 55%;"><img style="border-radius:40px;height: 20px;width: 20px;top: 5px;right: 5px;" src="../../img/logo.png" />雷赛科技有限公司</label>
 					<label style="font-size: 15px; padding-left: 25%;width: 45%;margin-top: 5px;">已保存</label>
 
 					</div>
 
-					<a href="example_attendence.html" style="color: #555555;"> <img class="mui-media-object mui-pull-left" src="../../images/cbd.jpg" style="max-width: 130px;height: 120px;"></a>
+					<a href="example_attendence.html" style="color: #555555;"> <img class="mui-media-object mui-pull-left" src="../../img/cbd.jpg" style="max-width: 130px;height: 120px;"></a>
 
 					<li class="mui-table-view-cell mui-media">
 
@@ -94,17 +135,23 @@
 							<form class="mui-input-group">
 								<div class="mui-input-row">
 									<label style="width: 80px;">编号</label>
-									<p>78915462165</p>
+									<p style="
+    margin-top: 6px;
+">78915462165</p>
 								</div>
 								<form class="mui-input-group">
 									<div class="mui-input-row">
 										<label style="width: 80px;">签到地点</label>
-										<p>科技花园</p>
+										<p style="
+    margin-top: 6px;
+">科技花园</p>
 									</div>
 									<form class="mui-input-group">
 										<div class="mui-input-row">
 											<label style="width: 80px;">签到时间</label>
-											<p>2018-10-11 16:31:36</p>
+											<p style="
+    margin-top: 6px;
+">2018-10-11 16:31:36</p>
 										</div>
 
 									</form>
@@ -118,9 +165,9 @@
 			<div class="anniu">
 				<ul class="mui-table-view">
 					<li class="mui-table-view-cell mui-collapse" style="height: 40px;">
-						<button type="button" class="mui-btn mui-btn-purple mui-btn-grey" onclick="window.location.href='confirm_attendence.html'" style="height: 30px;line-height: 0px;left: 70%;width:40px">上报</button>
+						<button type="button" class="mui-btn mui-btn-purple mui-btn-grey" onclick="window.location.href='confirm_attendence.html'" style="height: 30px;line-height: 0px;left: 70%;margin-left: -50px;">上报</button>
 
-						<button type="button" class="mui-btn mui-btn-purple mui-btn-grey" onclick="window.location.href='example_attendence.html'" style="height: 30px;line-height: 0px;width:40px">详情</button>
+						<button type="button" class="mui-btn mui-btn-purple mui-btn-grey" onclick="window.location.href='example_attendence.html'" style="height: 30px;line-height: 0px;">详情</button>
 
 					</li>
 
@@ -132,12 +179,12 @@
 			<div>
 				<ul class="mui-table-view">
 					<div class="mui-input-row" style="top: 5px;">
-					<label style="font-size: 15px;width: 55%;"><img style="border-radius:40px;height: 20px;width: 20px;top: 5px;right: 5px;" src="../../images/logo.png" />雷赛科技有限公司</label>
+					<label style="font-size: 15px;width: 55%;"><img style="border-radius:40px;height: 20px;width: 20px;top: 5px;right: 5px;" src="../../img/logo.png" />雷赛科技有限公司</label>
 					<label style="font-size: 15px; padding-left: 25%;width: 45%;margin-top: 5px;">已保存</label>
 
 					</div>
 
-					<a href="example_attendence.html" style="color: #555555;"> <img class="mui-media-object mui-pull-left" src="../../images/cbd.jpg" style="max-width: 130px;height: 120px;"></a>
+					<a href="example_attendence.html" style="color: #555555;"> <img class="mui-media-object mui-pull-left" src="../../img/cbd.jpg" style="max-width: 130px;height: 120px;"></a>
 
 					<li class="mui-table-view-cell mui-media">
 
@@ -145,17 +192,21 @@
 							<form class="mui-input-group">
 								<div class="mui-input-row">
 									<label style="width: 80px;">编号</label>
-									<p>78915462165</p>
+									<label style="vertical-align: middle;">78915462165</label>
 								</div>
 								<form class="mui-input-group">
 									<div class="mui-input-row">
 										<label style="width: 80px;">签到地点</label>
-										<p>科技花园</p>
+										<p style="
+    margin-top: 6px;
+">科技花园</p>
 									</div>
 									<form class="mui-input-group">
 										<div class="mui-input-row">
 											<label style="width: 80px;">签到时间</label>
-											<p>2018-10-11 16:31:36</p>
+											<p style="
+    margin-top: 6px;
+">2018-10-11 16:31:36</p>
 										</div>
 
 									</form>
@@ -169,16 +220,24 @@
 			<div class="anniu">
 				<ul class="mui-table-view">
 					<li class="mui-table-view-cell mui-collapse" style="height: 40px;">
-						<button type="button" class="mui-btn mui-btn-purple mui-btn-grey" onclick="window.location.href='confirm_attendence.html'" style="height: 30px;line-height: 0px;left: 70%;width:40px">上报</button>
+						<button type="button" class="mui-btn mui-btn-purple mui-btn-grey" onclick="window.location.href='confirm_attendence.html'" style="height: 30px;line-height: 0px;left: 70%;margin-left: -50px;">上报</button>
 
-						<button type="button" class="mui-btn mui-btn-purple mui-btn-grey" onclick="window.location.href='example_attendence.html'" style="height: 30px;line-height: 0px;width:40px">详情</button>
+						<button type="button" class="mui-btn mui-btn-purple mui-btn-grey" onclick="window.location.href='example_attendence.html'" style="height: 30px;line-height: 0px;">详情</button>
 
 					</li>
 
 				</ul>
 
 			</div>
+<!-- 底栏 -->
+		<div class="socialMedia scl-grey" style="margin-top: 200px;">
+			<span href="#" class="raysharecloud">雷赛云——博宝源清洁管理系统</span>
 
+		</div>
+		<div class="socialMedia scl-grey" style="margin-top: 0px;">
+			<span href="#" class="raysharecloud">
+					由“深圳市雷赛信息科技有限公司”提供技术支持</span>
+		</div>
 	</body>
 
 </html>
