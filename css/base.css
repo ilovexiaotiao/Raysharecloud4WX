@@ -1,7 +1,7 @@
-html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin: 0; padding: 0; }
+/*html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin: 0; padding: 0; }
 fieldset, img { border: none; }
 ul, ol, li { list-style: none; }
-body { color: #333; font: 12px/20px "Microsoft Yahei","Arial Narrow",HELVETICA; }
+body { color: #333; font: 12px/20px "Microsoft Yahei","Arial Narrow",HELVETICA; }*/
 
 html,body{
     width: 100%;
@@ -118,3 +118,19 @@ html,body{
 				font-size: 20px;
 				margin-left: -240px
 			}
+			
+p{
+	margin-top: 10px;
+}
+			#allmap {
+				width: 90%;
+				height: 40%;
+				overflow: hidden;
+				margin: 0;
+				font-family: "微软雅黑";
+				margin: 0 auto;
+			}
+
+
+
+  

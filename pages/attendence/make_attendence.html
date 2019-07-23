@@ -8,8 +8,9 @@
 		<link href="../../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
 		<link rel="stylesheet" type="text/css" href="../../css/base.css" />
-		<link rel="stylesheet" href="../../css/p.css" />
-		
+		<!--<link rel="stylesheet" href="../../css/p.css" />-->
+		<link href="../../css/icons-extra.css" rel="stylesheet" />
+		<link href="../../css/style.css" rel="stylesheet" />
 		<script type="text/javascript" src="../../js/jquery.min.js"></script>
 		<script src="../../js/mui.min.js"></script>
 		<script src="../../js/common.js"></script>
@@ -18,7 +19,6 @@
 		<script type="text/javascript" src="../../js/map.js"></script>
 		<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
 		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ox4ZBEjYHBpoONXLQCBV8pzMUFpalyFU"></script>
-
 
 		<script type="text/javascript">
 			mui.init()
@@ -37,73 +37,105 @@
 		</script>
 
 	</head>
-<body onload="start();today();autofill();">
-			<header class="mui-bar mui-bar-nav">
-			<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../index.html" style="color: white;"></a>
-			<h1 class="mui-title">新建考勤</h1>
-							<a href="list_attendence.html">
-				<span class="mui-icon mui-icon-bars" style="border-radius:40px;height: 40px;width: 40px;left: 80%;color: white;"></span>
-			</a>
+
+	<body onload="start();today();autofill();">
+		<header id="header" class="mui-bar mui-bar-transparent">
+			<div id="header">
+				<!--触碰顶栏返回顶部-->
+				<a href="#menu"></a>
+				<!--雷赛云公司名称-->
+				<!--<span id="Logo" class="svg">
+					<img src="fonts/method-draw-image.svg"/>
+				</span>-->
+				<!--用户头像-->
+				<!--<a class="backBtn" href="javascript:history.back();"></a>-->
+				<!--<a href="#Logo" class="sculpture">-->
+				<a class="backBtn" href="javascript:history.back();"></a>
+				</a>
+				<!--标题信息-->
+				<!--<a id="login_name" class="login_text">保洁组长：张长旺</a>
+				<a id="login_role" class="login_text">雷赛云-博宝源清洁服务管理系统</a>-->
+				<h1 style="color: white;">发起考勤</h1>
+				<!--通知图标-->
+				<a class="remind mui-icon-extra mui-icon-extra-lamp">
+					<span style="position: relative;"><i class="dot">		
+					</i>
+					</span>
+				</a>
+				<!--扫一扫图标-->
+				<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>
+
+			</div>
 		</header>
-		<div id="allmap" style="top: 60px;"></div>
+		<!--副标题：签到时间-->
+		<div class="subHeader" style="top: 80px;">
+			<i class="i-home i-small">
+				<img src="../../fonts/稿定设计导出-20190721-113310.png"/>
+			</i>推荐完成“迅美科技广场A区5楼”任务，点击开始</div>
+		<!--地图显示-->
+		<div id="allmap" style="top: 90px;"></div>
 
 		<div class="tips"></div>
-		<div class="mui-content" style="margin-top: -30px;">
-			<form class="mui-input-group" style="margin-top: 60px;">
-				<div class="mui-input-row">
-					<input type="text" class="mui-input-clear" placeholder="请输入考勤名称" style="margin-top: 0px;">
-				</div>
-			</form>
-			<form class="mui-input-group">
-				<div class="mui-input-row">
+		<div class="mui-content" style="margin-top: 100px;">
+
+			<form class="mui-input-group" style="
+    margin-bottom: 0px" ;>
+				<div class=" mui-input-row ">
 					<label>员工编号</label>
-					<input type="text" id="bh" class="mui-input-clear" disabled="disabled" placeholder="y45456458785416">
-				
+					<input type="text " id="bh " class="mui-input-clear " disabled="disabled " placeholder="y45456458785416 " style="
+    margin-top: 5px;
+">
+
 				</div>
 			</form>
-			<form class="mui-input-group">
+			<form class="mui-input-group " style=" margin-bottom: 0px;">
 				<div class="mui-input-row">
 					<label>公司</label>
-					<input type="text" id="gs" disabled="disabled" class="mui-input-clear" placeholder="公司名称">
+					<input type="text" id="gs" disabled="disabled" class="mui-input-clear" placeholder="博宝源清洁" style="
+    margin-top: 5px;">
 				</div>
 			</form>
-			<form class="mui-input-group">
+			<!--<form class="mui-input-group">
 				<div class="mui-input-row">
 					<label>范围</label>
 					<input type="text" class="mui-input-clear" placeholder="打卡范围">
 				</div>
-			</form>
+			</form>-->
 
-			<form class="mui-input-group">
+			<form class="mui-input-group" style="margin-bottom: 0px;">
 				<div class="mui-input-row">
-					<label>签到时间</label>
-					<input type="text" disabled="disabled" name="date" id="today" class="mui-input-clear" placeholder="">
+					<label>考勤时间</label>
+					<input type="text" disabled="disabled" name="date" id="today" class="mui-input-clear" placeholder="" style="
+    margin-top: 5px;">
 				</div>
 			</form>
-			<form class="mui-input-group">
+			<form class="mui-input-group" style="margin-bottom: 0px;">
 				<div class="mui-input-row">
-					<label>工作日</label>
-					<input type="text" id="gzr" class="mui-input-clear" placeholder="工作日">
+					<label>考勤类型</label>
+					<input type="text" id="gzr" class="mui-input-clear" placeholder="工作日" style="
+    margin-top: 5px;">
 				</div>
 			</form>
 
-			<form class="mui-input-group">
+			<form class="mui-input-group" style="margin-bottom: 0px;">
 				<div class="mui-input-row">
 					<label>地点</label>
-					<input type="text" class="mui-input-clear" id="address" placeholder="地点" disabled="disabled">
-					
+					<input type="text" class="mui-input-clear" id="address" placeholder="地点" disabled="disabled" style="
+    margin-top: 5px;">
+
 				</div>
 			</form>
 			<form class="mui-input-group">
 				<div class="mui-input-row">
 					<label>人数</label>
-					<input type="text" class="mui-input-clear" placeholder="人数" value="1">
+					<input type="text" class="mui-input-clear" placeholder="人数" value="1" style="
+    margin-top: 5px;">
 				</div>
 			</form>
 			<form class="mui-input-group">
 				<div class="mui-input-row">
 
-					<div class="mui-input-row">
+					<div class="mui-input-row" style="margin-bottom: 0px;">
 						<label>开放加入</label>
 						<div class="mui-switch mui-active">
 							<div class="mui-switch-handle"></div>
@@ -114,7 +146,7 @@
 			<form class="mui-input-group">
 				<div class="mui-input-row">
 
-					<div class="mui-input-row">
+					<div class="mui-input-row" style="margin-bottom: 0px;">
 						<label>打卡提醒</label>
 						<div class="mui-switch mui-active">
 							<div class="mui-switch-handle"></div>
@@ -124,9 +156,9 @@
 			</form>
 			<!--上传图片-->
 			<div class="container">
-				<label>上传签到图片：</label>
-				<button id="show-btn" onclick="show_btn()">添加图片</button>
-				<p> 最多只能上传六张照片</p>
+				<!--<label>上传签到图片：</label>-->
+				<button style="margin-left: 5px;" id="show-btn" onclick="show_btn()">考勤拍照</button>
+				
 				<!--
                 	作者：a15838261357@sina.com
                 	时间：2018-10-09
@@ -135,22 +167,39 @@
                 -->
 				<input type="file" id="file_input" name="upload" multiple />
 				<input type="file" id="file_input1" name="upload" accept="image/*" capture="camera">
+		
+				<button style="
+    margin-left: 50px;
+" onclick="window.location.href='confirm_attendence.html'">保存记录</button>
+				<button style="
+    margin-left: 50px;
+" onclick="window.location.href='confirm_attendence.html'" >发送考勤</button>
+			
 			</div>
-			<div align="center" style="margin-top: 10px;">
-				<button type="button" onclick="window.location.href='confirm_attendence.html'" style="width: 80px;position: absolute;bottom: -520px;left: 25%;" class="mui-btn mui-btn-grey">保存</button>
-				<button type="button" onclick="window.location.href='confirm_attendence.html'" style="width: 80px;position: absolute;bottom: -520px;" class="mui-btn mui-btn-grey">上报</button>
-			</div>
+			<p> 最多只能上传六张照片</p>
+			
+			
+		</div>
+		<!-- 底栏 -->
+		<!--<div class="socialMedia scl-grey" >
+			<span href="#" class="raysharecloud">雷赛云——博宝源清洁管理系统</span>
 
+		</div>-->
+		<!--<div class="socialMedia scl-grey" style="margin-top: 0px;">
+			<span href="#" class="raysharecloud">-->
+					<!--由“深圳市雷赛信息科技有限公司”提供技术支持</span>-->
+		<!--</div>-->
 	</body>
-</html>
-<script type="text/javascript">
-	var map = new RSMap();
-	map.getPoint("lng", "lat");
-	map.getAddress("address");
-	map.getMap("allmap");
-	//console(map.getPoint().lng);
+	<script type="text/javascript">
+		var map = new RSMap();
+		map.getPoint("lng", "lat");
+		map.getAddress("address");
+		map.getMap("allmap");
+		//console(map.getPoint().lng);
 
-	//console.log(map.sendSignal());
-	//map.getMap();
-	//map.getAddress();
-</script>
+		//console.log(map.sendSignal());
+		//map.getMap();
+		//map.getAddress();
+	</script>
+
+</html>
