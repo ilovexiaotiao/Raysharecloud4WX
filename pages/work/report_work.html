@@ -14,7 +14,8 @@
 		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
 		<link rel="stylesheet" type="text/css" href="../../css/base.css" />
 		<link rel="stylesheet" href="../../css/p.css" />
-
+		<link href="../../css/icons-extra.css" rel="stylesheet" />
+		<link href="../../css/style.css" rel="stylesheet" />
 		<script src="../../js/jquery.min.js"></script>
 		<script src="../../js/mui.min.js"></script>
 		<script src="../../js/common.js"></script>
@@ -42,46 +43,72 @@
 
 	<body onload="start();today();autofill1()">
 
-		<header class="mui-bar mui-bar-nav">
-			<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../index.html" style="color: white;"></a>
-			<h1 class="mui-title">工作上报</h1>
-			<a href="list_work.html">
-				<span class="mui-icon mui-icon-bars" style="border-radius:40px;height: 40px;width: 40px;left: 80%;color: white;"></span>
-			</a>
+		<header id="header" class="mui-bar mui-bar-transparent">
+			<div id="header">
+				<!--触碰顶栏返回顶部-->
+				<a href="#menu"></a>
+				<!--雷赛云公司名称-->
+				<!--<span id="Logo" class="svg">
+					<img src="fonts/method-draw-image.svg"/>
+				</span>-->
+				<!--用户头像-->
+				<!--<a class="backBtn" href="javascript:history.back();"></a>-->
+				<!--<a href="#Logo" class="sculpture">-->
+				<a class="backBtn" href="javascript:history.back();"></a>
+				</a>
+				<!--标题信息-->
+				<!--<a id="login_name" class="login_text">保洁组长：张长旺</a>
+				<a id="login_role" class="login_text">雷赛云-博宝源清洁服务管理系统</a>-->
+				<h1 style="color: white;">现场巡检</h1>
+				<!--通知图标-->
+				<a class="remind mui-icon-extra mui-icon-extra-lamp">
+					<span style="position: relative;"><i class="dot">		
+					</i>
+					</span>
+				</a>
+				<!--扫一扫图标-->
+				<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>
+
+			</div>
 		</header>
+		<!--副标题：签到时间-->
+		<div class="subHeader" style="top: 80px;">
+			<i class="i-home i-small">
+				<img src="../../fonts/稿定设计导出-20190721-113310.png"/>
+			</i>推荐完成“迅美科技广场A区5楼”任务，点击开始</div>
 		<div id="allmap" style="top: 60px;"></div>
 
 		<div class="tips"></div>
 		<div class="mui-content">
 			<!-- 上报内容 -->
 
-			<form class="mui-input-group" style="margin-top: 30px;">
+			<form class="mui-input-group" style="margin-bottom: 0px;">
 				<div class="mui-input-row">
 					<label>项目编号</label>
 					<input type="text" id="xm" class="mui-input-clear" disabled="disabled" placeholder="X256413215641">
 
 				</div>
 			</form>
-			<form class="mui-input-group">
+			<form class="mui-input-group" style="margin-bottom: 0px;">
 				<div class="mui-input-row">
 					<label>工位编号</label>
 					<input type="text" id="gw" class="mui-input-clear" disabled="disabled" placeholder="M545646541561768">
 
 				</div>
 			</form>
-			<form class="mui-input-group">
+			<form class="mui-input-group" style="margin-bottom: 0px;">
 				<div class="mui-input-row">
 					<label>员工编号</label>
 					<input type="text" id="yg" class="mui-input-clear" disabled="disabled" placeholder="y45456458785416">
 				</div>
 			</form>
-			<form class="mui-input-group">
+			<form class="mui-input-group" style="margin-bottom: 0px;">
 				<div class="mui-input-row">
 					<label>签到时间</label>
 					<input type="text" name="date" id="today" class="mui-input-clear" disabled="disabled">
 				</div>
 			</form>
-			<form class="mui-input-group">
+			<form class="mui-input-group" style="margin-bottom: 0px;">
 				<div class="mui-input-row">
 					<label>签到地点</label>
 					<input type="text" name="date" id="address" class="mui-input-clear" disabled="disabled">
