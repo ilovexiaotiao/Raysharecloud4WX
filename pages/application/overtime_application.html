@@ -3,17 +3,17 @@
 	<!--
 	作者：a15838261357@sina.com
 	时间：2018-10-09
-	描述：加班申请单
+	描述：请假申请单
 -->
 
 	<head>
 		<meta charset="UTF-8">
-		<title>雷赛云微信公众号加班申请单</title>
+		<title>雷赛云微信公众号请假班申请单</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="../../css/mui.min.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
-		<link rel="stylesheet" href="../../css/p.css" />
 		
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css"/>
+		<link rel="stylesheet" href="../../css/icons-extra.css" />
+		<link rel="stylesheet" href="../../css/style.css" />
 		<script src="../../js/mui.min.js"></script>
 		<script type="text/javascript" src="../../js/information.js"></script>
 		<script type="text/javascript">
@@ -24,17 +24,45 @@
 
 	<body>
 
-		<header class="mui-bar mui-bar-nav">
-			<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../index.html" style="color: white;"></a>
-			<h1 class="mui-title">加班（请假）申请单</h1>
-			<a href="list_application.html">
-				<span class="mui-icon mui-icon-bars" style="border-radius:40px;height: 40px;width: 40px;left: 80%;color: white;"></span>
-			</a>
+		<!--顶栏-->
+		<!--顶栏-->
+		<header id="header" class="mui-bar mui-bar-transparent">
+			<div id="header">
+				<!--触碰顶栏返回顶部-->
+				<a href="#menu"></a>
+				<!--雷赛云公司名称-->
+				<!--<span id="Logo" class="svg">
+					<img src="fonts/method-draw-image.svg"/>
+				</span>-->
+				<!--用户头像-->
+				<!--<a class="backBtn" href="javascript:history.back();"></a>-->
+				<!--<a href="#Logo" class="sculpture">-->
+				<a class="backBtn" href="javascript:history.back();"></a>
+				</a>
+				<!--标题信息-->
+				<!--<a id="login_name" class="login_text">保洁组长：张长旺</a>
+				<a id="login_role" class="login_text">雷赛云-博宝源清洁服务管理系统</a>-->
+				<h1 style="color: white;">申请详情</h1>
+				<!--通知图标-->
+				<a class="remind mui-icon-extra mui-icon-extra-lamp">
+					<span style="position: relative;"><i class="dot">		
+					</i>
+					</span>
+				</a>
+				<!--扫一扫图标-->
+				<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>
+
+			</div>
 		</header>
+		<!--副标题：签到时间-->
+		<div class="subHeader" style="top: 80px;">
+			<i class="i-home i-small">
+				<img src="../../fonts/稿定设计导出-20190721-113310.png"/>
+			</i>推荐完成“迅美科技广场A区5楼”任务，点击开始</div>
 		<!--
         	作者：a15838261357@sina.com
         	时间：2018-10-09
-        	描述：加班表的内容
+        	描述：请假信息
         -->
 		<div class="mui-content">
 			<form class="mui-input-group">
@@ -50,7 +78,7 @@
 				<form class="mui-input-group">
 					<div class="mui-input-row">
 						<label>姓名</label>
-						<input type="text" class="mui-input-clear" placeholder="姓名">
+						<input type="text" class="mui-input-clear" placeholder="姓名" >
 					</div>
 					<form class="mui-input-group">
 						<div class="mui-input-row">
@@ -60,17 +88,21 @@
 						<form class="mui-input-group">
 							<div class="mui-input-row">
 								<label>部门名称</label>
-								<input type="text" class="mui-input-clear" placeholder="部门名称">
+								<input type="text" class="mui-input-clear" placeholder="部门名称" >
 							</div>
 							<form class="mui-input-group">
 								<div class="mui-input-row">
 									<label>岗位名称</label>
-									<input type="text" class="mui-input-clear" placeholder="岗位名称">
+									<input type="text" class="mui-input-clear" placeholder="岗位名称" >
 								</div>
 								<form class="mui-input-group">
 									<div class="mui-input-row">
 										<label>加班（请假）类型</label>
-
+										<!--
+	作者：a15838261357@sina.com
+	时间：2018-10-09
+	描述：加班类型
+-->
 										<select style="font-size: 10px;">
 											<option value="">--请选择--</option>
 											<option value="volvo">日常</option>
@@ -89,7 +121,7 @@
 										<div class="mui-input-row">
 											<label>加班（请假）原因</label>
 										</div>
-										<textarea name="comment" form="usrform" placeholder="请填写原因"></textarea> </div>
+										<textarea name="comment" form="usrform" placeholder="请填写原因" style="height: 150px;"></textarea> </div>
 		</form>
 		</form>
 		</form>
@@ -97,9 +129,10 @@
 		</form>
 		</form>
 		</form>
+
 		<div align="center" style="margin-top: 10px;">
-			<button type="button" onclick="window.location.href='confirm_application.html'" style="width: 80px;position: absolute;left: 25%;" class="mui-btn mui-btn-grey">保存</button>
-			<button type="button" onclick="window.location.href='confirm_application.html'" style="width: 80px;position: absolute;" class="mui-btn mui-btn-grey">上报</button>
+			<button type="button" onclick="window.location.href='confirm_application.html'" style="width: 80px;position: absolute;bottom: 0;left: 25%;" class="mui-btn mui-btn-grey">保存</button>
+			<button type="button" onclick="window.location.href='confirm_application.html'" style="width: 80px;position: absolute;bottom: 0;" class="mui-btn mui-btn-grey">上报</button>
 		</div>
 		</div>
 	</body>

@@ -6,18 +6,23 @@
 		<title>雷赛云微信公众号入职申请单</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../../css/mui.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="../../css/header.css" />
-		<link rel="stylesheet" href="../../css/entry.css" />
-		<link href="../../css/p.css" />
+		<!--<link rel="stylesheet" href="../../css/header.css" />-->
+		<!--<link rel="stylesheet" href="../../css/entry.css" />-->
+		<link rel="stylesheet" href="../../css/icons-extra.css" />
+		<link rel="stylesheet" href="../../css/style.css" />
 		<script src="../../js/mui.min.js"></script>
 		<script src="../../js/common.js"></script>
-		<script type="text/javascript" src="../../js/information.js" ></script>
+		<script type="text/javascript" src="../../js/information.js"></script>
 		<script src="../../js/jquery.min.js"></script>
 
 		<script type="text/javascript">
 			mui.init()
 		</script>
-
+		<style>
+			p {
+				margin-top: 10px;
+			}
+		</style>
 	</head>
 	<!--
 	作者：a15838261357@sina.com
@@ -27,13 +32,40 @@
 
 	<body onload="getPhoneType()">
 
-		<header class="mui-bar mui-bar-nav">
-		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-			<h1 class="mui-title">入职（离职）申请单</h1>
-			<a href="list_application.html">
-			<span class="mui-icon mui-icon-bars" style="border-radius:40px;height: 40px;width: 40px;left: 80%;color: white;"></span>
-		</a>
+		<!--顶栏-->
+		<header id="header" class="mui-bar mui-bar-transparent">
+			<div id="header">
+				<!--触碰顶栏返回顶部-->
+				<a href="#menu"></a>
+				<!--雷赛云公司名称-->
+				<!--<span id="Logo" class="svg">
+					<img src="fonts/method-draw-image.svg"/>
+				</span>-->
+				<!--用户头像-->
+				<!--<a class="backBtn" href="javascript:history.back();"></a>-->
+				<!--<a href="#Logo" class="sculpture">-->
+				<a class="backBtn" href="javascript:history.back();"></a>
+				</a>
+				<!--标题信息-->
+				<!--<a id="login_name" class="login_text">保洁组长：张长旺</a>
+				<a id="login_role" class="login_text">雷赛云-博宝源清洁服务管理系统</a>-->
+				<h1 style="color: white;">申请详情</h1>
+				<!--通知图标-->
+				<a class="remind mui-icon-extra mui-icon-extra-lamp">
+					<span style="position: relative;"><i class="dot">		
+					</i>
+					</span>
+				</a>
+				<!--扫一扫图标-->
+				<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>
+
+			</div>
 		</header>
+		<!--副标题：签到时间-->
+		<div class="subHeader" style="top: 80px;">
+			<i class="i-home i-small">
+				<img src="../../fonts/稿定设计导出-20190721-113310.png"/>
+			</i>推荐完成“迅美科技广场A区5楼”任务，点击开始</div>
 		<!--
 	作者：a15838261357@sina.com
 	时间：2018-10-09
@@ -44,30 +76,30 @@
 				<div class="mui-input-row">
 					<label>申请类型</label>
 
-					<p style="margin-left: 65%;">入职</p>
+					<p style="margin-left: 50%;">入职</p>
 				</div>
 				<form class="mui-input-group">
 					<div class="mui-input-row">
 						<label>姓名</label>
-					<p style="margin-left: 65%;">王五</p>
+						<p style="margin-left: 50%;">王五</p>
 					</div>
 					<form class="mui-input-group">
 						<div class="mui-input-row">
 							<label>性别</label>
-					<p style="margin-left: 65%;">男</p>
+							<p style="margin-left: 50%;">男</p>
 						</div>
 					</form>
 					<form class="mui-input-group">
 						<div class="mui-input-row">
 							<label>身份证号</label>
-					<p style="margin-left: 65%;">412726199854126547</p>
+							<p style="margin-left: 50%;">412726199854126547</p>
 						</div>
 					</form>
 					<form class="mui-input-group">
 						<div class="mui-input-row">
 							<label>身份证正面照片</label>
 							<div class="file1" align="center" style="top: 0px;">
-								<img class="camerabox" id="newImage" src="../../images/u=4181988924,410599396&fm=26&gp=0.jpg" style="width: 10%; margin-top: 0px;">
+								<img class="camerabox" id="newImage" src="../../img/u=4181988924,410599396&fm=26&gp=0.jpg" style="width: 10%; margin-top: 0px;">
 							</div>
 						</div>
 					</form>
@@ -76,86 +108,74 @@
 						<div class="mui-input-row">
 							<label>身份证反面照片</label>
 							<div class="file1" align="center" style="top: 5px;">
-								<img class="camerabox" id="newImage1" src="../../images/u=4181988924,410599396&fm=26&gp=0.jpg" style="width: 10%; margin-top: 0px;">
-	
+								<img class="camerabox" id="newImage1" src="../../img/u=4181988924,410599396&fm=26&gp=0.jpg" style="width: 10%; margin-top: 0px;">
+
 							</div>
 						</div>
 					</form>
 					<form class="mui-input-group">
 						<div class="mui-input-row">
 							<label>入职（离职）项目</label>
-							<p style="margin-left: 65%;">雷赛科技有限公司</p>
+							<p style="margin-left: 50%;">雷赛科技有限公司</p>
 
 						</div>
 						<form class="mui-input-group">
 							<div class="mui-input-row">
 								<label>入职（离职）岗位</label>
-							<p style="margin-left: 65%;">保洁员</p>
+								<p style="margin-left: 50%;">保洁员</p>
 							</div>
 						</form>
 						<form class="mui-input-group">
 							<div class="mui-input-row">
 								<label>工资结算方式</label>
-								<p style="margin-left: 65%;">现金</p>
+								<p style="margin-left: 50%;">现金</p>
 
 							</div>
 						</form>
 						<form class="mui-input-group">
 							<div class="mui-input-row">
 								<label>入职（离职）日期</label>
-							<p style="margin-left: 65%;">2018/09/20</p>
+								<p style="margin-left: 50%;">2018/09/20</p>
+							</div>
+						</form>
+
+						<form class="mui-input-group">
+							<div class="mui-input-row">
+								<label>工作经历</label>
+								<p style="margin-left: 50%;">无</p>
+							</div>
+						</form>
+
+						<form class="mui-input-group">
+							<div class="mui-input-row">
+								<label>银行卡号</label>
+								<p style="margin-left: 50%;">暂未提供</p>
 							</div>
 						</form>
 						<form class="mui-input-group">
 							<div class="mui-input-row">
-								<label>入职（离职）说明</label>
+								<label>银行卡照片</label>
+								<div class="file1" align="center" style="top: 0px;">
+									<img class="camerabox" src="../../img/u=1943935163,3098413327&fm=72.jpg" id="newImage2" style="width: 10%; margin-top: 0px;" />
+
+								</div>
 							</div>
-							<p style="margin-left: 65%;">无</p>
+						</form>
+						<form class="mui-input-group">
+							<div class="mui-input-row">
+								<label>家庭信息</label>
+								<p style="margin-left: 50%;">无填写</p>
+							</div>
+						</form>
 
-		</form>
-		<form class="mui-input-group">
-			<div class="mui-input-row">
-				<label>工作经历</label>
-							<p style="margin-left: 65%;">无</p>
-			</div>
-		</form>
+					</form>
+				</form>
+			</form>
 
-		<form class="mui-input-group">
-			<div class="mui-input-row">
-				<label>银行卡号</label>
-							<p style="margin-left: 65%;">暂未提供</p>
+			<div align="center" style="margin-top: 10px;">
+				<button type="button" onclick="window.location.href='confirm_application.html'" style="width: 80px;position: absolute;left: 25%;" class="mui-btn mui-btn-grey">保存</button>
+				<button type="button" onclick="window.location.href='confirm_application.html'" style="width: 80px;position: absolute;" class="mui-btn mui-btn-grey">上报</button>
 			</div>
-		</form>
-		<form class="mui-input-group">
-			<div class="mui-input-row">
-				<label>银行卡照片</label>
-				<div class="file1" align="center" style="top: 0px;">
-					<img class="camerabox" src="../../images/u=1943935163,3098413327&fm=72.jpg" id="newImage2" style="width: 10%; margin-top: 0px;" />
-
-				</div>
-			</div>
-		</form>
-		<form class="mui-input-group">
-			<div class="mui-input-row">
-				<label>家庭信息</label>
-							<p style="margin-left: 65%;">无填写</p>
-			</div>
-		</form>
-		<form class="mui-input-group">
-			<div class="mui-input-row">
-				<label>其他</label>
-			</div>
-							<p style="margin-left: 65%;">无</p>
-
-		</form>
-		</form>
-		</form>
-		</form>
-     
-           <div align="center" style="margin-top: 10px;">
-			<button type="button" onclick="window.location.href='confirm_application.html'" style="width: 80px;position: absolute;left: 25%;" class="mui-btn mui-btn-grey">保存</button>
-			<button type="button" onclick="window.location.href='confirm_application.html'" style="width: 80px;position: absolute;" class="mui-btn mui-btn-grey">上报</button>
-           </div>
 		</div>
 	</body>
 
