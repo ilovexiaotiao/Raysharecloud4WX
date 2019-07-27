@@ -11,7 +11,7 @@
 		<title>新建考勤</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../../css/mui.min.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
+		<!--<link rel="stylesheet" type="text/css" href="../../css/header.css" />-->
 		<!--<link rel="stylesheet" type="text/css" href="../../css/base.css" />-->
 		<!--<link rel="stylesheet" href="../../css/p.css" />-->
 		<link href="../../css/icons-extra.css" rel="stylesheet" />
@@ -24,6 +24,14 @@
 		<script type="text/javascript" src="../../js/map.js"></script>
 		<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
 		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ox4ZBEjYHBpoONXLQCBV8pzMUFpalyFU"></script>
+		<style type="text/css">
+			a img {
+				margin-left: 10px;
+			}
+			li button{
+				bottom:10px;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -46,20 +54,20 @@
 				<a id="login_role" class="login_text">雷赛云-博宝源清洁服务管理系统</a>-->
 				<h1 style="color: white;">巡查列表</h1>
 				<!--通知图标-->
-				<a class="remind mui-icon-extra mui-icon-extra-lamp">
+				<a class="remind mui-icon-extra mui-icon-extra-lamp" onclick="click_news()">
 					<span style="position: relative;"><i class="dot">		
 					</i>
 					</span>
 				</a>
 				<!--添加图标-->
-				<a href="excute_supervise.html" class="add mui-icon mui-icon-plus"></a>
+				<a class="sweep mui-icon mui-icon-plus" onclick="click_supervise_add()"></a>
 				<!--扫一扫图标-->
 				<!--<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>-->
 
 			</div>
 		</header>
 		<!--副标题：巡查时间-->
-		<div class="subHeader" style="top: 80px;">
+		<div class="subHeader" style="top: 80px;" onclick="click_mission()">
 			<i class="i-home i-small">
 				<img src="../../fonts/稿定设计导出-20190721-113310.png"/>
 			</i>推荐完成“迅美科技广场A区5楼”任务，点击开始</div>
@@ -69,12 +77,12 @@
 
 			<ul class="mui-table-view">
 				<div class="mui-input-row" style="top: 5px;">
-					<label style="font-size: 15px;width: 55%;"><img style="border-radius:40px;height: 20px;width: 20px;top: 5px;right: 5px;" src="../../img/logo.png" />雷赛科技有限公司</label>
+					<label style="font-size: 15px;width: 55%;"><img style="border-radius:40px;height: 20px;width: 20px;top: 5px;right: 5px;" src="../../img/logo.png" />博宝源清洁公司</label>
 					<label style="font-size: 15px; padding-left: 25%;width: 45%;margin-top: 5px;">已保存</label>
 
 				</div>
 
-				<a href="example_attendence.html" style="color: #555555;"> <img class="mui-media-object mui-pull-left" src="../../img/cbd.jpg" style="max-width: 130px;height: 120px;"></a>
+				<a style="color: #555555;"> <img class="mui-media-object mui-pull-left" src="../../img/cbd.jpg" style="max-width: 130px;height: 120px;"></a>
 
 				<li class="mui-table-view-cell mui-media">
 
@@ -112,25 +120,27 @@
 		<div class="anniu">
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell mui-collapse" style="height: 40px;">
-					<button type="button" class="mui-btn mui-btn-purple mui-btn-grey" onclick="window.location.href='confirm_supervise.html'" style="height: 30px;line-height: 0px;left: 70%;margin-left: -50px;">上报</button>
-
-					<button type="button" class="mui-btn mui-btn-purple mui-btn-grey" onclick="window.location.href='example_supervise.html'" style="height: 30px;line-height: 0px;">详情</button>
-
+					<button style="
+    margin-left: 50px;
+" onclick="window.location.href='confirm_supervise.html'">保存记录</button>
+					<button style="
+    margin-left: 50px;
+" onclick="window.location.href='confirm_supervise.html'">发送巡查</button>
 				</li>
 
 			</ul>
 
 		</div>
-		<div class="mui-content" style="font-size: 10px;margin-top: 5px;">
+		<div class="mui-content" style="font-size: 10px;margin-top: 0;">
 
 			<ul class="mui-table-view">
 				<div class="mui-input-row" style="top: 5px;">
-					<label style="font-size: 15px;width: 55%;"><img style="border-radius:40px;height: 20px;width: 20px;top: 5px;right: 5px;" src="../../img/logo.png" />雷赛科技有限公司</label>
+					<label style="font-size: 15px;width: 55%;"><img style="border-radius:40px;height: 20px;width: 20px;top: 5px;right: 5px;" src="../../img/logo.png" />博宝源清洁公司</label>
 					<label style="font-size: 15px; padding-left: 25%;width: 45%;margin-top: 5px;">已保存</label>
 
 				</div>
 
-				<a href="example_attendence.html" style="color: #555555;"> <img class="mui-media-object mui-pull-left" src="../../img/cbd.jpg" style="max-width: 130px;height: 120px;"></a>
+				<a style="color: #555555;"> <img class="mui-media-object mui-pull-left" src="../../img/cbd.jpg" style="max-width: 130px;height: 120px;"></a>
 
 				<li class="mui-table-view-cell mui-media">
 
@@ -168,10 +178,12 @@
 		<div class="anniu">
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell mui-collapse" style="height: 40px;">
-					<button type="button" class="mui-btn mui-btn-purple mui-btn-grey" onclick="window.location.href='confirm_supervise.html'" style="height: 30px;line-height: 0px;left: 70%;margin-left: -50px;">上报</button>
-
-					<button type="button" class="mui-btn mui-btn-purple mui-btn-grey" onclick="window.location.href='example_supervise.html'" style="height: 30px;line-height: 0px;">详情</button>
-
+					<button style="
+    margin-left: 50px;
+" onclick="window.location.href='confirm_supervise.html'">保存记录</button>
+					<button style="
+    margin-left: 50px;
+" onclick="window.location.href='confirm_supervise.html'">发送巡查</button>
 				</li>
 
 			</ul>
@@ -182,12 +194,12 @@
 
 			<ul class="mui-table-view">
 				<div class="mui-input-row" style="top: 5px;">
-					<label style="font-size: 15px;width: 55%;"><img style="border-radius:40px;height: 20px;width: 20px;top: 5px;right: 5px;" src="../../img/logo.png" />雷赛科技有限公司</label>
+					<label style="font-size: 15px;width: 55%;"><img style="border-radius:40px;height: 20px;width: 20px;top: 5px;right: 5px;" src="../../img/logo.png" />博宝源清洁公司</label>
 					<label style="font-size: 15px; padding-left: 25%;width: 45%;margin-top: 5px;">已保存</label>
 
 				</div>
 
-				<a href="example_attendence.html" style="color: #555555;"> <img class="mui-media-object mui-pull-left" src="../../img/cbd.jpg" style="max-width: 130px;height: 120px;"></a>
+				<a style="color: #555555;"> <img class="mui-media-object mui-pull-left" src="../../img/cbd.jpg" style="max-width: 130px;height: 120px;"></a>
 
 				<li class="mui-table-view-cell mui-media">
 
@@ -225,10 +237,12 @@
 		<div class="anniu">
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell mui-collapse" style="height: 40px;">
-					<button type="button" class="mui-btn mui-btn-purple mui-btn-grey" onclick="window.location.href='confirm_supervise.html'" style="height: 30px;line-height: 0px;left: 70%;margin-left: -50px;">上报</button>
-
-					<button type="button" class="mui-btn mui-btn-purple mui-btn-grey" onclick="window.location.href='example_supervise.html'" style="height: 30px;line-height: 0px;">详情</button>
-
+					<button style="
+    margin-left: 50px;
+" onclick="window.location.href='confirm_supervise.html'">保存记录</button>
+					<button style="
+    margin-left: 50px;
+" onclick="window.location.href='confirm_supervise.html'">发送巡查</button>
 				</li>
 
 			</ul>

@@ -7,6 +7,8 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../../../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../../../css/header.css" />
+		<link href="../../../css/icons-extra.css" rel="stylesheet" />
+		<link href="../../../css/style.css" rel="stylesheet" />
 		<script src="../../../js/mui.min.js"></script>
 		<!--
         	作者：a15838261357@sina.com
@@ -45,10 +47,39 @@
 	</head>
 
 	<body>
-		<header class="mui-bar mui-bar-nav">
-			<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../../index.html" style="color: white;"></a>
-			<h1 class="mui-title">解绑手机号</h1>
-		</header>
+		<header id="header" class="mui-bar mui-bar-transparent">
+				<div id="header">
+					<!--触碰顶栏返回顶部-->
+					<a href="#menu"></a>
+					<!--雷赛云公司名称-->
+					<!--<span id="Logo" class="svg">
+					<img src="fonts/method-draw-image.svg"/>
+				</span>-->
+					<!--用户头像-->
+					<!--<a class="backBtn" href="javascript:history.back();"></a>-->
+					<!--<a href="#Logo" class="sculpture">-->
+					<a class="backBtn" href="javascript:history.back();"></a>
+					</a>
+					<!--标题信息-->
+					<!--<a id="login_name" class="login_text">保洁组长：张长旺</a>
+				<a id="login_role" class="login_text">雷赛云-博宝源清洁服务管理系统</a>-->
+					<h1 style="color: white;">解绑</h1>
+					<!--通知图标-->
+					<a class="remind mui-icon-extra mui-icon-extra-lamp">
+						<span style="position: relative;"><i class="dot">		
+					</i>
+					</span>
+					</a>
+					<!--扫一扫图标-->
+					<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>
+
+				</div>
+			</header>
+			<!--副标题：签到时间-->
+			<div class="subHeader" style="top: 80px;">
+				<i class="i-home i-small">
+				<img src="../../../fonts/稿定设计导出-20190721-113310.png"/>
+			</i>推荐完成“迅美科技广场A区5楼”任务，点击开始</div>
 		<div class="mui-content">
 			<form class="mui-input-group">
 				<div class="mui-input-row">
@@ -67,7 +98,7 @@
 				</div>
 				<textarea name="comment" form="usrform" placeholder="请留言，我们会尽快处理"></textarea> </div>
 		</form>
-		<button type="button" class="mui-btn mui-btn-grey mui-btn-block" onclick="checkPhone(),check1()" style="position: absolute;bottom: 0;width: 100%;">确认提交</button>
+		<button type="button" class="mui-btn mui-btn-grey mui-btn-block" onclick="checkPhone(),check1()" style="position: absolute;top: 250px;width: 100%;">确认提交</button>
 		</div>
 	</body>
 

@@ -6,9 +6,10 @@
 		<title>雷赛云微信公众号工资单</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../../css/mui.min.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
+		<!--<link rel="stylesheet" type="text/css" href="../../css/header.css" />-->
+		<link rel="stylesheet" href="../../css/style.css" />
 		<link rel="stylesheet" href="../../css/p.css" />
-		<link rel="stylesheet" href="../../css/demo.css" />
+		<link rel="stylesheet" href="../../css/icons-extra.css" />
 
 		<script type="text/javascript" src="../../js/jquery-1.8.2.min.js"></script>
 		<script src="../../js/demo.js"></script>
@@ -28,73 +29,41 @@
 
 	<body>
 
-		<header class="mui-bar mui-bar-nav">
-			<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../index.html" style="color: white;"></a>
-			<h1 class="mui-title">工资明细</h1>
-		</header>
-		<header class="mui-bar mui-bar-nav" style="top: 44px;background-color: white!important;color: red!important;height: 60px;">
-
-			<div>
-				<div class="screening" style="margin-top: 5px; color: black; font-size: 14px;">
-					<ul>
-
-						<li class="Regional">年度</li>
-						<li class="Sort">月度</li>
-						<li class="Brand">类型</li>
-					</ul>
-				</div>
-
-				<!-- End grade -->
-				<!-- Category -->
-
-				<div class="Regional-eject Regional-height">
-					<ul class="Regional-Regional" id="Regional-Regional" style="color: black;font-size: 14px;height: 36px;">
-						<li onclick="Regional(this)">2018</li>
-						<li onclick="Regional(this)">2019</li>
-						<li onclick="Regional(this)">2020</li>
-						<li onclick="Regional(this)">2021</li>
-						<li onclick="Regional(this)">2022</li>
-						<li onclick="Regional(this)">2023</li>
-						<li onclick="Regional(this)">2024</li>
-						<li onclick="Regional(this)">2025</li>
-						<li onclick="Regional(this)">2026</li>
-						<li onclick="Regional(this)">2027</li>
-						<li onclick="Regional(this)">2028</li>
-						<li onclick="Regional(this)">2029</li>
-					</ul>
-				</div>
-
-				<div class="Sort-eject Sort-height">
-					<ul class="Sort-Sort" id="Sort-Sort" style="color: black;font-size: 14px;height: 36px;">
-						<li onclick="Sorts(this)">1</li>
-						<li onclick="Sorts(this)">2</li>
-						<li onclick="Sorts(this)">3</li>
-						<li onclick="Sorts(this)">4</li>
-						<li onclick="Sorts(this)">5</li>
-						<li onclick="Sorts(this)">6</li>
-						<li onclick="Sorts(this)">7</li>
-						<li onclick="Sorts(this)">8</li>
-						<li onclick="Sorts(this)">9</li>
-						<li onclick="Sorts(this)">10</li>
-						<li onclick="Sorts(this)">11</li>
-						<li onclick="Sorts(this)">12</li>
-					</ul>
-				</div>
-
-				<div class="Brand-eject Brand-height" >
-					<ul class="Brand-Brand" id="Brand-Brand" style="color: black;font-size: 14px; height: 36px;">
-						<li onclick="Brand(this)">工资</li>
-						<li onclick="Brand(this)">五险一金</li>
-						<li onclick="Brand(this)">社保</li>
-						<li onclick="Brand(this)">其它</li>
-					</ul>
-				</div>
+		<header id="header" class="mui-bar mui-bar-transparent">
+			<div id="header">
+				<!--触碰顶栏返回顶部-->
+				<a href="#menu"></a>
+				<!--雷赛云公司名称-->
+				<!--<span id="Logo" class="svg">
+					<img src="fonts/method-draw-image.svg"/>
+				</span>-->
+				<!--用户头像-->
+				<!--<a class="backBtn" href="javascript:history.back();"></a>-->
+				<!--<a href="#Logo" class="sculpture">-->
+				<a class="backBtn" href="javascript:history.back();"></a>
+				</a>
+				<!--标题信息-->
+				<!--<a id="login_name" class="login_text">保洁组长：张长旺</a>
+				<a id="login_role" class="login_text">雷赛云-博宝源清洁服务管理系统</a>-->
+				<h1 style="color: white;">投诉详情</h1>
+				<!--通知图标-->
+				<a class="remind mui-icon-extra mui-icon-extra-lamp">
+					<span style="position: relative;"><i class="dot">		
+					</i>
+					</span>
+				</a>
+				<!--扫一扫图标-->
+				<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>
 
 			</div>
 		</header>
-
+		<!--副标题：签到时间-->
+		<div class="subHeader" style="top: 80px;">
+			<i class="i-home i-small">
+				<img src="../../fonts/稿定设计导出-20190721-113310.png"/>
+			</i>推荐完成“迅美科技广场A区5楼”任务，点击开始</div>
 		<body>
-			<div class="mui-content" style="font-size: 10px;margin-top: 70px;width: 98%;margin-left: 1%;">
+			<div class="mui-content" style="font-size: 10px;margin-top: 120px;width: 98%;margin-left: 1%;">
 
 				<form class="mui-input-group">
 					<div class="mui-input-row" style="height: 100%;width: 100%;">

@@ -118,7 +118,7 @@ pre
 	width: 40px;
 	height: 40px;
 	position: absolute;
-	top: 11px;
+	top: 15px;
 	left: 10px;
 }
 
@@ -160,19 +160,11 @@ pre
 	left: inherit;
 }
 
-/*扫一扫按钮*/
-#header a.add
+#header a #qrcode
 {
-	display: block;
-	color: rgba(225,225,225);
-	width: 40px;
-	height: 40px;
-	position: absolute;
-	top: 15px;
-	right: 5px;
-	left: inherit;
+	color: white;
+	href="http://sao315.com/w/api/saoyisao?redirect_uri=http://www.baidu.com" style="color: white;"
 }
-
 
 /*巡检图标*/
 .mui-icon-extra.mui-icon-extra-hotel	{
@@ -189,6 +181,11 @@ pre
 .remind{
 	margin-left: 75%;
 	color: white;
+}
+
+#header #remind
+{
+	 href="list_news.html"; style="color: white;"
 }
 
 /*提示红点*/

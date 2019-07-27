@@ -12,7 +12,8 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../../../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../../../css/header.css" />
-
+<link href="../../../css/icons-extra.css" rel="stylesheet" />
+		<link href="../../../css/style.css" rel="stylesheet" />
 		<script type="text/javascript" src="../../../js/common.js" ></script>
 		<script src="../../../js/mui.min.js"></script>
 		<script type="text/javascript">
@@ -20,12 +21,41 @@
 		</script>
 	</head>
 
-	<body onload="dis_confirm()">
+	<!--<body onload="dis_confirm()">-->
+<body>
+		<header id="header" class="mui-bar mui-bar-transparent">
+				<div id="header">
+					<!--触碰顶栏返回顶部-->
+					<a href="#menu"></a>
+					<!--雷赛云公司名称-->
+					<!--<span id="Logo" class="svg">
+					<img src="fonts/method-draw-image.svg"/>
+				</span>-->
+					<!--用户头像-->
+					<!--<a class="backBtn" href="javascript:history.back();"></a>-->
+					<!--<a href="#Logo" class="sculpture">-->
+					<a class="backBtn" href="javascript:history.back();"></a>
+					</a>
+					<!--标题信息-->
+					<!--<a id="login_name" class="login_text">保洁组长：张长旺</a>
+				<a id="login_role" class="login_text">雷赛云-博宝源清洁服务管理系统</a>-->
+					<h1 style="color: white;">个人信息</h1>
+					<!--通知图标-->
+					<a class="remind mui-icon-extra mui-icon-extra-lamp">
+						<span style="position: relative;"><i class="dot">		
+					</i>
+					</span>
+					</a>
+					<!--扫一扫图标-->
+					<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>
 
-		<header class="mui-bar mui-bar-nav">
-			<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../../index.html" style="color: white;"></a>
-			<h1 class="mui-title">个人信息</h1>
-		</header>
+				</div>
+			</header>
+			<!--副标题：签到时间-->
+			<div class="subHeader" style="top: 80px;">
+				<i class="i-home i-small">
+				<img src="../../../fonts/稿定设计导出-20190721-113310.png"/>
+			</i>推荐完成“迅美科技广场A区5楼”任务，点击开始</div>
 		<!--
 	作者：a15838261357@sina.com
 	时间：2018-10-09
@@ -33,54 +63,54 @@
 -->
 		<div class="mui-content">
 			<p style="font-size: 15px;margin-top: 5px;margin-left: 10px;">基本信息</p>
-			<form class="mui-input-group">
+				<form class="mui-input-group" style="margin-bottom: 0;">
 				<div class="mui-input-row" style="margin-top: 5px;">
 					<label>用户名</label>
-					<p style="margin-top: 10px;">王梅梅</p>
+					<p style="margin-top: 10px;">张长旺</p>
 				</div>
 				</form>
-				<form class="mui-input-group">
+					<form class="mui-input-group" style="margin-bottom: 0;">
 					<div class="mui-input-row" style="height: 60px;">
 						<label>个人头像</label>
-						<img class="mui-media-object mui-pull-left" src="../../../images/shuijiao.jpg" style="margin-top: 5px;" width="60px">
+						<img class="mui-media-object mui-pull-left" src="../../../fonts/Img384052659_gaitubao_36x40.jpg" style="margin-top: 5px;" width="40px">
 					</div>
-							<form class="mui-input-group">
+								<form class="mui-input-group" style="margin-bottom: 0;">
 							<div class="mui-input-row">
 								<label>所在公司</label>
-								<p style="margin-top: 10px;">雷曼科技有限公司</p>
+								<p style="margin-top: 10px;">博宝源清洁公司</p>
 
 							</div>
 							</form>
 						</form>
-							<form class="mui-input-group">
+							<form class="mui-input-group" style="margin-bottom: 0;">
 							<div class="mui-input-row">
 								<label>所在项目</label>
-								<p style="margin-top: 10px;">雷曼科技有限公司</p>
+								<p style="margin-top: 10px;">博宝源清洁公司</p>
 
 							</div>
 						</form>
-							<form class="mui-input-group">
+								<form class="mui-input-group" style="margin-bottom: 0;">
 							<div class="mui-input-row">
 								<label>项目编号</label>
 								<p style="margin-top: 10px;">X256413215641</p>
 
 							</div>
 						</form>
-						<form class="mui-input-group">
+							<form class="mui-input-group" style="margin-bottom: 0;">
 							<div class="mui-input-row">
 								<label>职位</label>
 								<p style="margin-top: 10px;">保洁员</p>
 
 							</div>
 						</form>
-						<form class="mui-input-group">
+							<form class="mui-input-group" style="margin-bottom: 0;">
 							<div class="mui-input-row">
 					 			<label>员工编号</label>
 								<p style="margin-top: 10px;">y45456458785416</p>
 
 							</div>
 						</form>
-						<form class="mui-input-group">
+							<form class="mui-input-group" style="margin-bottom: 0;">
 							<div class="mui-input-row">
 								<label>手机号码</label>
 
@@ -92,8 +122,8 @@
 	时间：2018-10-09
 	描述：修改 绑定页面
 -->
-									<button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" style="height: 20px;line-height: 0px; color: #000000" onclick="window.location='self_phone_change.html'">修改</button>
-									<button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" style="height: 20px;line-height: 0px; color: #000000" onclick="window.location='self_phone_unbind.html'">解绑</button>
+									<button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" style="height: 20px;line-height: 0px; color: #000000;margin-top: -5px;" onclick="window.location='self_phone_change.html'">修改</button>
+									<button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" style="height: 20px;line-height: 0px; color: #000000;margin-top: -5px;" onclick="window.location='self_phone_unbind.html'">解绑</button>
 								</div>
 						</form>
 
@@ -105,22 +135,22 @@
 
 			<div style="margin-top: 10px;">
 				<p style="font-size: 15px;margin-top: 5px; margin-left: 10px">个人详细资料</p>
-				<form class="mui-input-group">
+					<form class="mui-input-group" style="margin-bottom: 0;">
 					<div class="mui-input-row">
 						<label>昵称</label>
 						<p style="margin-top: 10px;">雷赛云</p>
 					</div>
-					<form class="mui-input-group">
+						<form class="mui-input-group" style="margin-bottom: 0;">
 						<div class="mui-input-row">
 							<label>所在组别</label>
 							<p style="margin-top: 10px;">保洁二组</p>
 						</div>
-						<form class="mui-input-group">
+							<form class="mui-input-group" style="margin-bottom: 0;">
 							<div class="mui-input-row">
 								<label>个人邮箱</label>
 								<p style="margin-top: 10px;">14587974561@sina.com</p>
 							</div>
-							<form class="mui-input-group">
+								<form class="mui-input-group" style="margin-bottom: 0;">
 								<div class="mui-input-row">
 									<label>qq</label>
 									<p style="margin-top: 10px;">145679411</p>
@@ -132,17 +162,17 @@
 			</div>
 			<div style="margin-top: 10px;">
 				<p style="font-size: 15px;margin-top: 5px; margin-left: 10px">其他</p>
-				<form class="mui-input-group">
+					<form class="mui-input-group" style="margin-bottom: 0;">
 					<div class="mui-input-row">
 						<label>银行卡号</label>
 						<p style="margin-top: 10px;">6228480719364002276</p>
 					</div>
-					<form class="mui-input-group">
+						<form class="mui-input-group" style="margin-bottom: 0;">
 						<div class="mui-input-row">
 							<label>开户银行</label>
 							<p style="margin-top: 10px;">农行</p>
 						</div>
-						<form class="mui-input-group">
+							<form class="mui-input-group" style="margin-bottom: 0;">
 							<div class="mui-input-row">
 								<label>兴趣爱好</label>
 								<p style="margin-top: 10px;">游泳</p>

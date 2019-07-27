@@ -210,6 +210,7 @@
 				setOverflow: "overflow-y:none", //设置滚动的属性 overflow-y：设置竖向  overflow-x:设置横向
 			});
 		</script>
+
 	</head>
 
 	<body onload="getPhoneType();today();autofill();">
@@ -232,13 +233,16 @@
 				<a id="login_role" class="login_text">雷赛云-博宝源清洁服务管理系统</a>-->
 				<h1 style="color: white;">现场巡查</h1>
 				<!--通知图标-->
-				<a class="remind mui-icon-extra mui-icon-extra-lamp">
+				<a class="remind mui-icon-extra mui-icon-extra-lamp" onclick="click_news()">
 					<span style="position: relative;"><i class="dot">		
 					</i>
 					</span>
 				</a>
 				<!--扫一扫图标-->
-				<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>
+				<!--<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>-->
+				<!--返回列表图标-->
+				<a class="sweep mui-icon mui-icon-bars" onclick="click_supervise_list()"></a>
+				
 
 			</div>
 		</header>
@@ -255,8 +259,10 @@
     margin-bottom: 0px;
 ">
 					<div class="mui-input-row">
-						<label>巡检时间</label>
-						<label>2018/9/20</label>
+						<label >巡检时间</label>
+						<label style="
+    margin-left: -14px;
+">2018/9/20</label>
 					</div>
 				</form>
 				<form class="mui-input-group" style="
@@ -264,7 +270,9 @@
 ">
 					<div class="mui-input-row">
 						<label>巡检地点</label>
-						<label>南山智园B区5楼</label>
+						<label style="
+    margin-left: -14px;
+">南山智园B区5楼</label>
 					</div>
 				</form>
 				<form class="mui-input-group" style="
@@ -272,7 +280,9 @@
 ">
 					<div class="mui-input-row">
 						<label>巡检内容</label>
-						<label>卫生间积水</label>
+						<label style="
+    margin-left: -14px;
+">卫生间积水</label>
 					</div>
 				</form>
 				<form class="mui-input-group" style="
@@ -282,9 +292,9 @@
 						<label>巡检结果</label>
 						<select style="font-size: 10px;">
 							</span>
-							<option value="">--请选择--</option>
-							<option class="mui-badge-green">合格</option>
-							<option value="saab" class="mui-badge-danger">不合格</option>
+							<option id="judge" value="" onclick="click_supervise_list()">--请选择--</option>
+							<option >合格</option>
+							<option >不合格</option>
 						</select>
 					</div>
 				</form>
@@ -726,4 +736,5 @@
 	//console.log(map.sendSignal());
 	//map.getMap();
 	//map.getAddress();
+	
 </script>

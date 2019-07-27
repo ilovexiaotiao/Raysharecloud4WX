@@ -61,13 +61,13 @@
 				<a id="login_role" class="login_text">雷赛云-博宝源清洁服务管理系统</a>-->
 				<h1 style="color: white;">现场巡检</h1>
 				<!--通知图标-->
-				<a class="remind mui-icon-extra mui-icon-extra-lamp">
+				<a class="remind mui-icon-extra mui-icon-extra-lamp" onclick="click_news()">
 					<span style="position: relative;"><i class="dot">		
 					</i>
 					</span>
 				</a>
-				<!--扫一扫图标-->
-				<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>
+				<!--添加图标-->
+				<a class="sweep mui-icon mui-icon-bars" onclick="click_mission_list()"></a>
 
 			</div>
 		</header>
@@ -218,7 +218,13 @@
 			<div class="container">
 				<label>上传签到图片：</label>
 				<button id="show-btn" onclick="show_btn()">添加图片</button>
-				<p> 最多只能上传六张照片</p>
+				<button style="
+    margin-left: 50px;
+" onclick="window.location.href='confirm_work.html'">保存记录</button>
+					<button style="
+    margin-left: 50px;
+" onclick="window.location.href='confirm_work.html'">上报工作</button>
+				<p> 最多只能上传六张照片，点击删除</p>
 				<!--
                 	作者：a15838261357@sina.com
                 	时间：2018-10-09
@@ -227,12 +233,10 @@
                 -->
 				<input type="file" id="file_input" name="upload" multiple />
 				<input type="file" id="file_input1" name="upload" accept="image/*" capture="camera">
+				
 			</div>
 
-			<div align="center" style="margin-top: 10px;">
-				<button type="button" onclick="window.location.href='confirm_work.html'" style="width: 80px;position: absolute;bottom: -700px;left: 25%;" class="mui-btn mui-btn-grey">保存</button>
-				<button type="button" onclick="window.location.href='confirm_work.html'" style="width: 80px;position: absolute;bottom: -700px;" class="mui-btn mui-btn-grey">上报</button>
-			</div>
+			
 
 	</body>
 

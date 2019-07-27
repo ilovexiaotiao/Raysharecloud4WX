@@ -24,8 +24,10 @@
 		<script type="text/javascript" src="js/jquery.mmenu.min.all.js"></script>
 		<script type="text/javascript" src="js/jquery.flexslider.js"></script>
 		<script type="text/javascript" src="js/o-script.js"></script>
+		<script type="text/javascript" src="js/common.js" ></script>
 		<script type="text/javascript" charset="utf-8">
 			mui.init();
+			
 		</script>
 	</head>
 
@@ -44,16 +46,18 @@
 				<a href="#Logo" class="sculpture">
 				</a>
 				<!--登录信息-->
-				<a id="login_name" class="login_text">保洁组长：张长旺</a>
-				<a id="login_role" class="login_text">雷赛云-博宝源清洁服务管理系统</a>
+				<a href="pages/information/self/self_personalSettings.html">
+					<a id="login_name" class="login_text">保洁组长：张长旺</a>
+					<a id="login_role" class="login_text">雷赛云-博宝源清洁服务管理系统</a>
+				</a>
 				<!--通知图标-->
-				<a class="remind mui-icon-extra mui-icon-extra-lamp">
+				<a class="remind mui-icon-extra mui-icon-extra-lamp" onclick="click_news_main()">
 					<span style="position: relative;"><i class="dot">		
 					</i>
 					</span>
 				</a>
 				<!--扫一扫图标-->
-				<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>
+				<a class="sweep mui-icon-extra mui-icon-extra-sweep" onclick="click_qr()"></a>
 
 			</div>
 		</header>
@@ -61,7 +65,9 @@
 		<div class="subHeader">
 			<i class="i-home i-small">
 				<img src="fonts/稿定设计导出-20190721-113310.png"/>
-			</i><a href="pages/attendence/example_attendence.html" style="color: white;">您已完成本日第四次考勤，点此查看</a></div>
+			</i>
+			<a href="pages/attendence/example_attendence.html" style="color: white;">您已完成本日第四次考勤，点此查看</a>
+		</div>
 		<!--正文内容-->
 		<div class="mui-content">
 			<!--滚动片-->
@@ -125,7 +131,8 @@
 					<span class="i-pane i-green">
 						<i class="mui-icon mui-icon-bars"></i>
 					</span>
-					<a href="pages/work/list_work.html"><h4 >我的任务</h4></a>
+					<a href="pages/work/list_work.html">
+						<h4>我的任务</h4></a>
 					<p>
 						<div class="c-green misson-desc ">进行任务：清扫讯美科技广场A区5楼</div>
 						<div class="c-green">待处理任务：3件</div>
@@ -136,51 +143,53 @@
 					<span class="i-pane i-orange">
 						<i class="mui-icon mui-icon-chat"></i>
 					</span>
-					<a href="pages/complain/list_complain.html"><h4>我的投诉</h4></a>
+					<a href="pages/complain/list_complain.html">
+						<h4>我的投诉</h4></a>
 					<p>
 						<div class="c-green misson-desc">进行中：清扫讯美科技广场A区5楼</div>
 						<div class="c-green">待处理：10件</div>
 					</p>
-					
+
 				</div>
 
 				<div class="mainIconPane">
 					<span class="i-pane i-red">
 						<i id="walk-icon" class="walk mui-icon-extra mui-icon-extra-hotel"></i>
 					</span>
-					<a href="pages/supervise/list_supervise.html"><h4>我的巡检</h4></a>
+					<a href="pages/supervise/list_supervise.html">
+						<h4>我的巡检</h4></a>
 					<p>
 						<div class="c-green misson-desc">进行：清扫讯美科技广场A区5楼</div>
 						<div class="c-green">待处理：10件</div>
 					</p>
-					
+
 				</div>
 			</div>
 
 			<!--1，2级标题分割线-->
 			<div class="block2">
-				我的功能<span class="mui-pull-right">更多...</span>
+				我的功能<span class="mui-pull-right"><a href="more.html">更多...</a></span>
 			</div>
 			<!--二级标题栏-->
 			<div class="exploreSiteFullPane">
 
-				<a href="#" class="explorePane">
+				<a href="pages/application/overtime_application.html" class="explorePane">
 					<span class="i-pane i-blue">
 						<i class="mui-icon mui-icon-compose"></i>
 					</span>
 					<h4>加班申请</h4>
 				</a>
-				<a href="about.html" class="explorePane middle">
+				<a href="pages/information/salary_information.html" class="explorePane middle">
 					<span class="i-pane i-blue">
 						<i class="mui-icon mui-icon-bars"></i>
 					</span>
 					<h4>工资明细</h4>
 				</a>
-				<a href="blog.html" class="explorePane">
+				<a href="pages/work/work_dashboard.html" class="explorePane">
 					<span class="i-pane i-blue">
 						<i class="mui-icon mui-icon-redo"></i>
 					</span>
-					<h4>加班申请</h4>
+					<h4>现场管理</h4>
 				</a>
 				<a href="pages/supervise/supervise_dashboard.html" class="explorePane">
 					<span class="i-pane i-blue">
@@ -188,22 +197,22 @@
 					</span>
 					<h4>质量评审</h4>
 				</a>
-				<a href="shortcodes.html" class="explorePane middle">
+				<a href="pages/information/contact.html" class="explorePane middle">
 					<span class="i-pane i-blue">
 						<i class="mui-icon mui-icon-contact"></i>
 					</span>
-					<h4>离职申请</h4>
+					<h4>通讯录</h4>
 				</a>
-				<a href="contact.html" class="explorePane">
+				<a href="pages/information/mark_information.html" class="explorePane">
 					<span class="i-pane i-blue">
 						<i class="mui-icon mui-icon-settings"></i>
 					</span>
-					<h4>请假申请</h4>
+					<h4>绩效查看</h4>
 				</a>
 			</div>
 			<!--2，3级标题分割线-->
 			<div class="block3">
-				重要通知<span class="mui-pull-right">更多...</span>
+				重要通知<span class="mui-pull-right"><a href="list_news.html">更多...</a></span>
 			</div>
 
 			<div id="content" style="
@@ -214,7 +223,7 @@
 						<i class="mui-icon mui-icon-info"></i>
 					</span>
 					<a href="pages/complain/example_complain.html">
-					<h4>达实大厦A区被客户投诉</h4>
+						<h4>达实大厦A区被客户投诉</h4>
 					</a>
 					<p>
 						<div class="c-green misson-desc">进行任务：达实大厦A区5楼</div>
@@ -235,7 +244,7 @@
 						<div class="c-green">被投诉人：刘宝生</div>
 					</p>
 				</div>
-<!--
+				<!--
 				<div class="mainIconPane">
 					<span class="i-pane i-red">
 						<i class="mui-icon mui-icon-info"></i>
@@ -267,6 +276,7 @@
 		slider.slider({
 			interval: 3000
 		});
+
 	</script>
 
 </html>

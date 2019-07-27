@@ -6,8 +6,10 @@
 		<title>雷赛云微信公众号工资单</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../../css/mui.min.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
+		<!--<link rel="stylesheet" type="text/css" href="../../css/header.css" />-->
+		<link rel="stylesheet" href="../../css/style.css" />
 		<link rel="stylesheet" href="../../css/p.css" />
+		<link rel="stylesheet" href="../../css/icons-extra.css" />
 		<script src="../../js/echarts.js"></script>
 
 		<script type="text/javascript" src="../../js/common.js"></script>
@@ -25,45 +27,72 @@
 
 	<body onload="fillSelect();">
 
-		<header class="mui-bar mui-bar-nav">
-			<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../index.html" style="color: white;"></a>
-			<h1 class="mui-title">工资单</h1>
-			<a href="salary_list.html">
-				<span class="mui-icon mui-icon-bars" style="border-radius:40px;height: 40px;width: 40px;left: 80%;color: white;"></span>
-			</a>
-		</header>
+		<header id="header" class="mui-bar mui-bar-transparent">
+			<div id="header">
+				<!--触碰顶栏返回顶部-->
+				<a href="#menu"></a>
+				<!--雷赛云公司名称-->
+				<!--<span id="Logo" class="svg">
+					<img src="fonts/method-draw-image.svg"/>
+				</span>-->
+				<!--用户头像-->
+				<!--<a class="backBtn" href="javascript:history.back();"></a>-->
+				<!--<a href="#Logo" class="sculpture">-->
+				<a class="backBtn" href="javascript:history.back();"></a>
+				</a>
+				<!--标题信息-->
+				<!--<a id="login_name" class="login_text">保洁组长：张长旺</a>
+				<a id="login_role" class="login_text">雷赛云-博宝源清洁服务管理系统</a>-->
+				<h1 style="color: white;">投诉详情</h1>
+				<!--通知图标-->
+				<a class="remind mui-icon-extra mui-icon-extra-lamp">
+					<span style="position: relative;"><i class="dot">		
+					</i>
+					</span>
+				</a>
+				<!--扫一扫图标-->
+				<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>
 
-		<body>
+			</div>
+		</header>
+		<!--副标题：签到时间-->
+		<div class="subHeader" style="top: 80px;">
+			<i class="i-home i-small">
+				<img src="../../fonts/稿定设计导出-20190721-113310.png"/>
+			</i>推荐完成“迅美科技广场A区5楼”任务，点击开始</div>
+
 
 			<div id="container" style="height: 50%;width: 50%;margin-top: 60px;"></div>
 			<form class="mui-input-group" style="height: 100px;">
 				<div class="mui-input-row" align="center">
-					<h3>当月实发工资（元）</h3>
+					<h3 style="font-size: 13px;">当月实发工资（元）</h3>
 
 				</div>
+				<a href="salary_list.html">
 				<div align="center" style="float: left;padding-left: 30%;">
-					<h1>4,623.23</h1>
+					<h1>4,623.23  元</h1>
 
 				</div>
 				<div style="float: left; padding-left: 10%;">
-					<a href="salary_list.html">
+					
 						<span class="mui-icon mui-icon-forward" style="border-radius:40px;height: 40px;width: 40px;font-size: 50px;color: black;"></span>
-					</a>
+			
 				</div>
+				</a>
 			</form>
-			<form class="mui-input-group">
+			<form class="mui-input-group" style="margin-bottom: 0;">
 				<div class="mui-input-row">
 					<label style="width: 60%;">结算员工</label>
-					<p>张三</p>
+					<p>张晓梅</p>
 				</div>
 			</form>
-			<form class="mui-input-group">
+			<form class="mui-input-group" style="margin-bottom: 0;">
 				<div class="mui-input-row">
 					<label style="width: 60%;">员工编号</label>
 					<p>y45456458785416</p>
 				</div>
 			</form>
-			<form class="mui-input-group">
+			<form class="mui-input-group" style="margin-bottom: 0;">
 				<div class="mui-input-row">
 					<label style="width: 60%;">部门岗位</label>
 					<p>保洁员</p>
@@ -75,6 +104,15 @@
 				<div id="main" style="width: 95%;height:400px;"></div>
 
 			</div>
+			<!-- 底栏 -->
+		<div class="socialMedia scl-grey" style="margin-top: 100px;">
+			<span href="#" class="raysharecloud">雷赛云——博宝源清洁管理系统</span>
+
+		</div>
+		<div class="socialMedia scl-grey" style="margin-top: 0px;">
+			<span href="#" class="raysharecloud">
+					由“深圳市雷赛信息科技有限公司”提供技术支持</span>
+		</div>
 		</body>
 
 </html>

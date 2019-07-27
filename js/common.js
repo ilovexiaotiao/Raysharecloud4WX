@@ -853,3 +853,41 @@ function l() {
 function l2() {
 	document.getElementById("newImage").src = "../../img/t014145efb179843d18.jpg";
 }
+
+//顶栏扫描图标跳转
+function click_qr(){
+	window.location.href = "http://sao315.com/w/api/saoyisao?redirect_uri=http://www.baidu.com";
+}
+
+//顶栏通知图标跳转
+function click_news(){
+	window.location.href = "../../list_news.html";
+}
+function click_news_main(){
+	window.location.href = "list_news.html";
+}
+//巡查页面返回列表
+function click_supervise_list(){
+	window.location.href = "list_supervise.html";
+}
+//巡查新增页面
+function click_supervise_add(){
+	window.location.href = "excute_supervise.html";
+}
+//推荐任务
+function click_mission(){
+	window.location.href = "../work/report_work.html";
+}
+
+function click_mission_main(){
+	window.location.href = "report_work.html";
+}
+
+//任务页面列表
+function click_mission_list(){
+	window.location.href = "list_work.html";
+}
+//任务添加页面
+function click_mission_add(){
+	window.location.href = "report_work.html";
+}

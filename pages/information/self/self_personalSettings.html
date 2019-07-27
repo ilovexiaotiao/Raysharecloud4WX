@@ -11,6 +11,8 @@
 		<link rel="stylesheet" href="../../../css/mui.min.css" />
 		<link rel="stylesheet" href="../../../css/setting.css" />
 		<link rel="stylesheet" type="text/css" href="../../../feedback.css">
+		<link href="../../../css/icons-extra.css" rel="stylesheet" />
+		<link href="../../../css/style.css" rel="stylesheet" />
 		<script>
 			function leave() {
 				var r = confirm("是否退出？")
@@ -23,32 +25,57 @@
 	</head>
 
 	<body>
+
 		<!--页面主结构开始-->
 		<div id="app" class="mui-views" data-view="1">
-			<div class="mui-view">
-				<div class="mui-navbar">
-					<div class="mui-navbar-inner mui-bar mui-bar-nav mui-navbar-center">
-						<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
-								<a class="mui mui-icon mui-icon-left-nav mui-pull-left" href="../../../index.html" style="color: white;"></a>
-				</button>
-						<h1 class="mui-center mui-title">个人设置</h1>
+				<header id="header" class="mui-bar mui-bar-transparent">
+					<div id="header">
+						<!--触碰顶栏返回顶部-->
+						<a href="#menu"></a>
+						<!--雷赛云公司名称-->
+						<!--<span id="Logo" class="svg">
+					<img src="fonts/method-draw-image.svg"/>
+				</span>-->
+						<!--用户头像-->
+						<!--<a class="backBtn" href="javascript:history.back();"></a>-->
+						<!--<a href="#Logo" class="sculpture">-->
+						<a class="backBtn" href="javascript:history.back();"></a>
+						</a>
+						<!--标题信息-->
+						<!--<a id="login_name" class="login_text">保洁组长：张长旺</a>
+				<a id="login_role" class="login_text">雷赛云-博宝源清洁服务管理系统</a>-->
+						<h1 style="color: white;">个人信息</h1>
+						<!--通知图标-->
+						<a class="remind mui-icon-extra mui-icon-extra-lamp">
+							<span style="position: relative;"><i class="dot">		
+					</i>
+					</span>
+						</a>
+						<!--扫一扫图标-->
+						<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>
+
 					</div>
-				</div>
+				</header>
+				<!--副标题：签到时间-->
+				<div class="subHeader" style="top: 80px;">
+					<i class="i-home i-small">
+				<img src="../../../fonts/稿定设计导出-20190721-113310.png"/>
+			</i>推荐完成“迅美科技广场A区5楼”任务，点击开始</div>
 				<div class="mui-pages">
 					<div id="setting" class="mui-page mui-page-center">
 						<!--页面标题栏开始-->
 
 						<!--页面标题栏结束-->
 						<!--页面主内容区开始-->
-						<div class="mui-page-content">
+						<div class="mui-page-content" style="margin-top: 50px;">
 							<div class="mui-scroll-wrapper" data-scroll="2">
 								<div class="mui-scroll" style="transform: translate3d(0px, 0px, 0px) translateZ(0px);">
 									<ul class="mui-table-view mui-table-view-chevron">
 										<li class="mui-table-view-cell mui-media">
 											<a class="mui-navigate-right" href="self_information.html">
-												<img class="mui-media-object mui-pull-left head-img" id="head-img" src="../../../images/shuijiao.jpg">
+												<img class="mui-media-object mui-pull-left head-img" id="head-img" src="../../../fonts/Img384052659_gaitubao_36x40.jpg">
 												<div class="mui-media-body" style="margin-top: 10px;">
-													王梅梅
+													张长旺
 													<p class="mui-ellipsis">y45456458785416</p>
 												</div>
 											</a>
@@ -56,7 +83,7 @@
 									</ul>
 									<ul class="mui-table-view mui-table-view-chevron">
 										<li class="mui-table-view-cell">
-											<a href="../../../systemNotification.html" class="mui-navigate-right">通知</a>
+											<a href="../../../list_news.html" class="mui-navigate-right">通知</a>
 										</li>
 									</ul>
 									<ul class="mui-table-view mui-table-view-chevron">
@@ -81,6 +108,9 @@
 										</li>
 									</ul>
 								</div>
+							</div>
+						</div>
+						</div>
 
 	</body>
 
