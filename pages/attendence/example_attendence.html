@@ -47,13 +47,13 @@
 				<a id="login_role" class="login_text">雷赛云-博宝源清洁服务管理系统</a>-->
 					<h1 style="color: white;">考勤详情</h1>
 					<!--通知图标-->
-					<a class="remind mui-icon-extra mui-icon-extra-lamp">
-						<span style="position: relative;"><i class="dot">		
+				<a class="remind mui-icon-extra mui-icon-extra-lamp" onclick="click_news()">
+					<span style="position: relative;"><i class="dot">		
 					</i>
 					</span>
-					</a>
-					<!--扫一扫图标-->
-					<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>
+				</a>
+				<!--扫一扫图标-->
+				<a class="sweep mui-icon mui-icon-bars" onclick="click_attendence_list()()"></a>
 
 				</div>
 			</header>
@@ -165,12 +165,20 @@
 				<div class="container">
 					
 					<button style="
-    margin-left: 100px;
+    margin-left: 80px;
 " onclick="window.location.href='confirm_attendence.html'">保存记录</button>
 					<button style="
     margin-left: 50px;
 " onclick="window.location.href='confirm_attendence.html'">发送考勤</button>
+<!-- 底栏 -->
+		<div class="socialMedia scl-grey" style="margin-top: 200px;">
+			<span href="#" class="raysharecloud">雷赛云——博宝源清洁管理系统</span>
 
+		</div>
+		<div class="socialMedia scl-grey" style="margin-top: 0px;">
+			<span href="#" class="raysharecloud">
+					由“深圳市雷赛信息科技有限公司”提供技术支持</span>
+		</div>
 				</div>
 				
 				<script type="text/javascript">

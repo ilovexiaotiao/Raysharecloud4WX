@@ -62,13 +62,15 @@
 				<a id="login_role" class="login_text">雷赛云-博宝源清洁服务管理系统</a>-->
 				<h1 style="color: white;">现场巡检</h1>
 				<!--通知图标-->
-				<a class="remind mui-icon-extra mui-icon-extra-lamp">
+				<a class="remind mui-icon-extra mui-icon-extra-lamp" onclick="click_news()">
 					<span style="position: relative;"><i class="dot">		
 					</i>
 					</span>
 				</a>
 				<!--扫一扫图标-->
-				<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>
+				<!--<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>-->
+				<!--返回列表图标-->
+				<a class="sweep mui-icon mui-icon-bars" onclick="click_supervise_list()"></a>
 
 			</div>
 		</header>
@@ -371,8 +373,13 @@
 					</div>
 
 					<div align="center" style="margin-top: 10px;">
-						<button type="button" onclick="revise()" style="width: 80px;position: absolute;left: 25%;bottom: 8%;" class="mui-btn mui-btn-grey">修改</button>
-						<button type="button" onclick="superviseSub()" style="width: 80px;position: absolute;bottom: 8%" class="mui-btn mui-btn-grey">上报</button>
+						<button style="
+    margin-left: 0px;
+" onclick="window.location.href='confirm_supervise.html'">保存记录</button>
+					<button style="
+    margin-left: 50px;
+" onclick="window.location.href='confirm_supervise.html'">发送巡查</button>
+			</div>
 					</div>
 			</div>
 		</div>

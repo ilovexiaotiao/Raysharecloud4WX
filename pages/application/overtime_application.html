@@ -44,13 +44,13 @@
 				<a id="login_role" class="login_text">雷赛云-博宝源清洁服务管理系统</a>-->
 				<h1 style="color: white;">申请详情</h1>
 				<!--通知图标-->
-				<a class="remind mui-icon-extra mui-icon-extra-lamp">
+				<a class="remind mui-icon-extra mui-icon-extra-lamp" onclick="click_news()">
 					<span style="position: relative;"><i class="dot">		
 					</i>
 					</span>
 				</a>
 				<!--扫一扫图标-->
-				<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>
+				<a class="sweep mui-icon mui-icon-bars" onclick="click_application_list()"></a>
 
 			</div>
 		</header>
@@ -131,8 +131,21 @@
 		</form>
 
 		<div align="center" style="margin-top: 10px;">
-			<button type="button" onclick="window.location.href='confirm_application.html'" style="width: 80px;position: absolute;bottom: 0;left: 25%;" class="mui-btn mui-btn-grey">保存</button>
-			<button type="button" onclick="window.location.href='confirm_application.html'" style="width: 80px;position: absolute;bottom: 0;" class="mui-btn mui-btn-grey">上报</button>
+			<button style="
+    margin-left: 50px;
+" onclick="window.location.href='confirm_application.html'">保存记录</button>
+					<button style="
+    margin-left: 50px;
+" onclick="window.location.href='confirm_application.html'">发起申请</button>
+		</div>
+		<!-- 底栏 -->
+		<div class="socialMedia scl-grey" style="margin-top: 200px;">
+			<span href="#" class="raysharecloud">雷赛云——博宝源清洁管理系统</span>
+
+		</div>
+		<div class="socialMedia scl-grey" style="margin-top: 0px;">
+			<span href="#" class="raysharecloud">
+					由“深圳市雷赛信息科技有限公司”提供技术支持</span>
 		</div>
 		</div>
 	</body>

@@ -11,7 +11,7 @@
 			<!--<link rel="stylesheet" href="../../css/p.css" />-->
 			<link href="../../css/icons-extra.css" rel="stylesheet" />
 			<link href="../../css/style.css" rel="stylesheet" />
-
+<script type="text/javascript" src="../../js/common.js" ></script>
 		<script src="../../js/mui.min.js"></script>
 		<script type="text/javascript" src="../../js/information.js"></script>
 		<script type="text/javascript">
@@ -44,13 +44,13 @@
 				<a id="login_role" class="login_text">雷赛云-博宝源清洁服务管理系统</a>-->
 					<h1 style="color: white;">发起投诉</h1>
 					<!--通知图标-->
-					<a class="remind mui-icon-extra mui-icon-extra-lamp">
+					<a class="remind mui-icon-extra mui-icon-extra-lamp" onclick="click_news()">
 						<span style="position: relative;"><i class="dot">		
 					</i>
 					</span>
 					</a>
-					<!--扫一扫图标-->
-					<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>
+					<!--添加图标-->
+				<a class="sweep mui-icon mui-icon-bars" onclick="click_log_list()"></a>
 
 				</div>
 			</header>
@@ -129,8 +129,12 @@
 		</form>
 
 		<div align="center" style="margin-top: 10px;">
-			<button type="button" onclick="window.location.href='confirm_application.html'" style="width: 80px;position: absolute;left: 25%;" class="mui-btn mui-btn-grey">保存</button>
-			<button type="button" onclick="window.location.href='confirm_application.html'" style="width: 80px;position: absolute;" class="mui-btn mui-btn-grey">上报</button>
+			<button style="
+    margin-left: 0px;
+" onclick="window.location.href='confirm_application.html'">保存记录</button>
+					<button style="
+    margin-left: 50px;
+" onclick="window.location.href='confirm_application.html'">上报工作</button>
 		</div>
 		</div>
 	</body>

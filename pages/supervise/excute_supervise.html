@@ -19,7 +19,7 @@
 		<script type="text/javascript" src="../../js/map.js"></script>
 		<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
 		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ox4ZBEjYHBpoONXLQCBV8pzMUFpalyFU"></script>
-
+<script type="text/javascript" src="../../js/common.js" ></script>
 		<!-- 定义当前页弹出容器属性 -->
 		<script type="text/javascript">
 			var layer = new Layer({
@@ -720,9 +720,22 @@
 			</div>
 
 			<div align="center" style="margin-top: 10px;">
-				<button type="button" onclick="window.location.href='confirm_supervise.html'" style="width: 80px;position: absolute;left: 25%;" class="mui-btn mui-btn-grey">保存</button>
-				<button type="button" onclick="window.location.href='confirm_supervise.html'" style="width: 80px;position: absolute;" class="mui-btn mui-btn-grey">上报</button>
+				<button style="
+    margin-left: 0px;
+" onclick="window.location.href='confirm_supervise.html'">保存记录</button>
+					<button style="
+    margin-left: 50px;
+" onclick="window.location.href='confirm_supervise.html'">发送巡查</button>
 			</div>
+			<!-- 底栏 -->
+		<div class="socialMedia scl-grey" style="margin-top: 200px;">
+			<span href="#" class="raysharecloud">雷赛云——博宝源清洁管理系统</span>
+
+		</div>
+		<div class="socialMedia scl-grey" style="margin-top: 0px;">
+			<span href="#" class="raysharecloud">
+					由“深圳市雷赛信息科技有限公司”提供技术支持</span>
+		</div>
 		</div>
 	</body>
 	</html>

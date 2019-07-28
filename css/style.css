@@ -352,6 +352,18 @@ li{
 	font-size: 12px;
 }
 
+/*安卓手机拍照弹窗*/
+.close_btn{
+    display: block;
+    width: 18px;
+    height: 18px;
+    float: right;
+    margin: 7px 5px;
+    background: url(../img/close.png) no-repeat center;
+		background-size: cover;
+    cursor: pointer;
+}
+
 /*********************/
 
 @media all and (min-width: 900px) {
@@ -371,6 +383,8 @@ li{
 		/*display: none !important;*/
 	}
 }
+
+
 
 #Logo { height: 41px; display: inline-block; padding-top: 10px; line-height: 40px; }
 #Logo.svg { padding:0px; }

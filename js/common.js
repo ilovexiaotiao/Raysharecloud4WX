@@ -891,3 +891,34 @@ function click_mission_list(){
 function click_mission_add(){
 	window.location.href = "report_work.html";
 }
+
+//物流添加页面
+function click_log_add(){
+	window.location.href = "material_application.html";
+}
+
+function click_log_list(){
+	window.location.href = "list_material.html";
+}
+
+//投诉添加页面
+function click_complain_list(){
+		window.location.href = "list_complain.html";
+}
+function click_complain_add(){
+		window.location.href = "raise_complain.html";
+}
+//添加申请列表
+function click_application_add(){
+		window.location.href = "all_application.html";
+}
+function click_application_list(){
+		window.location.href = "list_application.html";
+}
+//添加考勤
+function click_attendence_add(){
+	window.location.href = "make_attendence.html";
+}
+function click_attendence_list(){
+	window.location.href = "list_attendence.html";
+}

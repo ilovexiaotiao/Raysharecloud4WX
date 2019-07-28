@@ -24,6 +24,14 @@
 		<script type="text/javascript" src="../../js/map.js"></script>
 		<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
 		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ox4ZBEjYHBpoONXLQCBV8pzMUFpalyFU"></script>
+	<style>
+				a img {
+				margin-left: 10px;
+			}
+			li button{
+				bottom:10px;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -46,13 +54,13 @@
 				<a id="login_role" class="login_text">雷赛云-博宝源清洁服务管理系统</a>-->
 				<h1 style="color: white;">考勤列表</h1>
 				<!--通知图标-->
-				<a class="remind mui-icon-extra mui-icon-extra-lamp">
+				<a class="remind mui-icon-extra mui-icon-extra-lamp" onclick="click_news()">
 					<span style="position: relative;"><i class="dot">		
 					</i>
 					</span>
 				</a>
 				<!--添加图标-->
-				<a href="make_attendence.html" class="add mui-icon mui-icon-plus"></a>
+				<a class="sweep mui-icon mui-icon-plus" onclick="click_attendence_add()"></a>
 				<!--扫一扫图标-->
 				<!--<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>-->
 
@@ -112,9 +120,12 @@
 		<div class="anniu">
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell mui-collapse" style="height: 40px;">
-					<button type="button" class="mui-btn mui-btn-purple mui-btn-grey" onclick="window.location.href='confirm_attendence.html'" style="height: 30px;line-height: 0px;left: 70%;margin-left: -50px;">上报</button>
-
-					<button type="button" class="mui-btn mui-btn-purple mui-btn-grey" onclick="window.location.href='example_attendence.html'" style="height: 30px;line-height: 0px;">详情</button>
+					<button style="
+    margin-left: 50px;
+" onclick="window.location.href='example_attendence.html'">查看详情</button>
+					<button style="
+    margin-left: 50px;
+" onclick="window.location.href='confirm_attendence.html'">发起申请</button>
 
 				</li>
 
@@ -168,9 +179,12 @@
 		<div class="anniu">
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell mui-collapse" style="height: 40px;">
-					<button type="button" class="mui-btn mui-btn-purple mui-btn-grey" onclick="window.location.href='confirm_attendence.html'" style="height: 30px;line-height: 0px;left: 70%;margin-left: -50px;">上报</button>
-
-					<button type="button" class="mui-btn mui-btn-purple mui-btn-grey" onclick="window.location.href='example_attendence.html'" style="height: 30px;line-height: 0px;">详情</button>
+					<button style="
+    margin-left: 50px;
+" onclick="window.location.href='example_attendence.html'">查看详情</button>
+					<button style="
+    margin-left: 50px;
+" onclick="window.location.href='confirm_attendence.html'">发起申请</button>
 
 				</li>
 
@@ -225,9 +239,12 @@
 		<div class="anniu">
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell mui-collapse" style="height: 40px;">
-					<button type="button" class="mui-btn mui-btn-purple mui-btn-grey" onclick="window.location.href='confirm_attendence.html'" style="height: 30px;line-height: 0px;left: 70%;margin-left: -50px;">上报</button>
-
-					<button type="button" class="mui-btn mui-btn-purple mui-btn-grey" onclick="window.location.href='example_attendence.html'" style="height: 30px;line-height: 0px;">详情</button>
+					<button style="
+    margin-left: 50px;
+" onclick="window.location.href='example_attendence.html'">查看详情</button>
+					<button style="
+    margin-left: 50px;
+" onclick="window.location.href='confirm_attendence.html'">发起申请</button>
 
 				</li>
 
