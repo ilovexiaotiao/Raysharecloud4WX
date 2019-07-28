@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Created by Nicholas on 2018/10/8.
  * Nicholas Shan
  */
@@ -856,7 +856,7 @@ function l2() {
 
 //顶栏扫描图标跳转
 function click_qr(){
-	window.location.href = "http://sao315.com/w/api/saoyisao?redirect_uri=http://192.168.3.20/pages/work/report_work.html";
+	window.location.href = "http://sao315.com/w/api/saoyisao?redirect_uri=http://www.lazzypanda.com:8080/pages/work/report_work.html";
 }
 
 //顶栏通知图标跳转
