@@ -6,11 +6,11 @@
 		<title>雷赛云微信公众号登记结果</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../../css/mui.min.css" rel="stylesheet" />
-		<!--<link rel="stylesheet" type="text/css" href="../../css/header.css" />-->
-		<!--<link rel="stylesheet" type="text/css" href="../../css/base.css" />-->
-		<link rel="stylesheet" type="text/css" href="../../css/icons-extra.css"/>
-		<link rel="stylesheet" href="../../css/p.css" />
-		<link rel="stylesheet" href="../../css/style.css" /> />
+		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+		<!--<link rel="stylesheet" href="../../css/p.css" />-->
+		<link href="../../css/icons-extra.css" rel="stylesheet" />
+		<link href="../../css/style.css" rel="stylesheet" />
 		<script src="../../js/jquery.min.js"></script>
 		<script src="../../js/mui.min.js"></script>
 		<script src="../../js/common.js"></script>
@@ -19,7 +19,7 @@
 		<script type="text/javascript" src="../../js/map.js"></script>
 		<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
 		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ox4ZBEjYHBpoONXLQCBV8pzMUFpalyFU"></script>
-<script type="text/javascript" src="../../js/common.js" ></script>
+		<script type="text/javascript" src="../../js/qr_report.js"></script>
 		<!-- 定义当前页弹出容器属性 -->
 		<script type="text/javascript">
 			var layer = new Layer({
@@ -196,9 +196,15 @@
 
 			}
 		</script>
-
+		<style>
+			td .file {
+				margin-top: -8px;
+				margin-left: -10.5px;
+				width: 130%;
+			}
+		</style>
 		</script>
-				<!-- 定义当前页弹出容器属性 -->
+		<!-- 定义当前页弹出容器属性 -->
 		<script type="text/javascript">
 			var layer = new Layer({
 				layerclass: "layerContianer2", //存放页面的容器类名
@@ -213,7 +219,7 @@
 
 	</head>
 
-	<body onload="getPhoneType();today();autofill();">
+	<body onload="getPhoneType();today();autofill_report();">
 
 		<header id="header" class="mui-bar mui-bar-transparent">
 			<div id="header">
@@ -242,7 +248,6 @@
 				<!--<a class="sweep mui-icon-extra mui-icon-extra-sweep"></a>-->
 				<!--返回列表图标-->
 				<a class="sweep mui-icon mui-icon-bars" onclick="click_supervise_list()"></a>
-				
 
 			</div>
 		</header>
@@ -251,19 +256,48 @@
 			<i class="i-home i-small">
 				<img src="../../fonts/稿定设计导出-20190721-113310.png"/>
 			</i>推荐完成“迅美科技广场A区5楼”任务，点击开始</div>
-				<div id="allmap" style="top: 60px;"></div>
+		<div id="allmap" style="top: 60px;"></div>
 
 		<div class="tips"></div>
 		<div class="mui-content">
+
 			<form class="mui-input-group" style="
     margin-bottom: 0px;
 ">
+				<form class="mui-input-group" style="margin-bottom: 0px;">
 					<div class="mui-input-row">
-						<label >巡检时间</label>
-						<label style="
-    margin-left: -14px;
-">2018/9/20</label>
+						<label>项目编号</label>
+						<input type="text" id="xm" class="mui-input-clear" disabled="disabled" style="
+    margin-left: -14px;margin-top: 5px;
+">
+
 					</div>
+				</form>
+				<form class="mui-input-group" style="margin-bottom: 0px;">
+					<div class="mui-input-row">
+						<label>工位编号</label>
+						<input type="text" id="gw" class="mui-input-clear" disabled="disabled" style="
+    margin-left: -14px;margin-top: 5px;
+">
+
+					</div>
+				</form>
+				<form class="mui-input-group" style="margin-bottom: 0px;">
+					<div class="mui-input-row">
+						<label>员工编号</label>
+						<input type="text" id="yg" class="mui-input-clear" disabled="disabled" placeholder="y45456458785416" style="
+    margin-left: -14px;margin-top: 5px;
+">
+					</div>
+				</form>
+				<form class="mui-input-group" style="margin-bottom: 0px;">
+					<div class="mui-input-row">
+						<label>巡检时间</label>
+						<input type="text" name="date" id="today" class="mui-input-clear" disabled="disabled" style="
+    margin-left: -14px;margin-top: 5px;
+" class="mui-input-clear" disabled="disabled">
+					</div>
+
 				</form>
 				<form class="mui-input-group" style="
     margin-bottom: 0px;
@@ -293,8 +327,8 @@
 						<select style="font-size: 10px;">
 							</span>
 							<option id="judge" value="" onclick="click_supervise_list()">--请选择--</option>
-							<option >合格</option>
-							<option >不合格</option>
+							<option>合格</option>
+							<option>不合格</option>
 						</select>
 					</div>
 				</form>
@@ -303,7 +337,7 @@
 ">
 					<div class="mui-input-row">
 						<label>扣除绩效分数</label>
-						<input type="text" id="bh" class="mui-input-clear"  placeholder="">
+						<input type="text" id="bh" class="mui-input-clear" placeholder="">
 					</div>
 				</form>
 				<a style="color: red;">是否组织召开临时会议：</a>
@@ -315,9 +349,9 @@
 					<label>否</label>
 					<input name="radio" type="radio">
 				</div>
-				
+
 				<!--录入数据-->
-			<form class="mui-input-group">
+				<form class="mui-input-group">
 					<div class="col-lg-8">
 						<section class="box" style="border-left: 3px solid #e77512;">
 
@@ -335,33 +369,7 @@
 														<th data-priority="1">是否合格</th>
 												</thead>
 												<tbody>
-			<tr>
-														<th>地面</th>
-														<td class="upload_pic">
-															<div class="container" style="top: 40px;float: left;width:82px">
-
-																<div class="mui-card" align="center" style="margin: 0px;margin-bottom: 0px;height: 33px;margin-top: 0px;">
-
-																	<div class="file" align="center">
-																		<button>上传图片</button>
-
-																		<input id="fileInpBtn" type="file" name="upload" onchange="showPicture(this)" accept="image/*" multiple>
-																	</div>
-
-																</div>
-
-															</div>
-														</td>
-														<td>
-															<div class="container" style="margin-top: 0px;">
-																<button type="button" onclick="l()">查看图片</button>
-
-															</div>
-														</td>
-														<td style="text-align: center;vertical-align:middle;"><input type="checkbox"></td>
-													</tr>
-			<tr>
-														
+													<tr>
 														<th>地面</th>
 														<td class="upload_pic">
 															<div class="container" style="top: 40px;float: left;width:82px">
@@ -387,7 +395,33 @@
 														<td style="text-align: center;vertical-align:middle;"><input type="checkbox"></td>
 													</tr>
 													<tr>
-														
+
+														<th>地面</th>
+														<td class="upload_pic">
+															<div class="container" style="top: 40px;float: left;width:82px">
+
+																<div class="mui-card" align="center" style="margin: 0px;margin-bottom: 0px;height: 33px;margin-top: 0px;">
+
+																	<div class="file" align="center">
+																		<button>上传图片</button>
+
+																		<input id="fileInpBtn" type="file" name="upload" onchange="showPicture(this)" accept="image/*" multiple>
+																	</div>
+
+																</div>
+
+															</div>
+														</td>
+														<td>
+															<div class="container" style="margin-top: 0px;">
+																<button type="button" onclick="l()">查看图片</button>
+
+															</div>
+														</td>
+														<td style="text-align: center;vertical-align:middle;"><input type="checkbox"></td>
+													</tr>
+													<tr>
+
 														<th>墙面</th>
 														<td class="upload_pic">
 															<div class="container" style="top: 40px;float: left;width:82px">
@@ -411,8 +445,9 @@
 															</div>
 														</td>
 														<td style="text-align: center;vertical-align:middle;"><input type="checkbox"></td>
-													</tr><tr>
-														
+													</tr>
+													<tr>
+
 														<th>天花板</th>
 														<td class="upload_pic">
 															<div class="container" style="top: 40px;float: left;width:82px">
@@ -436,8 +471,9 @@
 															</div>
 														</td>
 														<td style="text-align: center;vertical-align:middle;"><input type="checkbox"></td>
-													</tr><tr>
-														
+													</tr>
+													<tr>
+
 														<th>坐厕间隔墙</th>
 														<td class="upload_pic">
 															<div class="container" style="top: 40px;float: left;width:82px">
@@ -461,8 +497,9 @@
 															</div>
 														</td>
 														<td style="text-align: center;vertical-align:middle;"><input type="checkbox"></td>
-													</tr><tr>
-														
+													</tr>
+													<tr>
+
 														<th>坐便器、小便斗</th>
 														<td class="upload_pic">
 															<div class="container" style="top: 40px;float: left;width:82px">
@@ -486,8 +523,9 @@
 															</div>
 														</td>
 														<td style="text-align: center;vertical-align:middle;"><input type="checkbox"></td>
-													</tr><tr>
-														
+													</tr>
+													<tr>
+
 														<th>洗手盆及台面、玻璃镜面</th>
 														<td class="upload_pic">
 															<div class="container" style="top: 40px;float: left;width:82px">
@@ -511,8 +549,9 @@
 															</div>
 														</td>
 														<td style="text-align: center;vertical-align:middle;"><input type="checkbox"></td>
-													</tr><tr>
-														
+													</tr>
+													<tr>
+
 														<th>灯罩</th>
 														<td class="upload_pic">
 															<div class="container" style="top: 40px;float: left;width:82px">
@@ -536,8 +575,9 @@
 															</div>
 														</td>
 														<td style="text-align: center;vertical-align:middle;"><input type="checkbox"></td>
-													</tr><tr>
-														
+													</tr>
+													<tr>
+
 														<th>送/排风口</th>
 														<td class="upload_pic">
 															<div class="container" style="top: 40px;float: left;width:82px">
@@ -561,8 +601,9 @@
 															</div>
 														</td>
 														<td style="text-align: center;vertical-align:middle;"><input type="checkbox"></td>
-													</tr><tr>
-														
+													</tr>
+													<tr>
+
 														<th>废纸篓</th>
 														<td class="upload_pic">
 															<div class="container" style="top: 40px;float: left;width:82px">
@@ -586,8 +627,9 @@
 															</div>
 														</td>
 														<td style="text-align: center;vertical-align:middle;"><input type="checkbox"></td>
-													</tr><tr>
-														
+													</tr>
+													<tr>
+
 														<th>喷香机、洗手液箱</th>
 														<td class="upload_pic">
 															<div class="container" style="top: 40px;float: left;width:82px">
@@ -611,8 +653,9 @@
 															</div>
 														</td>
 														<td style="text-align: center;vertical-align:middle;"><input type="checkbox"></td>
-													</tr><tr>
-														
+													</tr>
+													<tr>
+
 														<th>纸巾</th>
 														<td class="upload_pic">
 															<div class="container" style="top: 40px;float: left;width:82px">
@@ -636,8 +679,9 @@
 															</div>
 														</td>
 														<td style="text-align: center;vertical-align:middle;"><input type="checkbox"></td>
-													</tr><tr>
-														
+													</tr>
+													<tr>
+
 														<th>卫生纸架</th>
 														<td class="upload_pic">
 															<div class="container" style="top: 40px;float: left;width:82px">
@@ -661,8 +705,9 @@
 															</div>
 														</td>
 														<td style="text-align: center;vertical-align:middle;"><input type="checkbox"></td>
-													</tr><tr>
-														
+													</tr>
+													<tr>
+
 														<th>水龙头</th>
 														<td class="upload_pic">
 															<div class="container" style="top: 40px;float: left;width:82px">
@@ -687,7 +732,6 @@
 														</td>
 														<td style="text-align: center;vertical-align:middle;"><input type="checkbox"></td>
 													</tr>
-													
 
 												</tbody>
 											</table>
@@ -699,47 +743,41 @@
 						</section>
 					</div>
 
-			
-			
-			
-			
-			
-			
-			
-			<!--
+					<!--
             	作者：a15838261357@sina.com
             	时间：2018-10-09
             	描述：图片显示位置
             -->
-			<div class="container">
-				<form class="mui-input-group">
-					<div class="mui-input-row" style="height: 350px;">
-						<img class="camerabox" id="newImage" style="width: 100%;" />
+					<div class="container">
+						<form class="mui-input-group">
+							<div class="mui-input-row" style="height: 350px;">
+								<img class="camerabox" id="newImage" style="width: 100%;" />
+							</div>
+						</form>
 					</div>
-				</form>
-			</div>
 
-			<div align="center" style="margin-top: 10px;">
-				<button style="
+					<div align="center" style="margin-top: 10px;">
+						<button style="
     margin-left: 0px;
 " onclick="window.location.href='confirm_supervise.html'">保存记录</button>
-					<button style="
+						<button style="
     margin-left: 50px;
 " onclick="window.location.href='confirm_supervise.html'">发送巡查</button>
-			</div>
-			<!-- 底栏 -->
-		<div class="socialMedia scl-grey" style="margin-top: 200px;">
-			<span href="#" class="raysharecloud">雷赛云——博宝源清洁管理系统</span>
+					</div>
+					<!-- 底栏 -->
+					<div class="socialMedia scl-grey" style="margin-top: 200px;">
+						<span href="#" class="raysharecloud">雷赛云——博宝源清洁管理系统</span>
 
-		</div>
-		<div class="socialMedia scl-grey" style="margin-top: 0px;">
-			<span href="#" class="raysharecloud">
+					</div>
+					<div class="socialMedia scl-grey" style="margin-top: 0px;">
+						<span href="#" class="raysharecloud">
 					由“深圳市雷赛信息科技有限公司”提供技术支持</span>
-		</div>
+					</div>
 		</div>
 	</body>
-	</html>
-	<script type="text/javascript">
+
+</html>
+<script type="text/javascript">
 	var map = new RSMap();
 	map.getPoint("lng", "lat");
 	map.getAddress("address");
@@ -749,5 +787,4 @@
 	//console.log(map.sendSignal());
 	//map.getMap();
 	//map.getAddress();
-	
 </script>

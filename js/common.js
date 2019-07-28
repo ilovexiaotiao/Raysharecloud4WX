@@ -324,41 +324,41 @@ function getlocal() {
 	document.getElementById("file_input").click();
 }
 
-function getQueryString(name) {
-	var uri = window.location.search;
-	uri = uri.replace("&amp;", "&").replace("%2526", "&").replace("%26", "&");
-	//alert(uri);
-	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-	uri = uri.substr(1).match(reg);
-	uri = uri[2];
-	return uri;
-}
+//function getQueryString(name) {
+//	var uri = window.location.search;
+//	uri = uri.replace("&amp;", "&").replace("%2526", "&").replace("%26", "&");
+//	//alert(uri);
+//	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+//	uri = uri.substr(1).match(reg);
+//	uri = uri[2];
+//	return uri;
+//}
 
-function autofill() {
-	var bianhao = getQueryString('bh');
-	var gongsi = getQueryString("gs");
-
-	//alert(shijian);
-	//alert(document.getElementById("Txt_1"));
-	//alert(document.getElementById("Txt_3"));
-	document.getElementById("bh").value = bianhao;
-	document.getElementById("gs").value = gongsi;
-
-}
-
-function autofill1() {
-	var xiangmu = getQueryString('xm');
-	var gongwei = getQueryString("gw");
-	var yuangong = getQueryString("yg");
-
-	//alert(shijian);
-	//alert(document.getElementById("Txt_1"));
-	//alert(document.getElementById("Txt_3"));
-	document.getElementById("xm").value = xiangmu;
-	document.getElementById("gw").value = gongwei;
-	document.getElementById("yg").value = yuangong;
-
-}
+//function autofill() {
+//	var bianhao = getQueryString('bh');
+//	var gongsi = getQueryString("gs");
+//
+//	//alert(shijian);
+//	//alert(document.getElementById("Txt_1"));
+//	//alert(document.getElementById("Txt_3"));
+//	document.getElementById("bh").value = bianhao;
+//	document.getElementById("gs").value = gongsi;
+//
+//}
+//
+//function autofill1() {
+//	var xiangmu = getQueryString('xm');
+//	var gongwei = getQueryString("gw");
+//	var yuangong = getQueryString("yg");
+//
+//	//alert(shijian);
+//	//alert(document.getElementById("Txt_1"));
+//	//alert(document.getElementById("Txt_3"));
+//	document.getElementById("xm").value = xiangmu;
+//	document.getElementById("gw").value = gongwei;
+//	document.getElementById("yg").value = yuangong;
+//
+//}
 
 var a = null;
 
@@ -856,7 +856,7 @@ function l2() {
 
 //顶栏扫描图标跳转
 function click_qr(){
-	window.location.href = "http://sao315.com/w/api/saoyisao?redirect_uri=http://www.baidu.com";
+	window.location.href = "http://sao315.com/w/api/saoyisao?redirect_uri=http://192.168.3.20/pages/work/report_work.html";
 }
 
 //顶栏通知图标跳转

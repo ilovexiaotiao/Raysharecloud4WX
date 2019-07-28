@@ -13,7 +13,7 @@
 		<link href="../../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
 		<link rel="stylesheet" type="text/css" href="../../css/base.css" />
-		<link rel="stylesheet" href="../../css/p.css" />
+		<!--<link rel="stylesheet" href="../../css/p.css" />-->
 		<link href="../../css/icons-extra.css" rel="stylesheet" />
 		<link href="../../css/style.css" rel="stylesheet" />
 		<script src="../../js/jquery.min.js"></script>
@@ -24,7 +24,7 @@
 		<script type="text/javascript" src="../../js/map.js"></script>
 		<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
 		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ox4ZBEjYHBpoONXLQCBV8pzMUFpalyFU"></script>
-
+<script type="text/javascript" src="../../js/qr_report.js" ></script>
 		<!-- 定义当前页弹出容器属性 -->
 		<script type="text/javascript">
 			var layer = new Layer({
@@ -41,7 +41,7 @@
 
 	<!-- 随页面启动初始化函数 -->
 
-	<body onload="start();today();autofill1()">
+	<body onload="start();today();autofill_report();">
 
 		<header id="header" class="mui-bar mui-bar-transparent">
 			<div id="header">
@@ -85,14 +85,14 @@
 			<form class="mui-input-group" style="margin-bottom: 0px;">
 				<div class="mui-input-row">
 					<label>项目编号</label>
-					<input type="text" id="xm" class="mui-input-clear" disabled="disabled" placeholder="X256413215641">
+					<input type="text" id="xm" class="mui-input-clear" disabled="disabled">
 
 				</div>
 			</form>
 			<form class="mui-input-group" style="margin-bottom: 0px;">
 				<div class="mui-input-row">
 					<label>工位编号</label>
-					<input type="text" id="gw" class="mui-input-clear" disabled="disabled" placeholder="M545646541561768">
+					<input type="text" id="gw" class="mui-input-clear" disabled="disabled">
 
 				</div>
 			</form>
